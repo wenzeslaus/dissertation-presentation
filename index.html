@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Template for lecture slides</title>
+
+        <meta name="description" content="Template for lecture slides of NCSU OSGeoREL courses">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+    <h2>Template for creating slides for NCSU OSGeoREL courses</h2>
+    <h3>a title slide</h3>
+    <h3 style="margin-top: 0.5em">
+        Vaclav Petras</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU OSGeo Research and Education Laboratory">OSGeoREL</a>
+        at
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+    </p>
+    <p>September, 2014</p>
+</section>
+
+<section>
+    <h2>Headings</h2>
+    <h3>Heading level 3</h3>
+    <ul>
+        <li>Any headings can be used but it is a good practice to use the heading hierarchically.</li>
+        <li>The level of heading is for semantic.</li>
+        <li>The size should be modified using the style attribute or by changing CSS for all.</li>
+    </ul>
+    <h4>Heading level 4</h4>
+    <ul>
+        <li>Different headings should be placed in the order without skipping.</li>
+    </ul>
+    <h4>Heading level 4</h4>
+    <ul>
+        <li>
+            It seems that a good practice is <code>h2</code> heading for slide/section headings
+            <code>h1</code> or <code>h2</code> for presentation title and <code>h3</code>
+            for subtitles.
+        </li>
+    </ul>
+</section>
+<section>
+    <h2>Lists</h2>
+    <ul>
+        <li>bullet (unordered) list are done by <code>ul</code></li>
+        <li>numbered (ordered) list are done by <code>ol</code></li>
+        <li>nested lists
+            <ol>
+                <li>nested list font size is smaller</li>
+                <li>works the same for bullet and numbered lists</li>
+                <li>you should pay attention to nesting elements
+                    <ul>
+                        <li>nested list must be inside <code>li</code> element</li>
+                        <li>if the HTML is not valid the styles will not work</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>
+            description lists and their elements (<code>dl</code>, <code>dt</code>, <code>dd</code>)
+            do not have any special handing
+        </li>
+    </ul>
+</section>
+<section>
+    <h2>Any web page can be embedded</h2>
+    <iframe src="http://grass.osgeo.org/grass71/manuals/r.slope.aspect.html"
+        width="542" height="450px" seamless class="top">
+    </iframe>
+    <ul>
+        <li>
+            online pages to avoid screenshots or switching to different window to show a web page
+            <ul>
+                <li>
+                    by controlling the embedded web page you loose control over the slides
+                    <ul>
+                        <li>you need to click to the slide to associate keyboard with slides again</li>
+                        <li>you may consider enabling the control arrows (<code>controls</code>) for Reveal.js</li>
+                    </ul>
+                </li>
+                <li>mind the risk of not having internet access</li>
+                <li>note that if the slides are online with <code>https</code>, websites with <code>http</code> will not show</li>
+            </ul>
+        </li>
+        <li>offline pages for embedding some HTML document which we don't want to integrate</li>
+    </ul>
+</section>
+<section>
+    <h2>Large image or image at the slide bottom</h2>
+    <img src="img/elevation.png" width="40%">
+    <p>Additional text or caption.</p>
+</section>
+<section>
+    <h2>Test slides to fit screens</h2>
+    <p>
+        With all kind of slides you need to take care of their size
+        which unlike non-HTML presentations is not fixed.
+    </p>
+    <p>
+        Note that a web browser window has different aspect ratio then
+        the full screen where the presentation will be used.
+    </p>
+    <p>
+        Test your slides with different ratios, new screens and
+        projectors have 16:9, 16:10 and the classic ration is 4:3.
+    </p>
+    <p>
+        For example, Mozilla Firefox has responsive design view
+        (Tools > Web Developer > Responsive Design View)
+        where you can try different rations, e.g. 4:3 can be tested
+        as 800x600. You can also save few useful ones.
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <!-- alternative symbol: &#x1f3e0; -->
+        <a href="https://github.com/ncsu-osgeorel/lecture-slides-template" title="Go to the repository">&#8962;</a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+        		// optionally load pre-recorded chalkboard drawing from file
+            		src: "chalkboard.json",
+            	},
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true },
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+            	    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+            	    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+            	    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+            	     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+            	    68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+            	},
+            });
+
+        </script>
+
+    </body>
+</html>
