@@ -1,107 +1,207 @@
 <section>
-    <h2>Template for creating slides for NCSU OSGeoREL courses</h2>
-    <h3>a title slide</h3>
+    <h2>Dissertation proposal</h2>
+    <h3>
+        Turning
+        point clouds, surfaces,
+        <br>
+        and their time series
+        into information
+        <br>
+        in a framework of open geospatial science
+    </h3>
     <h3 style="margin-top: 0.5em">
         Vaclav Petras</h3>
     <p class="title-foot">
         <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
-        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU OSGeo Research and Education Laboratory">OSGeoREL</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
         at
         <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
         <br>
     </p>
-    <p>September, 2014</p>
+    <p>March 17, 2017</p>
 </section>
 
+
 <section>
-    <h2>Headings</h2>
-    <h3>Heading level 3</h3>
-    <ul>
-        <li>Any headings can be used but it is a good practice to use the heading hierarchically.</li>
-        <li>The level of heading is for semantic.</li>
-        <li>The size should be modified using the style attribute or by changing CSS for all.</li>
-    </ul>
-    <h4>Heading level 4</h4>
-    <ul>
-        <li>Different headings should be placed in the order without skipping.</li>
-    </ul>
-    <h4>Heading level 4</h4>
+    <h2>Chapter 1</h2>
+    <h3>Efficient processing of point clouds with variable density</h3>
     <ul>
         <li>
-            It seems that a good practice is <code>h2</code> heading for slide/section headings
-            <code>h1</code> or <code>h2</code> for presentation title and <code>h3</code>
-            for subtitles.
-        </li>
     </ul>
 </section>
+
+
 <section>
-    <h2>Lists</h2>
+    <h2>Chapter 2</h2>
+    <h3>Mapping gradient fields of landform migration</h3>
     <ul>
-        <li>bullet (unordered) list are done by <code>ul</code></li>
-        <li>numbered (ordered) list are done by <code>ol</code></li>
-        <li>nested lists
-            <ol>
-                <li>nested list font size is smaller</li>
-                <li>works the same for bullet and numbered lists</li>
-                <li>you should pay attention to nesting elements
-                    <ul>
-                        <li>nested list must be inside <code>li</code> element</li>
-                        <li>if the HTML is not valid the styles will not work</li>
-                    </ul>
-                </li>
-            </ol>
-        </li>
         <li>
-            description lists and their elements (<code>dl</code>, <code>dt</code>, <code>dd</code>)
-            do not have any special handing
-        </li>
     </ul>
 </section>
+
+
 <section>
-    <h2>Any web page can be embedded</h2>
-    <iframe src="http://grass.osgeo.org/grass71/manuals/r.slope.aspect.html"
-        width="542" height="450px" seamless class="top">
-    </iframe>
+    <h2>Chapter 3</h2>
+    <h3>Lidar-based 3D fragmentation index</h3>
     <ul>
         <li>
-            online pages to avoid screenshots or switching to different window to show a web page
+    </ul>
+</section>
+
+
+<section>
+    <h2>Chapter 4</h2>
+    <h3>A framework for open geospatial science</h3>
+    <ul>
+        <li>
+    </ul>
+</section>
+
+
+
+<section>
+    <h2>Appendix</h2>
+    <h3>Additional projects</h3>
+    <ul>
+        <li>Urban growth model &ndash; FUTURES
+        <li>Disease spread model &ndash; SOD
+        <li>Seamless desktop and remote computations
+        <li>Tangible Landscape for QGIS
+        <li>Course: Tools for open geospatial science
+    </ul>
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; before</h2>
+    <ul>
+        <li>configuration file based interface
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; before</h2>
+    <ul>
+        <li>preprocessGISData.cpp
+    </ul>
+    <img class="stretch" src="img/futures_code_constants.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; after</h2>
+    <ul>
+        <li>GUI, command line, Python
+    </ul>
+    <img class="stretch" src="img/futures_pga_gui.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; after</h2>
+    <ul>
+        <li>faster <small>input/output, efficient memory usage</small>
+        <li>fixed <small>memory management, edge cases</small>
+        <li>flexible <small>inputs, interface</small>
+    </ul>
+</section>
+
+
+<section>
+    <h2>Sudden Oak Death Model</h2>
+    <ul>
+        <li>hardcoded parameters &rarr; GUI + CLI (GRASS GIS)
+        <li>multiple stochastic runs which run in parallel (OpenMP)
+        <li>optimization <!-- inlining, move semantics -->
+        <li>undefined behavior &rarr; correct memory management
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+
+<section>
+    <h2>Tool for hybrid desktop-server workflow</h2>
+    <ul>
+        <li>tests of processing or part of processing locally
+        <li>store and process the big data on a server
+    </ul>
+    <pre class="bash"><code>g.remote server=fatra.cnr.ncsu.edu ... \
+    grassdata=grassdata location=nc_spf_gremote_2 mapset=practice1 \
+    vector_input=max_3_4_5 raster_output=max_3_4_5_surface \
+    --exec \
+    v.surf.rst.mp input=max_3_4_5 elevation=max_3_4_5_surface</code></pre>
+</section>
+
+
+<section>
+    <h2>Tangible Landscape for QGIS</h2>
+    <ul>
+        <li>
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
+</section>
+
+
+<section>
+    <h2>Course: Tools for open geospatial science</h2>
+    <ul>
+        <li>1. Introduction to and motivation for open science
+2. Collaborative writing of scientific papers
+3. Advanced tools for papers and reports
+4. Revision control systems and wiki technologies
+5. How open source communities and development work
+6. QGIS, a free and open source geographic system
+7. Introduction to command line and remote access to computational resources
+8. GRASS GIS as software for geospatial research
+9. Combining text, code and results into one document
+10. Publishing code as part of an open source project
+11. Publishing data on web
+12. Command line and Python tools for geospatial work
+13. Reproducible computational environments
+14. Writing and reproducing an open science paper
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
+</section>
+
+
+<section>
+    <h2>Course: Tools for open geospatial science</h2>
+    <h4>What it is</h4>
+    <ul>
+        <li>a course with research focus
+        <li>a course with extension to industry
+            <ul>
+                <li>tools like Git are daily bread in many companies
+            </ul>
+    </ul>
+    <h4>What it is not</h4>
+    <ul>
+        <li>a course limited to geospatial topics
+            <ul>
+                <li>authoring, management, computer knowledge needed as well
+            </ul>
+        <li>the complete open science course
             <ul>
                 <li>
-                    by controlling the embedded web page you loose control over the slides
-                    <ul>
-                        <li>you need to click to the slide to associate keyboard with slides again</li>
-                        <li>you may consider enabling the control arrows (<code>controls</code>) for Reveal.js</li>
-                    </ul>
-                </li>
-                <li>mind the risk of not having internet access</li>
-                <li>note that if the slides are online with <code>https</code>, websites with <code>http</code> will not show</li>
             </ul>
-        </li>
-        <li>offline pages for embedding some HTML document which we don't want to integrate</li>
+        <li>the course where you learn open source GIS
+            <ul>
+                <li>this should happen in all other courses
+            </ul>
     </ul>
 </section>
+
+
 <section>
-    <h2>Large image or image at the slide bottom</h2>
-    <img src="img/elevation.png" width="40%">
-    <p>Additional text or caption.</p>
-</section>
-<section>
-    <h2>Test slides to fit screens</h2>
-    <p>
-        With all kind of slides you need to take care of their size
-        which unlike non-HTML presentations is not fixed.
-    </p>
-    <p>
-        Note that a web browser window has different aspect ratio then
-        the full screen where the presentation will be used.
-    </p>
-    <p>
-        Test your slides with different ratios, new screens and
-        projectors have 16:9, 16:10 and the classic ration is 4:3.
-    </p>
-    <p>
-        For example, Mozilla Firefox has responsive design view
-        (Tools > Web Developer > Responsive Design View)
-        where you can try different rations, e.g. 4:3 can be tested
-        as 800x600. You can also save few useful ones.
+    <h2>Jupyter Notebook</h2>
+    <ul>
+        <li>
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
 </section>

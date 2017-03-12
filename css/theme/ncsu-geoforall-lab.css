@@ -257,13 +257,13 @@ body {
   display: inline-block;
   font-size: smaller;
   line-height: 1.2em;
-  vertical-align: top;
+  vertical-align: bottom;
   margin: 0.1em; }
 
 .reveal small * {
-  vertical-align: top; }
+  vertical-align: bottom; }
 
-.reveal credit {
+.reveal .credit {
   font-size: small;
   color: gray;
   margin: 0.1em;
