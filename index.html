@@ -45,111 +45,599 @@
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
 <section>
-    <h2>Template for creating slides for NCSU OSGeoREL courses</h2>
-    <h3>a title slide</h3>
+    <h2>
+        Turning
+        point clouds, surfaces,
+        <br>
+        and their time series
+        into information
+        <br>
+        in a framework of open geospatial science
+    </h2>
     <h3 style="margin-top: 0.5em">
         Vaclav Petras</h3>
     <p class="title-foot">
         <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
-        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU OSGeo Research and Education Laboratory">OSGeoREL</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
         at
         <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
         <br>
     </p>
-    <p>September, 2014</p>
+    <p>March 17, 2017</p>
 </section>
 
+
+<!-- decimation -->
+
+
 <section>
-    <h2>Headings</h2>
-    <h3>Heading level 3</h3>
-    <ul>
-        <li>Any headings can be used but it is a good practice to use the heading hierarchically.</li>
-        <li>The level of heading is for semantic.</li>
-        <li>The size should be modified using the style attribute or by changing CSS for all.</li>
-    </ul>
-    <h4>Heading level 4</h4>
-    <ul>
-        <li>Different headings should be placed in the order without skipping.</li>
-    </ul>
-    <h4>Heading level 4</h4>
+    <h2>Chapter 1</h2>
+    <h3>Efficient processing of point clouds with variable density</h3>
     <ul>
         <li>
-            It seems that a good practice is <code>h2</code> heading for slide/section headings
-            <code>h1</code> or <code>h2</code> for presentation title and <code>h3</code>
-            for subtitles.
-        </li>
     </ul>
 </section>
+
+
 <section>
-    <h2>Lists</h2>
+    <h3>Point density for airborne lidar</h3>
     <ul>
-        <li>bullet (unordered) list are done by <code>ul</code></li>
-        <li>numbered (ordered) list are done by <code>ol</code></li>
-        <li>nested lists
-            <ol>
-                <li>nested list font size is smaller</li>
-                <li>works the same for bullet and numbered lists</li>
-                <li>you should pay attention to nesting elements
-                    <ul>
-                        <li>nested list must be inside <code>li</code> element</li>
-                        <li>if the HTML is not valid the styles will not work</li>
-                    </ul>
-                </li>
-            </ol>
-        </li>
         <li>
-            description lists and their elements (<code>dl</code>, <code>dt</code>, <code>dd</code>)
-            do not have any special handing
-        </li>
+    </ul>
+    <img class="stretch" src="img/count_lidar.png">
+</section>
+
+
+<section>
+    <h3>Point density for ground-based lidar</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/count_ground.png">
+</section>
+
+
+<section>
+    <h3>Point density for UAV imagery SfM point cloud</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/count_uav.png">
+</section>
+
+
+<section>
+    <h3>Point density for Kinect point cloud</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/count_kinect.png">
+</section>
+
+
+<section>
+    <h3>Local Relief Model</h3>
+    <ul>
+        <li>all points included
+    </ul>
+    <br>
+    <img class="stretch" src="img/lrm_elev_all.png">
+</section>
+
+
+<section>
+    <h3>Local Relief Model</h3>
+    <ul>
+        <li>90% of points removed
+    </ul>
+    <br>
+    <img class="stretch" src="img/lrm_elev_preserve_10.png">
+</section>
+
+
+<section>
+    <h3>Removing airborne lidar points</h3>
+    <ul>
+        <li>
+    </ul>
+    <br>
+    <img class="stretch" src="img/lrm_grid_count_lidar.png">
+</section>
+
+
+<section>
+    <h3>Removing ground-based lidar points</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/lrm_grid_count_ground.png">
+</section>
+
+
+<section>
+    <h3>Removing UAV imagery SfM points</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/lrm_grid_count_uav.png">
+</section>
+
+
+<!-- gradients -->
+
+
+<section>
+    <h2>Chapter 2</h2>
+    <h3>Mapping gradient fields of landform migration</h3>
+    <ul>
+        <li>
     </ul>
 </section>
+
+
 <section>
-    <h2>Any web page can be embedded</h2>
-    <iframe src="http://grass.osgeo.org/grass71/manuals/r.slope.aspect.html"
-        width="542" height="450px" seamless class="top">
-    </iframe>
+    <h3></h3>
     <ul>
         <li>
-            online pages to avoid screenshots or switching to different window to show a web page
+    </ul>
+    <img class="stretch" src="img/jr_anim.gif">
+</section>
+
+
+<section>
+    <h3>Space-Time Cube visualization</h3>
+Contour evolution represented by isosurfaces 
+<br><i>z = f (x,y,t) </i>, z=16m and 20m
+<p>
+  <img height="400" src="img/jr16animation.gif">
+<img height="400" src="img/jr20animation.gif">
+<!--  <img height="100" src="img/JR74-12_10mcont2.png">-->
+</section>
+
+
+<section>
+    <h3>Simple experiment</h3>
+Series of DEMs for tests created using Tangible Landscape
+    <img class="left" src="img/tangible_1.jpg">
+    <img class="right" src="img/tangible_4.jpg">
+</section>
+
+
+<section>
+    <h3>Contours, year 2001, z = 110m</h3>
+    <img class="stretch" src="img/grad_st1_cont.png">
+</section>
+<section>
+    <h3>Contours, year 2005, z = 110m</h3>
+    <img class="stretch" src="img/grad_st2_cont.png">
+</section>
+
+
+<section>
+    <h3>Contours, year 2008, z = 110m</h3>
+    <img class="stretch" src="img/grad_st3_cont.png">
+</section>
+
+
+<section>
+    <h3>Contours, year 2009, z = 110m</h3>
+    <img class="stretch" src="img/grad_st4_cont.png">
+</section>
+
+
+<section>
+    <h3>Define migration areas</h3>
+    <p class="small">Mask internal areas outside the range of 110m contour migration</p>
+    <img class="stretch" src="img/grad_st1234_coreenvmask2_110m.png">
+</section>
+
+
+<section>
+    <h3>Assign time [year] attribute</h3>
+    <p class="small">Each 110m contour is assigned a time [year] attribute</p>
+    <img class="stretch" src="img/grad_st1234_110m.png">
+</section>
+
+
+<section>
+    <h3>Interpolate temporal surface</h3>
+    <p class="small" >Temporal surface is interpolated from a time series of 110m contours </p>
+    <img class="stretch" src="img/grad_st1234_surfmasked_110m.png">
+</section>
+
+
+<section>
+    <h3>Migration gradient field</h3>
+<p class="small"> Derived from spatio-temporal surface using derivatives of spline function </p>
+<p>
+    <img src="img/gradlines_overyear.png" width="49%">
+    <img src="img/gradarrows_overrates.png" width="49%">
+<p class="small">gradient lines over time and vectors over migration rates
+</section>
+
+
+<section>
+    <h3>Dynamic visualization of the gradient field</h3>
+<p class="small">Shows spatial pattern of mass concentration and dispersal over time </p>
+    <video class="stretch" data-autoplay muted loop>
+         <source src="img/comets.mp4" type="video/mp4">
+    </video>
+    <p class="small">
+        Inspired by Tokyo Wind Speed application by Cameron Beccario.
+        Derived from <code>air.js</code> source code.
+        Uses HTML, CSS, JavaScript and D3.js library.
+    </p>
+</section>
+
+
+<section>
+    <h3>Real world data experiment</h3>
+    <p class="small">
+        Gradient field of horizontal migration at z=12m for Jockey's Ridge dune 
+        for years 1974, 1995, 2001, 2008, 2012, contour segmentation is needed
+    </p>
+    <img class="stretch" src="img/jr_contours_all_clipped.jpg">
+</section>
+
+
+<section>
+    <h3>Gradient field and rate of migration</h3>
+    <p class="small">
+        Migration of windward side of Jockey's Ridge dune at different elevations 
+    </p>
+    <img class="stretch" src="img/jr-stc-contours.png">
+</section>
+
+
+<section>
+    <h3>Second order parameters</h3>
+        Temporal surface curvature: 
+    <ul>
+        <li>in gradient direction: spread acceleration
+        <li>in isoline direction: concentrating or dispersing spread
+    </ul>
+    <img src="img/curvature_profile.png" width="40%">
+    <img src="img/curvature_tangential.png" width="40%">
+</section>
+
+
+<section>
+    <h3>Generalization for complex dynamics</h3>
+<ul>
+        <li>integrating the fields across several elevation contours
+        <li>using implicit function <i>f(x,y,t)=const</i> to analyze countour evolution isosurface
+        <li>derive 3D gradient lines of fastest change using trivariate splines
+    </ul>
+</section>
+
+
+<section>
+    <h3>Conclusion</h3>
+    <ul>
+        <li>visual and quantitative technique
+        <li>magnitude and direction of change
+        <li>spatial distribution of rate of change
+        <li>detection of anomalies
+        <li>
+            analysis of 3D monitoring data or model calibration
             <ul>
-                <li>
-                    by controlling the embedded web page you loose control over the slides
-                    <ul>
-                        <li>you need to click to the slide to associate keyboard with slides again</li>
-                        <li>you may consider enabling the control arrows (<code>controls</code>) for Reveal.js</li>
-                    </ul>
-                </li>
-                <li>mind the risk of not having internet access</li>
-                <li>note that if the slides are online with <code>https</code>, websites with <code>http</code> will not show</li>
+                <li>evolving shorelines and islands
+                <li>disease spread
+                <li>glacier melting
             </ul>
         </li>
-        <li>offline pages for embedding some HTML document which we don't want to integrate</li>
+        <li>
+            spatio-temporal interpolation of migrating landforms
+        </li>
     </ul>
 </section>
+
+
 <section>
-    <h2>Large image or image at the slide bottom</h2>
-    <img src="img/elevation.png" width="40%">
-    <p>Additional text or caption.</p>
+    <h3>Availability</h3>
+    <ul>
+        <li>
+            Method and use cases:
+            <ul>
+                <li>Geomorphometry 2015
+                <li>open access, CC BY-ND
+                <li>can be implemented in any GIS-like software
+            </ul>
+        <li>
+            Software source code:
+            <ul>
+                <li>
+                    <a href="https://github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution">
+                        github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution
+                    </a>
+                </li>
+                <li>GNU GPL <small>(code can be copied and changed)</small></li>
+                <li>
+                    depends only on GRASS GIS
+                    <small>(anybody can have what is needed)</small>
+                </li>
+                <li>GRASS GIS module <small>(convenient to get, ready to use)</small></li>
+            </ul>
+    </ul>
+    <p>
+    <img src="img/logos/cc.svg" width="10%">
+    <img src="img/logos/grass_gis.png" width="10%">
+    <img src="img/logos/open_source.png" width="10%">
+    <img src="img/logos/gnu_gpl.svg" width="17%">
+    <img src="img/logos/github.png" width="10%">
 </section>
+
+
+<!-- 3D fragmentation -->
+
+
 <section>
-    <h2>Test slides to fit screens</h2>
-    <p>
-        With all kind of slides you need to take care of their size
-        which unlike non-HTML presentations is not fixed.
-    </p>
-    <p>
-        Note that a web browser window has different aspect ratio then
-        the full screen where the presentation will be used.
-    </p>
-    <p>
-        Test your slides with different ratios, new screens and
-        projectors have 16:9, 16:10 and the classic ration is 4:3.
-    </p>
-    <p>
-        For example, Mozilla Firefox has responsive design view
-        (Tools > Web Developer > Responsive Design View)
-        where you can try different rations, e.g. 4:3 can be tested
-        as 800x600. You can also save few useful ones.
+    <h2>Chapter 3</h2>
+    <h3>Lidar-based 3D fragmentation index</h3>
+    <ul>
+        <li>
+    </ul>
+</section>
+
+
+<section>
+    <h3>3D index of 3D raster</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/points.png">
+</section>
+
+
+<section>
+    <h3>3D index of 3D raster</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/raster3d.png">
+</section>
+
+
+<section>
+    <h3>profile of 3D raster</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/profile3d.png">
+</section>
+
+
+<section>
+    <h3>point presence and index profiles</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/profiles.png">
+</section>
+
+
+<section>
+    <h3>As 2D raster</h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/comparison_ortho.png">
+</section>
+
+
+<!-- open geospatial science -->
+
+
+<section>
+    <h2>Chapter 4</h2>
+    <h3>A framework for open geospatial science</h3>
+    <ul>
+        <li>
+    </ul>
+</section>
+
+<!--
+<section>
+    <h3></h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/.png">
+</section>
+
+
+<section>
+    <h3></h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/.png">
+</section>
+
+
+<section>
+    <h3></h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/.png">
+</section>
+
+
+<section>
+    <h3></h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/.png">
+</section>
+
+
+<section>
+    <h3></h3>
+    <ul>
+        <li>
+    </ul>
+    <img class="stretch" src="img/.png">
+</section>
+
+-->
+<!-- appendix -->
+
+
+<section>
+    <h2>Appendix</h2>
+    <h3>Selected additional projects</h3>
+    <ul>
+        <li>Urban growth model &ndash; FUTURES
+        <li>Disease spread model &ndash; SOD
+        <li>Seamless desktop and remote computations
+        <li>Tangible Landscape for QGIS
+        <li>Course: Tools for open geospatial science
+    </ul>
+</section>
+
+
+<!-- modeling -->
+
+
+<section>
+    <h2>FUTURES PGA &ndash; before</h2>
+    <ul>
+        <li>configuration file based interface
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; before</h2>
+    <ul>
+        <li>preprocessGISData.cpp
+    </ul>
+    <img class="stretch" src="img/futures_code_constants.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; after</h2>
+    <ul>
+        <li>GUI, command line, Python
+    </ul>
+    <img class="stretch" src="img/futures_pga_gui.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; after</h2>
+    <ul>
+        <li>faster <small>input/output, efficient memory usage</small>
+        <li>fixed <small>memory management, edge cases</small>
+        <li>flexible <small>inputs, interface</small>
+    </ul>
+</section>
+
+
+<section>
+    <h2>Sudden Oak Death Model</h2>
+    <ul>
+        <li>hardcoded parameters &rarr; GUI + CLI (GRASS GIS)
+        <li>multiple stochastic runs which run in parallel (OpenMP) <!-- weeks and loops -->
+        <li>optimization <!-- inlining, move semantics -->
+        <li>undefined behavior &rarr; correct memory management
+        <li>tested and versioned <!-- issues of testing (2 bugs) -->
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+
+<!-- g.remote -->
+
+
+<section>
+    <h2>Tool for hybrid desktop-server workflow</h2>
+    <ul>
+        <li>tests of processing or part of processing locally
+        <li>store and process the big data on a server
+    </ul>
+    <pre class="bash"><code>g.remote server=fatra.cnr.ncsu.edu ... \
+    grassdata=grassdata location=nc_spf_gremote_2 mapset=practice1 \
+    vector_input=max_3_4_5 raster_output=max_3_4_5_surface \
+    --exec \
+    v.surf.rst.mp input=max_3_4_5 elevation=max_3_4_5_surface</code></pre>
+</section>
+
+
+<!-- Tangible Landscape -->
+
+
+<section>
+    <h2>Tangible Landscape for QGIS</h2>
+    <ul>
+        <li>
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
+</section>
+
+
+<!-- open science course -->
+
+
+<section>
+    <h2>Course<br>Tools for open geospatial science</h2>
+    <ul>
+        <li>Collaborative writing of scientific papers
+        <li>Revision control systems and wiki technologies
+        <li>QGIS + GRASS GIS
+        <li>command line, remote access, Linux
+        <li>Interactive notebooks
+        <li>Publishing code as part of an open source project
+        <li>Publishing data on web
+        <li>Reproducible computational environments
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
+</section>
+
+
+<section>
+    <h2>Course<br>Tools for open geospatial science</h2>
+    <h4>What it is</h4>
+    <ul>
+        <li>a course with research focus
+        <li>a course with extension to industry
+            <ul>
+                <li>tools like Git are daily bread in many companies
+            </ul>
+    </ul>
+    <h4>What it is not</h4>
+    <ul>
+        <li>a course limited to geospatial topics
+            <ul>
+                <li>authoring, management, computer knowledge needed as well
+            </ul>
+        <li>the complete &amp; comprehensive open science course
+            <ul>
+                <li>this one is focused on software tools
+                <li>not data, open access, ...
+            </ul>
+        <li>the course where you learn open source GIS
+            <ul>
+                <li>this should happen in all other courses
+            </ul>
+    </ul>
+</section>
+
+
+<section>
+    <h2>Jupyter Notebook</h2>
+    <ul>
+        <li>
+    </ul>
+    <br>
+    <img class="stretch" src="img/futures_config.png">
 </section>
 <!-- This is a generated file. Do not edit. -->
         </div>  <!-- slides -->
