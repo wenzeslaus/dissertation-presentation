@@ -29,17 +29,11 @@
     <ul>
         <li>Lidar and UAV point clouds
         <li>Getting consistent products fast
-            <ul>
-                <li>in two dimensions
-            </ul>
+            <small>in two dimensions</small>
         <li>Describing terrain changes in time
-            <ul>
-                <li>time-series of surfaces
-            </ul>
+            <small>time-series of surfaces</small>
         <li>Describing vegetation using lidar point cloud
-            <ul>
-                <li>in three dimensions
-            </ul>
+            <small>in three dimensions</small>
         <!-- TODO: put this to styles -->
         <li style="position: relative;">
             <span class="fragment fade-out" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">Publish or perish</span>
@@ -66,7 +60,7 @@
 
 <section>
     <h2>Chapter 1</h2>
-    <h3>Efficient processing of point clouds with variable density</h3>
+    <h3>Efficient processing of point clouds<br>with variable density</h3>
 </section>
 
 
@@ -228,7 +222,7 @@ test data (not used in the study)
 <section>
     <h3>Removing airborne lidar points</h3>
     <ul>
-        <li>
+        <li>count-based and grid-based decimations are equivalent
     </ul>
     <br>
     <img class="stretch" src="img/lrm_grid_count_lidar.png">
@@ -238,8 +232,9 @@ test data (not used in the study)
 <section>
     <h3>Removing ground-based lidar points</h3>
     <ul>
-        <li>
+        <li>grid-based decimation performs better
     </ul>
+    <br>
     <img class="stretch" src="img/lrm_grid_count_ground.png">
 </section>
 
@@ -247,8 +242,9 @@ test data (not used in the study)
 <section>
     <h3>Removing UAV imagery SfM points</h3>
     <ul>
-        <li>
+        <li>grid-based decimation performs slightly better
     </ul>
+    <br>
     <img class="stretch" src="img/lrm_grid_count_uav.png">
 </section>
 
@@ -258,7 +254,7 @@ test data (not used in the study)
     Petras, V., A. Petrasova, J. Jeziorska, and H. Mitasova (2016). <em>Processing UAV
     and lidar point clouds in GRASS GIS</em>. In: ISPRS-International Archives of the
     Photogrammetry, Remote Sensing and Spatial Information Sciences, pp. 945–952
-    <img class="stretch" src="img/papers/petras2016processing.png">
+    <img style="width: 50%" src="img/papers/petras2016processing.png">
 </section>
 
 
@@ -283,11 +279,12 @@ test data (not used in the study)
 
 
 <section>
-    <h3></h3>
+    <h3>Migrating landform</h3>
     <ul>
-        <li>
+        <li>time-series of DEMs
     </ul>
     <img class="stretch" src="img/jr_anim.gif">
+    <small>Jockey's Ridge, 1974 - 2012</small>
 </section>
 
 
@@ -320,7 +317,7 @@ test data (not used in the study)
     <h3>Space-Time Cube visualization</h3>
     Contour evolution represented by isosurfaces
     <br>
-    <i>z = f (x,y,t) </i>, z=16m and 20m
+    <i>z = f (x,y,t) </i>, z = 16m and z = 20m
     <p>
     <img height="400" src="img/jr16animation.gif">
     <img height="400" src="img/jr20animation.gif">
@@ -361,13 +358,13 @@ test data (not used in the study)
 
 <section>
     <h3>Define migration areas</h3>
-    <p class="small">Mask internal areas outside the range of 110m contour migration</p>
+    <p class="small">Mask areas outside the range of 110m contour migration</p>
     <img class="stretch" src="img/grad_st1234_coreenvmask2_110m.png">
 </section>
 
 
 <section>
-    <h3>Assign time [year] attribute</h3>
+    <h3>Assign time attribute</h3>
     <p class="small">Each 110m contour is assigned a time [year] attribute</p>
     <img class="stretch" src="img/grad_st1234_110m.png">
 </section>
@@ -393,15 +390,16 @@ test data (not used in the study)
 
 <section>
     <h3>Dynamic visualization of the gradient field</h3>
-<p class="small">Shows spatial pattern of mass concentration and dispersal over time </p>
+    <p>Shows spatial pattern of mass concentration and dispersal over time</p>
     <video class="stretch" data-autoplay muted loop>
          <source src="img/comets.mp4" type="video/mp4">
     </video>
-    <p class="small">
+    <br>
+    <small>
         Inspired by Tokyo Wind Speed application by Cameron Beccario.
         Derived from <code>air.js</code> source code.
         Uses HTML, CSS, JavaScript and D3.js library.
-    </p>
+    </small>
 </section>
 
 
@@ -426,13 +424,25 @@ test data (not used in the study)
 
 <section>
     <h3>Second order parameters</h3>
+    <!-- TODO: put this to styles -->
+    <p style="width: 80%; margin: 0 auto; text-align: left; margin-bottom: 0;">
         Temporal surface curvature:
+    </p>
     <ul>
         <li>in gradient direction: spread acceleration
         <li>in isoline direction: concentrating or dispersing spread
     </ul>
     <img src="img/curvature_profile.png" width="40%">
     <img src="img/curvature_tangential.png" width="40%">
+    <!-- TODO: put this to styles -->
+    <div style="width: 80%; margin: 0 auto;">
+        <span style="display: block; float: left; font-size: smaller;">
+            acceleration (red) and deceleration (blue)
+        </span>
+        <span style="display: block; float: right; font-size: smaller;">
+            concentrating (red) and dispersing (blue)
+        </span>
+    </div>
 </section>
 
 
@@ -557,36 +567,24 @@ test data (not used in the study)
 
 <section>
     <h3>3D index of 3D raster</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/raster3d.png">
 </section>
 
 
 <section>
-    <h3>profile of 3D raster</h3>
-    <ul>
-        <li>
-    </ul>
+    <h3>Profile of 3D raster</h3>
     <img class="stretch" src="img/profile3d.png">
 </section>
 
 
 <section>
-    <h3>point presence and index profiles</h3>
-    <ul>
-        <li>
-    </ul>
+    <h3>Point presence and index profiles</h3>
     <img class="stretch" src="img/profiles.png">
 </section>
 
 
 <section>
     <h3>As 2D raster</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/comparison_ortho.png">
 </section>
 
@@ -863,6 +861,7 @@ test data (not used in the study)
         <li>How much original research is in the software?
             <ul>
                 <li>What is the ratio of original research code and implementations of existing methods?
+                <li>How many researches are contributing the original research?
             </ul>
         <li>What makes software and code suitable for research and for practitioners?
     </ul>
@@ -962,10 +961,13 @@ test data (not used in the study)
 <section>
     <h2>Tangible Landscape for QGIS</h2>
     <ul>
-        <li>
+        <li>QGIS used regularly to teach GIS on basic level
+        <li>Tangible Landscape suitable for teaching geospatial concepts
+        <li>Deploy both together
+        <li>GRASS GIS as processing backend
     </ul>
     <br>
-    <img class="stretch" src="img/futures_config.png">
+    <img class="stretch" src="img/logos/qgis.png">
 </section>
 
 
@@ -1004,12 +1006,14 @@ test data (not used in the study)
         <li>Reproducible computational environments
     </ul>
     <br>
-    <img class="stretch" src="img/futures_config.png">
+    <img class="stretch" src="img/open/open_pens.png">
+    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
 </section>
 
 
 <section>
     <h2>Course<br>Tools for open geospatial science</h2>
+    <div class="left">
     <h4>What it is</h4>
     <ul>
         <li>a course with research focus
@@ -1018,6 +1022,10 @@ test data (not used in the study)
                 <li>tools like Git are daily bread in many companies
             </ul>
     </ul>
+    <img style="width: 100%;" src="img/open/open_books.png">
+    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
+    </div>
+    <div class="right">
     <h4>What it is not</h4>
     <ul>
         <li>a course limited to geospatial topics
@@ -1034,14 +1042,15 @@ test data (not used in the study)
                 <li>this should happen in all other courses
             </ul>
     </ul>
+    </div>
 </section>
 
 
 <section>
     <h2>Jupyter Notebook</h2>
     <ul>
-        <li>
+        <li>interactive document with text, code, and figures
     </ul>
     <br>
-    <img class="stretch" src="img/futures_config.png">
+    <img class="stretch" src="img/jupyter.png">
 </section>
