@@ -5,9 +5,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Template for lecture slides</title>
+        <title>Turning point clouds into information with open science</title>
 
-        <meta name="description" content="Template for lecture slides of NCSU OSGeoREL courses">
+        <meta name="description" content="Turning point clouds, surfaces, and their time series into information in a framework of open geospatial science">
         <meta name="author" content="Vaclav Petras">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -427,8 +427,8 @@ test data (not used in the study)
     <h3>Migration gradient field</h3>
     <small>Derived from spatio-temporal surface using derivatives of spline function</small>
     <br>
-    <img src="img/gradlines_overyear.png" width="49%">
-    <img src="img/gradarrows_overrates.png" width="49%">
+    <img src="img/gradlines_overyear.png" style="width: 49%;">
+    <img src="img/gradarrows_overrates.png" style="width: 49%;">
     <br>
     <small>gradient lines over time and vectors over migration rates</small>
 </section>
@@ -478,8 +478,8 @@ test data (not used in the study)
         <li>in gradient direction: spread acceleration
         <li>in isoline direction: concentrating or dispersing spread
     </ul>
-    <img src="img/curvature_profile.png" width="40%">
-    <img src="img/curvature_tangential.png" width="40%">
+    <img src="img/curvature_profile.png" style="width: 40%;">
+    <img src="img/curvature_tangential.png" style="width: 40%;">
     <!-- TODO: put this to styles -->
     <div style="width: 80%; margin: 0 auto;">
         <span style="display: block; float: left; font-size: smaller;">
@@ -551,11 +551,11 @@ test data (not used in the study)
             </ul>
     </ul>
     <p>
-    <img src="img/logos/cc.svg" width="10%">
-    <img src="img/logos/grass_gis.png" width="10%">
-    <img src="img/logos/open_source.png" width="10%">
-    <img src="img/logos/gnu_gpl.svg" width="17%">
-    <img src="img/logos/github.png" width="10%">
+    <img src="img/logos/cc.svg" style="width: 10%;">
+    <img src="img/logos/grass_gis.png" style="width: 10%;">
+    <img src="img/logos/open_source.png" style="width: 10%;">
+    <img src="img/logos/gnu_gpl.svg" style="width: 17%;">
+    <img src="img/logos/github.png" style="width: 10%;">
 </section>
 
 
@@ -688,7 +688,7 @@ test data (not used in the study)
             &mdash;Nature Methods - 4, 189 (2007)
         </p>
     </blockquote>
-    <img src="img/open/open_science.png" width="50%">
+    <img src="img/open/open_science.png" style="width: 50%;">
     <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
     <!--
     Access to information is crucial for science
@@ -710,7 +710,7 @@ test data (not used in the study)
             cited by Cable Green in The Obviousness of Open Policy
         -->
     </blockquote>
-    <img src="img/open/open_up_book.png" width="50%">
+    <img src="img/open/open_up_book.png" style="width: 50%;">
     <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
 </section>
 
@@ -793,7 +793,7 @@ test data (not used in the study)
     </blockquote>
     <small>Latest release: December 2016 <small>(last checked March 2017)</small></small>
     <p>
-    <img src="img/logos/maxima.svg" width="15%">
+    <img src="img/logos/maxima.svg" style="width: 15%;">
 </section>
 
 
@@ -823,7 +823,7 @@ test data (not used in the study)
         </p>
     </blockquote>
     <p>
-    <img src="img/logos/github.png" width="10%">
+    <img src="img/logos/github.png" style="width: 10%;">
 </section>
 
 
@@ -839,7 +839,7 @@ test data (not used in the study)
         </p>
     </blockquote>
     <p>
-    <img src="img/logos/github.png" width="10%">
+    <img src="img/logos/github.png" style="width: 10%;">
 </section>
 
 
@@ -965,8 +965,21 @@ test data (not used in the study)
     <h2>FUTURES PGA &ndash; after</h2>
     <ul>
         <li>faster <small>input/output, efficient memory usage</small>
+            <ul>
+                <li>binary input and put reduces time spent by I/O operations
+                <li>only memory which is needed is used
+            </ul>
         <li>fixed <small>memory management, edge cases</small>
+            <ul>
+                <li>all memory operations are done correctly (no failures or random results)
+                <li>handling of cases such as unresolved items from previous iteration
+            </ul>
         <li>flexible <small>inputs, interface</small>
+            <ul>
+                <li>resolution and extent can be changed arbitrarily
+                <li>easy to add new parameters
+                <li>control over stochastic outcomes
+            </ul>
     </ul>
 </section>
 
@@ -975,8 +988,34 @@ test data (not used in the study)
     <h2>Sudden Oak Death Model</h2>
     <ul>
         <li>hardcoded parameters &rarr; GUI + CLI (GRASS GIS)
-        <li>multiple stochastic runs which run in parallel (OpenMP) <!-- weeks and loops -->
-        <li>optimization <!-- inlining, move semantics -->
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+
+<section>
+    <h2>Sudden Oak Death Model</h2>
+    <ul>
+        <li>multiple stochastic runs which run in parallel
+            <ul>
+                <li>OpenMP
+                <li>week-based simulation but threads created for
+                    chunks of weeks to use less resources
+                    (in comparison for one thread for each week of every run)
+                <li>inputs shared over threads
+            </ul>
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+<section>
+    <h2>Sudden Oak Death Model</h2>
+    <ul>
+        <li>optimization
+            <ul>
+                <li>inlining (reduces function call overheads)
+                <li>C++11 move semantics (avoids copy operations)
+            </ul>
         <li>undefined behavior &rarr; correct memory management
         <li>tested and versioned <!-- issues of testing (2 bugs) -->
     </ul>
@@ -1020,8 +1059,6 @@ test data (not used in the study)
 <!-- open science course -->
 
 
-
-
 <section>
     <h3>Teaching/Curriculum</h3>
     Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
@@ -1038,6 +1075,7 @@ test data (not used in the study)
     [submitted to Ecological Informatics, Jan 20, 2017]
     </small>
 </section>
+
 
 <section>
     <h2>Course<br>Tools for open geospatial science</h2>
