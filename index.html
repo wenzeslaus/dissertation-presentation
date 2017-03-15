@@ -986,11 +986,16 @@ test data (not used in the study)
         <li>tests of processing or part of processing locally
         <li>store and process the big data on a server
     </ul>
-    <pre class="bash"><code>g.remote server=fatra.cnr.ncsu.edu ... \
-    grassdata=grassdata location=nc_spf_gremote_2 mapset=practice1 \
-    vector_input=max_3_4_5 raster_output=max_3_4_5_surface \
+    <pre class="bash" style="font-size: x-large;"><code>g.region "small"
+# v.surf.rst runs locally
+v.surf.rst input="max_3_4_5" elevation="max_3_4_5_surface"
+g.region "large"
+# v.surf.rst runs on a remote machine
+g.remote server="example.ncsu.edu" ... \
+    grassdata="grassdata" location="nc_spf_gremote_2" mapset="practice1" \
+    vector_input="max_3_4_5" raster_output="max_3_4_5_surface" \
     --exec \
-    v.surf.rst.mp input=max_3_4_5 elevation=max_3_4_5_surface</code></pre>
+    v.surf.rst input="max_3_4_5" elevation="max_3_4_5_surface"</code></pre>
 </section>
 
 
@@ -1014,7 +1019,7 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Teaching/Curriculum</h3>
+    <h2>Course<br>Tools for open geospatial science</h2>
     Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
     <em>Integrating free and open source solutions into geospatial science education</em>.
     In: ISPRS International Journal of Geo-Information 4.2, pp. 942–956
