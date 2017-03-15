@@ -178,6 +178,10 @@ body {
 .reveal dd {
   margin-left: 40px; }
 
+.reveal li {
+  margin: 10px 0;
+}
+
 .reveal q,
 .reveal blockquote {
   quotes: none; }
