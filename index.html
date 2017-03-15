@@ -67,45 +67,38 @@
 <section>
     <h2>Chapter 1</h2>
     <h3>Efficient processing of point clouds with variable density</h3>
-    <ul>
-        <li>
-    </ul>
 </section>
 
 
 <section>
     <h3>Point density for airborne lidar</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/count_lidar.png">
+    <br>
+    <small>raster resolution 1.5 m</small>
 </section>
 
 
 <section>
     <h3>Point density for ground-based lidar</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/count_ground.png">
+    <br>
+    <small>raster resolution 0.5 m, red color used for 80 to 18 thousand points per cell</small>
 </section>
 
 
 <section>
     <h3>Point density for UAV imagery SfM point cloud</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/count_uav.png">
+    <br>
+    <small>raster resolution 0.5 m</small>
 </section>
 
 
 <section>
     <h3>Point density for Kinect point cloud</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/count_kinect.png">
+    <br>
+    <small>0.37 m × 0.35 m, raster resolution 0.002 m</small>
 </section>
 
 
@@ -132,19 +125,13 @@
 <ul>
     <li>
         Which decimation performs better for topography and micro-topography?
-        <ul>
-            <li>How this changes with the point cloud acquisition method?
-        </ul>
+        How this changes with the point cloud acquisition method?
     <li>
         Is the simplest decimations enough?
-        <ul>
-            <li>Or do we need to use slower but more sophisticated techniques?
-        </ul>
+        Or do we need to use slower but more sophisticated techniques?
     <li>
         How to derive maximum raster resolution for point cloud with variable density?
-        <ul>
-            <li>Is the resolution estimate for point cloud valid when density anomalies are present?
-        </ul>
+        Is the resolution estimate for point cloud valid when density anomalies are present?
 </ul>
 </section>
 
@@ -267,7 +254,7 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Published</h3>
+    <h3>Publication</h3>
     Petras, V., A. Petrasova, J. Jeziorska, and H. Mitasova (2016). <em>Processing UAV
     and lidar point clouds in GRASS GIS</em>. In: ISPRS-International Archives of the
     Photogrammetry, Remote Sensing and Spatial Information Sciences, pp. 945–952
@@ -292,9 +279,6 @@ test data (not used in the study)
 <section>
     <h2>Chapter 2</h2>
     <h3>Mapping gradient fields of landform migration</h3>
-    <ul>
-        <li>
-    </ul>
 </section>
 
 
@@ -321,17 +305,6 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Space-Time Cube visualization</h3>
-Contour evolution represented by isosurfaces 
-<br><i>z = f (x,y,t) </i>, z=16m and 20m
-<p>
-  <img height="400" src="img/jr16animation.gif">
-<img height="400" src="img/jr20animation.gif">
-<!--  <img height="100" src="img/JR74-12_10mcont2.png">-->
-</section>
-
-
-<section>
     <h3>Transects</h3>
     <img class="stretch" src="img/contour_transects.svg">
 </section>
@@ -344,8 +317,19 @@ Contour evolution represented by isosurfaces
 
 
 <section>
+    <h3>Space-Time Cube visualization</h3>
+    Contour evolution represented by isosurfaces
+    <br>
+    <i>z = f (x,y,t) </i>, z=16m and 20m
+    <p>
+    <img height="400" src="img/jr16animation.gif">
+    <img height="400" src="img/jr20animation.gif">
+</section>
+
+
+<section>
     <h3>Simple experiment</h3>
-Series of DEMs for tests created using Tangible Landscape
+    Series of DEMs for tests created using Tangible Landscape
     <img class="left" src="img/tangible_1.jpg">
     <img class="right" src="img/tangible_4.jpg">
 </section>
@@ -398,11 +382,12 @@ Series of DEMs for tests created using Tangible Landscape
 
 <section>
     <h3>Migration gradient field</h3>
-<p class="small"> Derived from spatio-temporal surface using derivatives of spline function </p>
-<p>
+    <small>Derived from spatio-temporal surface using derivatives of spline function</small>
+    <br>
     <img src="img/gradlines_overyear.png" width="49%">
     <img src="img/gradarrows_overrates.png" width="49%">
-<p class="small">gradient lines over time and vectors over migration rates
+    <br>
+    <small>gradient lines over time and vectors over migration rates</small>
 </section>
 
 
@@ -423,7 +408,7 @@ Series of DEMs for tests created using Tangible Landscape
 <section>
     <h3>Real world data experiment</h3>
     <p class="small">
-        Gradient field of horizontal migration at z=12m for Jockey's Ridge dune 
+        Gradient field of horizontal migration at z=12m for Jockey's Ridge dune
         for years 1974, 1995, 2001, 2008, 2012, contour segmentation is needed
     </p>
     <img class="stretch" src="img/jr_contours_all_clipped.jpg">
@@ -433,7 +418,7 @@ Series of DEMs for tests created using Tangible Landscape
 <section>
     <h3>Gradient field and rate of migration</h3>
     <p class="small">
-        Migration of windward side of Jockey's Ridge dune at different elevations 
+        Migration of windward side of Jockey's Ridge dune at different elevations
     </p>
     <img class="stretch" src="img/jr-stc-contours.png">
 </section>
@@ -441,7 +426,7 @@ Series of DEMs for tests created using Tangible Landscape
 
 <section>
     <h3>Second order parameters</h3>
-        Temporal surface curvature: 
+        Temporal surface curvature:
     <ul>
         <li>in gradient direction: spread acceleration
         <li>in isoline direction: concentrating or dispersing spread
@@ -519,7 +504,7 @@ Series of DEMs for tests created using Tangible Landscape
 
 
 <section>
-    <h3>Published</h3>
+    <h3>Publication</h3>
     Petras, V., H. Mitasova, and A. Petrasova (2015).
     <em>Mapping gradient fields of landform migration</em>.
     In: Geomorphometry for Geosciences. Ed. by Jasiewicz, J.,
@@ -545,9 +530,6 @@ Series of DEMs for tests created using Tangible Landscape
 <section>
     <h2>Chapter 3</h2>
     <h3>Lidar-based 3D fragmentation index</h3>
-    <ul>
-        <li>
-    </ul>
 </section>
 
 
@@ -610,7 +592,7 @@ Series of DEMs for tests created using Tangible Landscape
 
 
 <section>
-    <h3>Accepted with Minor Revisions</h3>
+    <h3>Publication</h3>
     Petras, V., D. J. Newcomb, and H. Mitasova.
     <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
     In: Open Geospatial Data, Software and Standards
@@ -625,9 +607,6 @@ Series of DEMs for tests created using Tangible Landscape
 <section>
     <h2>Chapter 4</h2>
     <h3>A framework for open geospatial science</h3>
-    <ul>
-        <li>
-    </ul>
 </section>
 
 
@@ -665,7 +644,7 @@ Series of DEMs for tests created using Tangible Landscape
             &mdash;Nature Methods - 4, 189 (2007)
         </p>
     </blockquote>
-    <img src="img/open/open_science.png" width="50%" style="margin: 0.1em;">
+    <img src="img/open/open_science.png" width="50%">
     <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
     <!--
     Access to information is crucial for science
@@ -721,7 +700,7 @@ Series of DEMs for tests created using Tangible Landscape
         <p>
             Macsyma (Project MAC’s SYmbolic MAnipulator) [...]
             was originally developed from 1968 to 1982 at MIT's Project MAC.
-            In 1982, Macsyma was licensed to Symbolics and became a commercial product. 
+            In 1982, Macsyma was licensed to Symbolics and became a commercial product.
         </p>
         <p>
             &mdash;Wikipedia contributors. "Macsyma." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 17 Oct. 2016. Web. 14 Mar. 2017.
@@ -866,7 +845,8 @@ Series of DEMs for tests created using Tangible Landscape
         A framework for geospatial open science
         <br>
         as implemented in GRASS GIS,
-        <br>a geospatial research platform
+        <br>
+        a geospatial research platform
     </em>
 </section>
 
