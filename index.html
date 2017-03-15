@@ -67,6 +67,46 @@
 </section>
 
 
+<!-- intro -->
+
+
+<section>
+    <h2>Topics</h2>
+    <ul>
+        <li>Lidar and UAV point clouds
+        <li>Getting consistent products fast
+            <ul>
+                <li>in two dimensions
+            </ul>
+        <li>Describing terrain changes in time
+            <ul>
+                <li>time-series of surfaces
+            </ul>
+        <li>Describing vegetation using lidar point cloud
+            <ul>
+                <li>in three dimensions
+            </ul>
+        <!-- TODO: put this to styles -->
+        <li style="position: relative;">
+            <span class="fragment fade-out" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">Publish or perish</span>
+            <span class="fragment fade-in" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">Share or your work will perish</span>
+    </ul>
+</section>
+
+
+<section>
+    <h2>Chapters</h2>
+    <ul>
+        <li>Chapter 1: Efficient processing of point clouds with variable density
+        <li>Chapter 2: Mapping gradient fields of landform migration
+        <li>Chapter 3: Lidar-based 3D fragmentation index
+        <li>Chapter 4: A framework for open geospatial science
+        <li>Additional projects
+    </ul>
+</section>
+
+
+
 <!-- decimation -->
 
 
@@ -116,11 +156,13 @@
 
 
 <section>
-    <h3>Evaluating level of detail</h3>
+    <h3>Decimation</h3>
 
 <ul>
-    <li>Local relief model (LRM)
-    <li>micro-topography, features other than trend
+    <li>decimation ~ thinning ~ sampling
+    <li>makes the point cloud smaller, more manageable
+    <li>may remove variations in point density
+    <li>grid-based decimation ~ binning
 </ul>
 
 <br>
@@ -128,13 +170,28 @@
 <img style="width: 40%;" src="img/decimation_full.png">
 <img style="width: 40%;" src="img/decimation_preserve.png">
 
-<br>
+</section>
 
-<small>
-30-60cm wide, 30cm deep, 60m long gully (resolution 30cm)
-<!-- 294 rows, 325 cols (88.2m x 97.5m) -->
-</small>
 
+<section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        Which decimation performs better for topography and micro-topography?
+        <ul>
+            <li>How this changes with the point cloud acquisition method?
+        </ul>
+    <li>
+        Is the simplest decimations enough?
+        <ul>
+            <li>Or do we need to use slower but more sophisticated techniques?
+        </ul>
+    <li>
+        How to derive maximum raster resolution for point cloud with variable density?
+        <ul>
+            <li>Is the resolution estimate for point cloud valid when density anomalies are present?
+        </ul>
+</ul>
 </section>
 
 
@@ -264,6 +321,15 @@ test data (not used in the study)
 </section>
 
 
+<section>
+    <h3>Planned publication</h3>
+    <em>
+        Efficient dense point cloud processing and correction
+        <br>
+        of density anomalies using decimations
+    </em>
+</section>
+
 
 
 <!-- gradients -->
@@ -288,6 +354,19 @@ test data (not used in the study)
 
 
 <section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        How to represent landform changes in time?
+    <li>
+        How to communicate the temporal changes correctly?
+    <li>
+        How to interpolate the missing data in a time-series?
+</ul>
+</section>
+
+
+<section>
     <h3>Space-Time Cube visualization</h3>
 Contour evolution represented by isosurfaces 
 <br><i>z = f (x,y,t) </i>, z=16m and 20m
@@ -295,6 +374,18 @@ Contour evolution represented by isosurfaces
   <img height="400" src="img/jr16animation.gif">
 <img height="400" src="img/jr20animation.gif">
 <!--  <img height="100" src="img/JR74-12_10mcont2.png">-->
+</section>
+
+
+<section>
+    <h3>Transects</h3>
+    <img class="stretch" src="img/contour_transects.svg">
+</section>
+
+
+<section>
+    <h3>Hand drawn connections</h3>
+    <img class="stretch" src="img/contour_connections.svg">
 </section>
 
 
@@ -310,6 +401,8 @@ Series of DEMs for tests created using Tangible Landscape
     <h3>Contours, year 2001, z = 110m</h3>
     <img class="stretch" src="img/grad_st1_cont.png">
 </section>
+
+
 <section>
     <h3>Contours, year 2005, z = 110m</h3>
     <img class="stretch" src="img/grad_st2_cont.png">
@@ -482,6 +575,16 @@ Series of DEMs for tests created using Tangible Landscape
 </section>
 
 
+<section>
+    <h3>Planned publication</h3>
+    <em>
+        Description and interpolation of migrating landforms
+        <br>
+        using gradient fields based on spatio-temporal contours
+    </em>
+</section>
+
+
 <!-- 3D fragmentation -->
 
 
@@ -495,11 +598,24 @@ Series of DEMs for tests created using Tangible Landscape
 
 
 <section>
-    <h3>3D index of 3D raster</h3>
+    <h3>Point cloud</h3>
     <ul>
         <li>
     </ul>
     <img class="stretch" src="img/points.png">
+</section>
+
+
+<section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        How to derive and describe 3D structure captured in lidar point clouds?
+    <li>
+        Is a 2D landscape index extensible and applicable to 3D vegetation structure?
+    <li>
+        Is 3D raster representation appropriate for lidar data analysis?
+</ul>
 </section>
 
 
@@ -804,10 +920,17 @@ Series of DEMs for tests created using Tangible Landscape
 <section>
     <h3>A framework for geospatial open science</h3>
     <ul>
-        <li>Differences between software tool and research platform
-        <li>Authors of significant additions and maintainers of the code
-        <li>Original research code versus implementations of existing methods
-        <li>Suitability for research and for practitioners
+        <li>What are the differences between software tool and research platform?
+        <li>Who are the authors of significant additions to the code?
+            <ul>
+                <li>Are they the same as the maintainers of the code?
+                <li>Are they the same as the original authors?
+            </ul>
+        <li>How much original research is in the software?
+            <ul>
+                <li>What is the ratio of original research code and implementations of existing methods?
+            </ul>
+        <li>What makes software and code suitable for research and for practitioners?
     </ul>
 </section>
 
