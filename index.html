@@ -919,8 +919,21 @@ test data (not used in the study)
     <h2>FUTURES PGA &ndash; after</h2>
     <ul>
         <li>faster <small>input/output, efficient memory usage</small>
+            <ul>
+                <li>binary input and put reduces time spent by I/O operations
+                <li>only memory which is needed is used
+            </ul>
         <li>fixed <small>memory management, edge cases</small>
+            <ul>
+                <li>all memory operations are done correctly (no failures or random results)
+                <li>handling of cases such as unresolved items from previous iteration
+            </ul>
         <li>flexible <small>inputs, interface</small>
+            <ul>
+                <li>resolution and extent can be changed arbitrarily
+                <li>easy to add new parameters
+                <li>control over stochastic outcomes
+            </ul>
     </ul>
 </section>
 
@@ -929,14 +942,39 @@ test data (not used in the study)
     <h2>Sudden Oak Death Model</h2>
     <ul>
         <li>hardcoded parameters &rarr; GUI + CLI (GRASS GIS)
-        <li>multiple stochastic runs which run in parallel (OpenMP) <!-- weeks and loops -->
-        <li>optimization <!-- inlining, move semantics -->
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+
+<section>
+    <h2>Sudden Oak Death Model</h2>
+    <ul>
+        <li>multiple stochastic runs which run in parallel
+            <ul>
+                <li>OpenMP
+                <li>week-based simulation but threads created for
+                    chunks of weeks to use less resources
+                    (in comparison for one thread for each week of every run)
+                <li>inputs shared over threads
+            </ul>
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+<section>
+    <h2>Sudden Oak Death Model</h2>
+    <ul>
+        <li>optimization
+            <ul>
+                <li>inlining (reduces function call overheads)
+                <li>C++11 move semantics (avoids copy operations)
+            </ul>
         <li>undefined behavior &rarr; correct memory management
         <li>tested and versioned <!-- issues of testing (2 bugs) -->
     </ul>
     <img class="stretch" src="img/sod_screenshot.png">
 </section>
-
 
 <!-- g.remote -->
 
