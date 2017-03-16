@@ -295,9 +295,6 @@ test data (not used in the study)
 
 <section>
     <h3>Migrating landform</h3>
-    <ul>
-        <li>time-series of DEMs
-    </ul>
     <img class="stretch" src="img/jr_anim.gif">
     <small>Jockey's Ridge, 1974 - 2012</small>
 </section>
@@ -313,30 +310,6 @@ test data (not used in the study)
     <li>
         How to interpolate the missing data in a time-series?
 </ul>
-</section>
-
-
-<section>
-    <h3>Possible solutions</h3>
-    <div class="left">
-    <h4>Transects</h4>
-    <img style="width: 400px;" src="img/contour_transects.svg">
-    </div>
-    <div class="right">
-    <h4>Hand drawn connections</h4>
-    <img style="width: 400px;" src="img/contour_connections.svg">
-    </div>
-</section>
-
-
-<section>
-    <h3>Space-time cube visualization</h3>
-    Contour evolution represented by isosurfaces
-    <br>
-    <i>z = f (x,y,t) </i>, z = 16m and z = 20m
-    <p>
-    <img height="400" src="img/jr16animation.gif">
-    <img height="400" src="img/jr20animation.gif">
 </section>
 
 
@@ -420,59 +393,18 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Real world data experiment</h3>
-    <p class="small">
-        Gradient field of horizontal migration at z=12m for Jockey's Ridge dune
-        for years 1974, 1995, 2001, 2008, 2012, contour segmentation is needed
-    </p>
-    <img class="stretch" src="img/jr_contours_all_clipped.jpg">
-</section>
-
-
-<section>
-    <h3>Gradient field and rate of migration</h3>
-    <p class="small">
-        Migration of windward side of Jockey's Ridge dune at different elevations
-    </p>
-    <img class="stretch" src="img/jr-stc-contours.png">
-</section>
-
-
-<section>
-    <h3>Second order parameters</h3>
-    <!-- TODO: put this to styles -->
-    <p style="width: 80%; margin: 0 auto; text-align: left; margin-bottom: 0;">
-        Temporal surface curvature:
-    </p>
-    <ul>
-        <li>in gradient direction: spread acceleration
-        <li>in isoline direction: concentrating or dispersing spread
-    </ul>
-    <img src="img/curvature_profile.png" style="width: 40%;">
-    <img src="img/curvature_tangential.png" style="width: 40%;">
-    <!-- TODO: put this to styles -->
-    <div style="width: 80%; margin: 0 auto;">
-        <span style="display: block; float: left; font-size: smaller;">
-            acceleration (red) and deceleration (blue)
-        </span>
-        <span style="display: block; float: right; font-size: smaller;">
-            concentrating (red) and dispersing (blue)
-        </span>
-    </div>
-</section>
-
-
-<section>
-    <h3>Conclusion</h3>
     <div class="left">
-    <h4>Features</h4>
+    <h3>Features</h3>
     <ul>
         <li>visual and quantitative technique
         <li>magnitude and direction of change
         <li>spatial distribution of rate of change
         <li>highlighting unexpected changes
     </ul>
-    <h4 style="margin-top: 2em;">Use cases</h4>
+    <img style="width: 100%" src="img/jr_contours_all_clipped.jpg">
+    </div>
+    <div class="right">
+    <h3>Use cases</h3>
     <ul>
         <li>
             analysis of 3D monitoring data or model calibration
@@ -483,15 +415,6 @@ test data (not used in the study)
                 <li>glacier melting
             </ul>
         </li>
-    </ul>
-    </div>
-    <div class="right">
-    <h4>Future work</h4>
-    <ul>
-        <li>description and interpretation of second order parameters
-        <li>integrating the fields across several elevation contours
-        <li>spatio-temporal interpolation of migrating landforms
-        <li>implementation and tests of the above
     </ul>
     </div>
 </section>
@@ -535,12 +458,22 @@ test data (not used in the study)
 
 
 <section>
+    <div class="left">
+    <h3>Future work</h3>
+    <ul>
+        <li>description and interpretation of second order parameters
+        <li>integrating the fields across several elevation contours
+        <li>spatio-temporal interpolation of migrating landforms
+        <li>implementation and tests of the above
+    </ul>
+    </div>
+    <div class="right">
     <h3>Planned publication</h3>
     <em>
         Description and interpolation of migrating landforms
-        <br>
         using gradient fields based on spatio-temporal contours
     </em>
+    </div>
 </section>
 
 
