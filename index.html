@@ -118,38 +118,10 @@
 
 
 <section>
-    <h3>Influence of grid-based decimation resolution</h3>
-
-<small>
-grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
-<br>
-<small>
-(points removed: 0 % &rarr; 81 % &rarr; 98 % &rarr; 99 %)
-</small>
-</small>
-
-<br>
-
-<img style="width: 20%;" src="img/uav_grid_points_res_0_1_shaded_elevation.png">
-
-<img style="width: 20%;" src="img/uav_grid_points_res_0_3_shaded_elevation.png">
-
-<img style="width: 20%;" src="img/uav_grid_points_res_0_9_shaded_elevation.png">
-
-<img style="width: 20%;" src="img/uav_grid_points_res_1_5_shaded_elevation.png">
-
-<!--
-test data (not used in the study)
--->
-
-</section>
-
-
-<section>
     <h3>Evaluating level of detail</h3>
 
 <ul>
-    <li>Local relief model (LRM)
+    <li>local relief model (LRM)
     <li>micro-topography, features other than trend
 </ul>
 
@@ -187,52 +159,35 @@ test data (not used in the study)
 
 <img style="width: 20%;" src="img/uav_grid_points_res_1_5_lrm_shaded.png">
 
-<!--
-test data (not used in the study)
--->
+<small>
+grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
+<br>
+<small>
+(points removed: 0 % &rarr; 81 % &rarr; 98 % &rarr; 99 %)
+</small>
+</small>
 
 </section>
 
 
 <section>
-    <h3>Local relief model</h3>
-    <ul>
-        <li>all points included
-        <li>90% of points removed
-    </ul>
-    <br>
-    <img style="width: 40%;" src="img/lrm_elev_all.png">
-    <img style="width: 40%;" src="img/lrm_elev_preserve_10.png">
-</section>
-
-
-<section>
-    <h3>Removing airborne lidar points</h3>
+    <h3>Removing points</h3>
+    <div class="left">
+    <h4>Airborne lidar</h4>
     <ul>
         <li>count-based and grid-based decimations are equivalent
     </ul>
     <br>
-    <img class="stretch" src="img/lrm_grid_count_lidar.png">
-</section>
-
-
-<section>
-    <h3>Removing ground-based lidar points</h3>
+    <img style="width: 100%;" src="img/lrm_grid_count_lidar.png">
+    </div>
+    <div class="right">
+    <h4>Ground-based lidar</h4>
     <ul>
         <li>grid-based decimation performs better
     </ul>
     <br>
-    <img class="stretch" src="img/lrm_grid_count_ground.png">
-</section>
-
-
-<section>
-    <h3>Removing UAV imagery SfM points</h3>
-    <ul>
-        <li>grid-based decimation performs slightly better
-    </ul>
-    <br>
-    <img class="stretch" src="img/lrm_grid_count_uav.png">
+    <img style="width: 100%;" src="img/lrm_grid_count_ground.png">
+    </div>
 </section>
 
 
@@ -267,6 +222,8 @@ test data (not used in the study)
         <br>
         of density anomalies using decimations
     </em>
+    <p>
+        ...
 </section>
 
 
