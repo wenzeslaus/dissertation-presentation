@@ -981,21 +981,22 @@ test data (not used in the study)
 
 
 <section>
-    <h2>Tool for hybrid desktop-server workflow</h2>
+    <h2>Hybrid desktop-server workflow</h2>
     <ul>
-        <li>tests of processing or part of processing locally
-        <li>store and process the big data on a server
+        <li>locally: parts of processing, test runs on smaller data
+        <li>remotely: big data storage and processing
     </ul>
     <pre class="bash" style="font-size: x-large;"><code>g.region "small"
 # v.surf.rst runs locally
-v.surf.rst input="max_3_4_5" elevation="max_3_4_5_surface"
+v.surf.rst input="points" elevation="terrain_surface"
 g.region "large"
 # v.surf.rst runs on a remote machine
 g.remote server="example.ncsu.edu" ... \
     grassdata="grassdata" location="nc_spf_gremote_2" mapset="practice1" \
-    vector_input="max_3_4_5" raster_output="max_3_4_5_surface" \
+    vector_input="points" raster_output="terrain_surface" \
     --exec \
-    v.surf.rst input="max_3_4_5" elevation="max_3_4_5_surface"</code></pre>
+    v.surf.rst input="points" elevation="terrain_surface"</code></pre>
+    <img class="stretch" src="img/g_remote.svg">
 </section>
 
 
