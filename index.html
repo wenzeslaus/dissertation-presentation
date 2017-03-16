@@ -493,34 +493,37 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Generalization for complex dynamics</h3>
-<ul>
-        <li>integrating the fields across several elevation contours
-        <li>using implicit function <i>f(x,y,t)=const</i> to analyze countour evolution isosurface
-        <li>derive 3D gradient lines of fastest change using trivariate splines
-    </ul>
-</section>
-
-
-<section>
     <h3>Conclusion</h3>
+    <div class="left">
+    <h4>Features</h4>
     <ul>
         <li>visual and quantitative technique
         <li>magnitude and direction of change
         <li>spatial distribution of rate of change
-        <li>detection of anomalies
+        <li>highlighting unexpected changes
+    </ul>
+    <h4 style="margin-top: 2em;">Use cases</h4>
+    <ul>
         <li>
             analysis of 3D monitoring data or model calibration
             <ul>
                 <li>evolving shorelines and islands
+                <li>fire spread
                 <li>disease spread
                 <li>glacier melting
             </ul>
         </li>
-        <li>
-            spatio-temporal interpolation of migrating landforms
-        </li>
     </ul>
+    </div>
+    <div class="right">
+    <h4>Future work</h4>
+    <ul>
+        <li>description and interpretation of second order parameters
+        <li>integrating the fields across several elevation contours
+        <li>spatio-temporal interpolation of migrating landforms
+        <li>implementation and tests of the above
+    </ul>
+    </div>
 </section>
 
 
@@ -535,7 +538,7 @@ test data (not used in the study)
                 <li>can be implemented in any GIS-like software
             </ul>
         <li>
-            Software source code:
+            Software and source code:
             <ul>
                 <li>
                     <a href="https://github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution">
