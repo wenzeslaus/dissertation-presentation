@@ -76,8 +76,8 @@
         <li>Lidar and UAV point clouds
         <li>Getting consistent products fast
             <small>in two dimensions</small>
-        <li>Describing terrain changes in time
-            <small>time-series of surfaces</small>
+        <li>Describing terrain changes
+            <small>using time-series of surfaces</small>
         <li>Describing vegetation using lidar point cloud
             <small>in three dimensions</small>
         <!-- TODO: put this to styles -->
@@ -86,19 +86,6 @@
             <span class="fragment fade-in" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">Share or your work will perish</span>
     </ul>
 </section>
-
-
-<section>
-    <h2>Chapters</h2>
-    <ul>
-        <li>Chapter 1: Efficient processing of point clouds with variable density
-        <li>Chapter 2: Mapping gradient fields of landform migration
-        <li>Chapter 3: Lidar-based 3D fragmentation index
-        <li>Chapter 4: A framework for open geospatial science
-        <li>Additional projects
-    </ul>
-</section>
-
 
 
 <!-- decimation -->
@@ -177,38 +164,10 @@
 
 
 <section>
-    <h3>Influence of grid-based decimation resolution</h3>
-
-<small>
-grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
-<br>
-<small>
-(points removed: 0 % &rarr; 81 % &rarr; 98 % &rarr; 99 %)
-</small>
-</small>
-
-<br>
-
-<img style="width: 20%;" src="img/uav_grid_points_res_0_1_shaded_elevation.png">
-
-<img style="width: 20%;" src="img/uav_grid_points_res_0_3_shaded_elevation.png">
-
-<img style="width: 20%;" src="img/uav_grid_points_res_0_9_shaded_elevation.png">
-
-<img style="width: 20%;" src="img/uav_grid_points_res_1_5_shaded_elevation.png">
-
-<!--
-test data (not used in the study)
--->
-
-</section>
-
-
-<section>
     <h3>Evaluating level of detail</h3>
 
 <ul>
-    <li>Local relief model (LRM)
+    <li>local relief model (LRM)
     <li>micro-topography, features other than trend
 </ul>
 
@@ -246,52 +205,35 @@ test data (not used in the study)
 
 <img style="width: 20%;" src="img/uav_grid_points_res_1_5_lrm_shaded.png">
 
-<!--
-test data (not used in the study)
--->
+<small>
+grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
+<br>
+<small>
+(points removed: 0 % &rarr; 81 % &rarr; 98 % &rarr; 99 %)
+</small>
+</small>
 
 </section>
 
 
 <section>
-    <h3>Local relief model</h3>
-    <ul>
-        <li>all points included
-        <li>90% of points removed
-    </ul>
-    <br>
-    <img style="width: 40%;" src="img/lrm_elev_all.png">
-    <img style="width: 40%;" src="img/lrm_elev_preserve_10.png">
-</section>
-
-
-<section>
-    <h3>Removing airborne lidar points</h3>
+    <h3>Removing points</h3>
+    <div class="left">
+    <h4>Airborne lidar</h4>
     <ul>
         <li>count-based and grid-based decimations are equivalent
     </ul>
     <br>
-    <img class="stretch" src="img/lrm_grid_count_lidar.png">
-</section>
-
-
-<section>
-    <h3>Removing ground-based lidar points</h3>
+    <img style="width: 100%;" src="img/lrm_grid_count_lidar.png">
+    </div>
+    <div class="right">
+    <h4>Ground-based lidar</h4>
     <ul>
         <li>grid-based decimation performs better
     </ul>
     <br>
-    <img class="stretch" src="img/lrm_grid_count_ground.png">
-</section>
-
-
-<section>
-    <h3>Removing UAV imagery SfM points</h3>
-    <ul>
-        <li>grid-based decimation performs slightly better
-    </ul>
-    <br>
-    <img class="stretch" src="img/lrm_grid_count_uav.png">
+    <img style="width: 100%;" src="img/lrm_grid_count_ground.png">
+    </div>
 </section>
 
 
@@ -300,7 +242,24 @@ test data (not used in the study)
     Petras, V., A. Petrasova, J. Jeziorska, and H. Mitasova (2016). <em>Processing UAV
     and lidar point clouds in GRASS GIS</em>. In: ISPRS-International Archives of the
     Photogrammetry, Remote Sensing and Spatial Information Sciences, pp. 945–952
+    <!-- <small>[438 reads on ResearchGate, March 16, 2017 <small>(secondary PDF location)</small>]</small> -->
+    <br>
     <img style="width: 50%" src="img/papers/petras2016processing.png">
+</section>
+
+
+<section>
+    <h3>Software</h3>
+    <ul>
+        <li>extended GRASS GIS module for binning (r.in.lidar)
+        <li>created GRASS GIS module for binning in 3D (r3.in.lidar)
+        <li>created module for count- and grid-based decimation (v.decimate)
+        <li>extended GRASS GIS module for point cloud import (v.in.lidar)
+        <li>local relief model implementation for GRASS GIS (r.local.relief)
+        <li>under development: tool which performs the tests done in the paper
+    </ul>
+    <br>
+    <img class="stretch" src="img/v_profile_points.png">
 </section>
 
 
@@ -311,6 +270,8 @@ test data (not used in the study)
         <br>
         of density anomalies using decimations
     </em>
+    <p>
+        ...
 </section>
 
 
@@ -326,9 +287,6 @@ test data (not used in the study)
 
 <section>
     <h3>Migrating landform</h3>
-    <ul>
-        <li>time-series of DEMs
-    </ul>
     <img class="stretch" src="img/jr_anim.gif">
     <small>Jockey's Ridge, 1974 - 2012</small>
 </section>
@@ -344,29 +302,6 @@ test data (not used in the study)
     <li>
         How to interpolate the missing data in a time-series?
 </ul>
-</section>
-
-
-<section>
-    <h3>Transects</h3>
-    <img class="stretch" src="img/contour_transects.svg">
-</section>
-
-
-<section>
-    <h3>Hand drawn connections</h3>
-    <img class="stretch" src="img/contour_connections.svg">
-</section>
-
-
-<section>
-    <h3>Space-time cube visualization</h3>
-    Contour evolution represented by isosurfaces
-    <br>
-    <i>z = f (x,y,t) </i>, z = 16m and z = 20m
-    <p>
-    <img height="400" src="img/jr16animation.gif">
-    <img height="400" src="img/jr20animation.gif">
 </section>
 
 
@@ -425,12 +360,9 @@ test data (not used in the study)
 
 <section>
     <h3>Migration gradient field</h3>
-    <small>Derived from spatio-temporal surface using derivatives of spline function</small>
-    <br>
+    <p class="small">Gradient lines over time and vectors over migration rates</p>
     <img src="img/gradlines_overyear.png" style="width: 49%;">
     <img src="img/gradarrows_overrates.png" style="width: 49%;">
-    <br>
-    <small>gradient lines over time and vectors over migration rates</small>
 </section>
 
 
@@ -441,7 +373,7 @@ test data (not used in the study)
          <source src="img/comets.mp4" type="video/mp4">
     </video>
     <br>
-    <small>
+    <small class="credit">
         Inspired by Tokyo Wind Speed application by Cameron Beccario.
         Derived from <code>air.js</code> source code.
         Uses HTML, CSS, JavaScript and D3.js library.
@@ -450,63 +382,23 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Real world data experiment</h3>
-    <p class="small">
-        Gradient field of horizontal migration at z=12m for Jockey's Ridge dune
-        for years 1974, 1995, 2001, 2008, 2012, contour segmentation is needed
-    </p>
-    <img class="stretch" src="img/jr_contours_all_clipped.jpg">
-</section>
-
-
-<section>
-    <h3>Gradient field and rate of migration</h3>
-    <p class="small">
-        Migration of windward side of Jockey's Ridge dune at different elevations
-    </p>
-    <img class="stretch" src="img/jr-stc-contours.png">
-</section>
-
-
-<section>
-    <h3>Second order parameters</h3>
-    <!-- TODO: put this to styles -->
-    <p style="width: 80%; margin: 0 auto; text-align: left; margin-bottom: 0;">
-        Temporal surface curvature:
-    </p>
-    <ul>
-        <li>in gradient direction: spread acceleration
-        <li>in isoline direction: concentrating or dispersing spread
-    </ul>
-    <img src="img/curvature_profile.png" style="width: 40%;">
-    <img src="img/curvature_tangential.png" style="width: 40%;">
-    <!-- TODO: put this to styles -->
-    <div style="width: 80%; margin: 0 auto;">
-        <span style="display: block; float: left; font-size: smaller;">
-            acceleration (red) and deceleration (blue)
-        </span>
-        <span style="display: block; float: right; font-size: smaller;">
-            concentrating (red) and dispersing (blue)
-        </span>
-    </div>
-</section>
-
-
-<section>
-    <h3>Conclusion</h3>
     <div class="left">
-    <h4>Features</h4>
+    <h3>Features</h3>
     <ul>
         <li>visual and quantitative technique
         <li>magnitude and direction of change
         <li>spatial distribution of rate of change
         <li>highlighting unexpected changes
     </ul>
-    <h4 style="margin-top: 2em;">Use cases</h4>
+    <img style="width: 100%" src="img/jr_contours_all_clipped.jpg">
+    </div>
+    <div class="right">
+    <h3>Use cases</h3>
     <ul>
         <li>
             analysis of 3D monitoring data or model calibration
             <ul>
+                <li>migrating landforms
                 <li>evolving shorelines and islands
                 <li>fire spread
                 <li>disease spread
@@ -515,50 +407,6 @@ test data (not used in the study)
         </li>
     </ul>
     </div>
-    <div class="right">
-    <h4>Future work</h4>
-    <ul>
-        <li>description and interpretation of second order parameters
-        <li>integrating the fields across several elevation contours
-        <li>spatio-temporal interpolation of migrating landforms
-        <li>implementation and tests of the above
-    </ul>
-    </div>
-</section>
-
-
-<section>
-    <h3>Availability</h3>
-    <ul>
-        <li>
-            Method and use cases:
-            <ul>
-                <li>Geomorphometry 2015
-                <li>open access, CC BY-ND
-                <li>can be implemented in any GIS-like software
-            </ul>
-        <li>
-            Software and source code:
-            <ul>
-                <li>
-                    <a href="https://github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution">
-                        github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution
-                    </a>
-                </li>
-                <li>GNU GPL <small>(code can be copied and changed)</small></li>
-                <li>
-                    depends only on GRASS GIS
-                    <small>(anybody can have what is needed)</small>
-                </li>
-                <li>GRASS GIS module <small>(convenient to get, ready to use)</small></li>
-            </ul>
-    </ul>
-    <p>
-    <img src="img/logos/cc.svg" style="width: 10%;">
-    <img src="img/logos/grass_gis.png" style="width: 10%;">
-    <img src="img/logos/open_source.png" style="width: 10%;">
-    <img src="img/logos/gnu_gpl.svg" style="width: 17%;">
-    <img src="img/logos/github.png" style="width: 10%;">
 </section>
 
 
@@ -568,18 +416,55 @@ test data (not used in the study)
     <em>Mapping gradient fields of landform migration</em>.
     In: Geomorphometry for Geosciences. Ed. by Jasiewicz, J.,
     Z. Zwolinski, H. Mitasova, and T. Hengl
-    [Best Paper Award at Geomorphometry 2015, 1062 PDF hits on March 6, 2017]
+    <small>
+    [Best Paper Award at Geomorphometry 2015,
+    1062 PDF hits on March 6, 2017]
+    </small>
     <img class="stretch" src="img/papers/petras2015mapping.png">
 </section>
 
 
 <section>
+    <h3>Software</h3>
+    <ul>
+        <li>can be implemented in any GIS-like software
+        <li>
+            <a href="https://github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution">
+                github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution
+            </a>
+        </li>
+        <li>GNU GPL <small>(code can be copied and changed)</small></li>
+        <li>
+            depends only on GRASS GIS
+            <small>(anybody can have what is needed)</small>
+        </li>
+        <li>GRASS GIS module <small>(convenient to get, ready to use)</small></li>
+    </ul>
+    <p>
+    <img src="img/logos/grass_gis.png" style="width: 10%;">
+    <img src="img/logos/open_source.png" style="width: 10%;">
+    <img src="img/logos/gnu_gpl.svg" style="width: 17%;">
+    <img src="img/logos/github.png" style="width: 10%;">
+</section>
+
+
+<section>
+    <div class="left">
+    <h3>Future work</h3>
+    <ul>
+        <li>description and interpretation of second order parameters
+        <li>integrating the fields across several elevation contours
+        <li>spatio-temporal interpolation of migrating landforms
+        <li>implementation and tests of the above
+    </ul>
+    </div>
+    <div class="right">
     <h3>Planned publication</h3>
     <em>
         Description and interpolation of migrating landforms
-        <br>
         using gradient fields based on spatio-temporal contours
     </em>
+    </div>
 </section>
 
 
@@ -594,9 +479,6 @@ test data (not used in the study)
 
 <section>
     <h3>Point cloud</h3>
-    <ul>
-        <li>
-    </ul>
     <img class="stretch" src="img/points.png">
 </section>
 
@@ -648,6 +530,20 @@ test data (not used in the study)
 </section>
 
 
+<section>
+    <h3>Software</h3>
+    <ul>
+        <li>3D fragmentation index module (r3.forestfrag)
+        <li>revised 2D fragmentation index module (r.forestfrag)
+        <li>count categories in vertical direction (r3.count.categories)
+        <li>3D scatter plot of 3D raster (r3.scatterplot)
+        <li>3D scatter plot of 2D raster (r.scatterplot)
+    </ul>
+    <br>
+    <img class="stretch" src="img/r3_scatterplot.png">
+</section>
+
+
 <!-- open geospatial science -->
 
 
@@ -658,29 +554,7 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Reproducibility crisis</h3>
-    <blockquote style="width: 100%; margin: 0.1em;">
-        <p>
-            More than 70% of researchers have tried and failed to reproduce
-            another scientist's experiments, and more than half have failed
-            to reproduce their own experiments.
-        </p>
-        <p>
-            &mdash;Baker, Monya (2016).
-            1,500 scientists lift the lid on reproducibility.
-            Nature. 533 (7604): 452–454. doi:10.1038/533452a.
-        </p>
-    </blockquote>
-</section>
-
-
-<section>
-    <h3>Motivation for open science</h3>
-    <!--<ul>
-        <li>Sharing</li>
-        <li>Reproducibility</li>
-        <li>Only journal papers not enough</li>
-    </ul>-->
+    <h3>The case for sharing code</h3>
     <blockquote style="width: 100%; margin: 0.1em;">
         <p>
             Software [...] developed as part of novel methods is as important
@@ -693,75 +567,13 @@ test data (not used in the study)
     </blockquote>
     <img src="img/open/open_science.png" style="width: 50%;">
     <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
-    <!--
-    Access to information is crucial for science
-    Azhar, Gulrez Shah. "Access to information is crucial for science." Lancet 377.9775 (2011): 1404.
-    -->
 </section>
 
 
 <section>
-    <h3>Motivation for open</h3>
-    <blockquote>
-        <p>
-            The opposite of ‘open’ isn’t closed. The opposite of open is ‘broken.’
-        </p>
-        <p>
-            &mdash;John Wilbanks
-        </p>
-        <!--
-            cited by Cable Green in The Obviousness of Open Policy
-        -->
-    </blockquote>
-    <img src="img/open/open_up_book.png" style="width: 50%;">
-    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
-</section>
-
-
-
-<section>
-    <h3>Challenges of research done with software</h3>
-    <blockquote>
-        <p>
-            What happens when Wolfram Research goes out of business?
-            Does all of the mathematical research based on Mathematica disappear?
-            Will there be any way to reproduce the published results?
-        </p>
-        <p>
-            &mdash;Tim Daly, response to Ten reasons you must publish your code
-        </p>
-        <!--
-            http://climatecode.org/blog/2013/07/ten-reasons-you-must-publish-your-code/#comments
-        -->
-    </blockquote>
-</section>
-
-
-<section>
-    <h3>The case of Macsyma/Symbolics</h3>
-    <!--
-        Macsyma was born in the MAC project at MIT (1969), the name means MAC
-        SYmbolic MAnipulator
-    -->
-    <blockquote>
-        <p>
-            Macsyma (Project MAC’s SYmbolic MAnipulator) [...]
-            was originally developed from 1968 to 1982 at MIT's Project MAC.
-            In 1982, Macsyma was licensed to Symbolics and became a commercial product.
-        </p>
-        <p>
-            &mdash;Wikipedia contributors. "Macsyma." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 17 Oct. 2016. Web. 14 Mar. 2017.
-        </p>
-        <!--
-            https://en.wikipedia.org/wiki/Macsyma
-        -->
-    </blockquote>
-</section>
-
-
-<section>
-    <h3>The case of Macsyma/Symbolics</h3>
-    <blockquote>
+    <h3>The case for using open source</h3>
+    <div class="left">
+    <blockquote style="width: 100%;">
         <p>
             Symbolics went bankrupt; Macsyma business was
             continued by Macsyma Inc. [...] the company was sold [...]
@@ -769,16 +581,10 @@ test data (not used in the study)
             All efforts spent on improving this branch of Macsyma
             are irreversibly lost.
         </p>
-        <p>
-            &mdash;Grozin, A. (2014). Introduction to MATHEMATICA for Physicists (p. 252). Springer.
-        </p>
     </blockquote>
-</section>
-
-
-<section>
-    <h3>The case of Macsyma/Symbolics</h3>
-    <blockquote>
+    </div>
+    <div class="right">
+    <blockquote style="width: 100%;">
         <p>
             Fortunately, this was not the only branch.
             [...]
@@ -790,25 +596,12 @@ test data (not used in the study)
             called Maxima [...] under GPL
             [...] is an active free software project [...]
         </p>
-        <p>
-            &mdash;Grozin, A. (2014). Introduction to MATHEMATICA for Physicists (p. 252). Springer.
-        </p>
     </blockquote>
-    <small>Latest release: December 2016 <small>(last checked March 2017)</small></small>
-    <p>
+    </div>
+    <small>Grozin, A. (2014). Introduction to MATHEMATICA for Physicists (p. 252). Springer</small>
+    <small>Latest release of Maxima: December 2016 <small>(last checked March 2017)</small></small>
+    <br>
     <img src="img/logos/maxima.svg" style="width: 15%;">
-</section>
-
-
-<section>
-    <h3>Open source</h3>
-    <ul>
-        <li>research uses software &rarr; open source
-    </ul>
-    <h4 style="margin-top: 2em;">A step further</h4>
-    <ul>
-        <li>code/software created as part of research &rarr; open source
-    </ul>
 </section>
 
 
@@ -831,7 +624,7 @@ test data (not used in the study)
 
 
 <section>
-    <h3>GitHub?</h3>
+    <h3>More than a link to GitHub</h3>
     <blockquote>
         <p>
             Thanks for the GitHub link… What does it do?
@@ -849,8 +642,8 @@ test data (not used in the study)
 <section>
     <h3>Software as part of research</h3>
     <ul>
-        <li>based on open source
         <li>is open source
+        <li>is based on open source
         <li>has stable place for code
         <li>is more than code
     </ul>
@@ -858,31 +651,68 @@ test data (not used in the study)
 
 
 <section>
-    <h3>Software as part of research</h3>
+    <h3>Integrating code into GRASS GIS</h3>
     <ul>
-        <li>What is good software to base research on?
-        <li>What makes code open source?
-        <li>What is a stable place for code?
-        <li>How to share more than just code?
+        <li>Do I want to create new open source project?
+        <li>Preprocessing, visualization, and user interface included
+        <li>Well integrated with existing analytical tools
+        <li>New methods as new GRASS GIS modules or improvements of existing ones
     </ul>
 </section>
 
 
 <section>
-    <h3>Posters</h3>
+    <h3>Reproducibility</h3>
+    <ul>
+        <li>reproducibility ~ repeatability ~ replicability ~ recomputability
+        <li>methods as GRASS GIS modules
+            <small style="color: gray;">(C and Python)</small>
+        <li>scripts to perform the analyses
+            <small style="color: gray;">(Bash and Python)</small>
+        <li>data for the study area
+            <small style="color: gray;">(open formats)</small>
+            <!-- <small style="color: gray;">(small enough)</small> -->
+        <li>details about all dependencies
+            <small style="color: gray;">(Dockerfile)</small>
+        <li>code repository &rarr; complete runtime environment
+            <small style="color: gray;">(Git, GitHub, Linux, Docker)</small>
+        <li>continuous integration service
+            <small style="color: gray;">(Travis-CI)</small>
+    </ul>
+    <small>
+    Petras, V., D. J. Newcomb, and H. Mitasova.
+    <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
+    In: Open Geospatial Data, Software and Standards
+    [minor reviews Mar 9, 2017]
+    </small>
+</section>
+
+
+<section>
+    <h3>Testing framework for GRASS GIS</h3>
+    <img class="stretch" src="img/papers/petras2014testing.png">
+    <p>
+    <small>
     Petras, V. and Gebbert, S. (2014).
     <em>Testing framework for GRASS GIS: ensuring reproducibility of scientific geospatial computing</em>.
     In: AGU Fall Meeting
     Abstracts. Vol.&nbsp;1, p.&nbsp;3758
+    </small>
+</section>
+
+
+<section>
+    <h3>How code in GRASS GIS develops over time</h3>
+    <img class="stretch" src="img/papers/petras2017how.png">
     <p>
+    <small>
     Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
     Leo, S. Gebbert, and M. Neteler (2017).
     <em>How innovations thrive in GRASS GIS</em>.
     NCGIS2017, Raleigh, NC, USA.
-    <p>
-    <img style="height: 200px;" src="img/papers/petras2014testing.png">
-    <img style="height: 200px;" src="img/papers/petras2017how.png">
-    <p><small>Also: Petras (2015) and Chemin (2015) at EGU</small>
+    <br>
+    <small>Also: Petras (2015) and Chemin (2015) at EGU</small>
+    </small>
 </section>
 
 
@@ -899,7 +729,7 @@ test data (not used in the study)
 
 
 <section>
-    <h3>A framework for geospatial open science</h3>
+    <h3>Questions</h3>
     <ul>
         <li>What are the differences between software tool and research platform?
         <li>Who are the authors of significant additions to the code?
@@ -972,16 +802,16 @@ test data (not used in the study)
                 <li>binary input and put reduces time spent by I/O operations
                 <li>only memory which is needed is used
             </ul>
-        <li>fixed <small>memory management, edge cases</small>
-            <ul>
-                <li>all memory operations are done correctly (no failures or random results)
-                <li>handling of cases such as unresolved items from previous iteration
-            </ul>
         <li>flexible <small>inputs, interface</small>
             <ul>
                 <li>resolution and extent can be changed arbitrarily
                 <li>easy to add new parameters
                 <li>control over stochastic outcomes
+            </ul>
+        <li>fixed <small>memory management, edge cases</small>
+            <ul>
+                <li>all memory operations are done correctly (no failures or random results)
+                <li>handling of cases such as unresolved items from previous iteration
             </ul>
     </ul>
 </section>
