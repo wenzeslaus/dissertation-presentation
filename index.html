@@ -604,62 +604,68 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Software as part of research</h3>
+    <h3>Integrating code into GRASS GIS</h3>
     <ul>
-        <li>What makes new code open source?
-        <li>What is good software to base research on?
-        <li>What is a stable place for code?
-        <li>How to share more than just code?
+        <li>Do I want to create new open source project?
+        <li>Preprocessing, visualization, and user interface included
+        <li>Well integrated with existing analytical tools
+        <li>New methods as new GRASS GIS modules or improvements of existing ones
     </ul>
 </section>
 
 
 <section>
-    <h3>What makes new code open source?</h3>
+    <h3>Reproducibility</h3>
     <ul>
-        <li>organizations curating lists of licenses
-            <ul>
-                <li>Open Source Initiative (OSI)
-                <li>Free Software Foundation (FSF, GNU project)
-            </ul>
-        <li>publicly available code != open source
-        <!-- <li>software for free != open source -->
+        <li>reproducibility ~ repeatability ~ replicability ~ recomputability
+        <li>methods as GRASS GIS modules
+            <small style="color: gray;">(C and Python)</small>
+        <li>scripts to perform the analyses
+            <small style="color: gray;">(Bash and Python)</small>
+        <li>data for the study area
+            <small style="color: gray;">(open formats)</small>
+            <!-- <small style="color: gray;">(small enough)</small> -->
+        <li>details about all dependencies
+            <small style="color: gray;">(Dockerfile)</small>
+        <li>code repository &rarr; complete runtime environment
+            <small style="color: gray;">(Git, GitHub, Linux, Docker)</small>
+        <li>continuous integration service
+            <small style="color: gray;">(Travis-CI)</small>
     </ul>
+    <small>
+    Petras, V., D. J. Newcomb, and H. Mitasova.
+    <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
+    In: Open Geospatial Data, Software and Standards
+    [minor reviews Mar 9, 2017]
+    </small>
 </section>
 
 
 <section>
-    <h3>What is good software to base research on?</h3>
-    <ul>
-        <li>organizations: OSGeo, Apache Foundation
-        <li>OSGeo incubation procedure
-            <ul>
-                <li>openness
-                    <ul>
-                        <li>license
-                        <li>communication
-                        <li>decision making
-                    </ul>
-            </ul>
-    </ul>
-</section>
-
-
-<section>
-    <h3>Posters</h3>
+    <h3>Testing framework for GRASS GIS</h3>
+    <img class="stretch" src="img/papers/petras2014testing.png">
+    <p>
+    <small>
     Petras, V. and Gebbert, S. (2014).
     <em>Testing framework for GRASS GIS: ensuring reproducibility of scientific geospatial computing</em>.
     In: AGU Fall Meeting
     Abstracts. Vol.&nbsp;1, p.&nbsp;3758
+    </small>
+</section>
+
+
+<section>
+    <h3>How code in GRASS GIS develops over time</h3>
+    <img class="stretch" src="img/papers/petras2017how.png">
     <p>
+    <small>
     Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
     Leo, S. Gebbert, and M. Neteler (2017).
     <em>How innovations thrive in GRASS GIS</em>.
     NCGIS2017, Raleigh, NC, USA.
-    <p>
-    <img style="height: 200px;" src="img/papers/petras2014testing.png">
-    <img style="height: 200px;" src="img/papers/petras2017how.png">
-    <p><small>Also: Petras (2015) and Chemin (2015) at EGU</small>
+    <br>
+    <small>Also: Petras (2015) and Chemin (2015) at EGU</small>
+    </small>
 </section>
 
 
@@ -676,7 +682,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>A framework for geospatial open science</h3>
+    <h3>Questions</h3>
     <ul>
         <li>What are the differences between software tool and research platform?
         <li>Who are the authors of significant additions to the code?
