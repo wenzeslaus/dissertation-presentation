@@ -1,12 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Geospatial analytics for point clouds and dynamic surfaces in an open science framework</title>
+
+        <meta name="description" content="Turning point clouds, surfaces, and their time series into information in a framework of open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
 <section>
     <h2>
-        Turning
-        point clouds, surfaces,
+        Geospatial analytics
+        for point clouds and dynamic surfaces
         <br>
-        and their time series
-        into information
-        <br>
-        in a framework of open geospatial science
+        in an open science framework
     </h2>
     <h3 style="margin-top: 0.5em">
         Vaclav Petras</h3>
@@ -17,7 +59,7 @@
         <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
         <br>
     </p>
-    <p>March 17, 2017</p>
+    <p>September 11, 2017</p>
 </section>
 
 
@@ -25,20 +67,87 @@
 
 
 <section>
-    <h2>Topics</h2>
+    <h2>Overview</h2>
     <ul>
-        <li>Lidar and UAV point clouds
-        <li>Getting consistent products fast
-            <small>in two dimensions</small>
+        <li>Learning about point cloud density <small>and its anomalies</small>
+        <li>Processing point clouds
+            <small>while dealing with high density</small>
         <li>Describing terrain changes
             <small>using time-series of surfaces</small>
         <li>Describing vegetation using lidar point cloud
             <small>in three dimensions</small>
-        <!-- TODO: put this to styles -->
-        <li style="position: relative;">
-            <span class="fragment fade-out" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">Publish or perish</span>
-            <span class="fragment fade-in" style="position: absolute; margin-left: auto; margin-right: auto; left: 0; right: 0;" data-fragment-index="0">Share or your work will perish</span>
+        <li>Publishing the results <small>in a reproducible way</small>
     </ul>
+</section>
+
+
+<!-- density -->
+
+
+<section>
+    <h2>Chapter 1</h2>
+    <h3>Density anomalies in lidar and UAV point clouds</h3>
+</section>
+
+
+<section>
+    <h3>Lidar and UAV point clouds</h3>
+    <ul>
+        <li>flood modeling
+        <li>wildfire fuel assessment
+        <li>habitat identification
+    </ul>
+    <br>
+    <img class="stretch" src="img/points.png">
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/scan_line_end_detail.png">
+    <br>
+    <small>detail of an end of scan line</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/density_overlap.png">
+    <br>
+    <small>point density in swath overlap</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/custom_density_ground.png">
+    <br>
+    <small>classified group point density in swath overlap</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/uav_density_anomalies.png">
+    <br>
+    <small>point distribution in UAV point cloud</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/custom_pattern_first.png">
+    <br>
+    <small>influence of vegetation on point distribution</small>
+</section>
+
+
+<section>
+    <h3>Planned publication</h3>
+    Petras, V., ...
+    <em>Density anomalies in lidar and UAV point clouds</em>.
+    <br>
+    Target journal(s): Remote Sensing of Environment or GIScience &amp; Remote Sensing
 </section>
 
 
@@ -46,8 +155,8 @@
 
 
 <section>
-    <h2>Chapter 1</h2>
-    <h3>Efficient processing of point clouds<br>with variable density</h3>
+    <h2>Chapter 2</h2>
+    <h3>Processing UAV and lidar point clouds in GRASS GIS</h3>
 </section>
 
 
@@ -110,10 +219,8 @@
     <li>
         Is the simplest decimations enough?
         Or do we need to use slower but more sophisticated techniques?
-    <li>
-        How to derive maximum raster resolution for point cloud with variable density?
-        Is the resolution estimate for point cloud valid when density anomalies are present?
 </ul>
+
 </section>
 
 
@@ -195,10 +302,12 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <h3>Publication</h3>
     Petras, V., A. Petrasova, J. Jeziorska, and H. Mitasova (2016). <em>Processing UAV
     and lidar point clouds in GRASS GIS</em>. In: ISPRS-International Archives of the
-    Photogrammetry, Remote Sensing and Spatial Information Sciences, pp. 945–952
-    <!-- <small>[438 reads on ResearchGate, March 16, 2017 <small>(secondary PDF location)</small>]</small> -->
+    Photogrammetry, Remote Sensing and Spatial Information Sciences, pp. 945–952.
+    DOI:10.5194/isprs-archives-XLI-B7-945-2016
     <br>
-    <img style="width: 50%" src="img/papers/petras2016processing.png">
+    <small>[560 reads on ResearchGate, Sep 8, 2018]</small>
+    <br>
+    <img class="stretch" src="img/papers/petras2016processing.png">
 </section>
 
 
@@ -219,14 +328,17 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Planned publication</h3>
-    <em>
-        Efficient dense point cloud processing and correction
-        <br>
-        of density anomalies using decimations
-    </em>
+    <h3>Educational material</h3>
     <p>
-        ...
+    <em>Processing lidar and UAV point clouds in GRASS GIS</em>
+    available online
+    <br>
+    (and translated to Spanish by GRASS GIS community).
+    </p>
+    <h3 style="padding-top: 1ex;">Training</h3>
+    Workshop at FOSS4G 2017 in Boston,
+    <br>
+    Center for Geographic Analysis, Harvard University.
 </section>
 
 
@@ -234,7 +346,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h2>Chapter 2</h2>
+    <h2>Chapter 3</h2>
     <h3>Mapping gradient fields of landform migration</h3>
 </section>
 
@@ -253,8 +365,6 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         How to represent landform changes in time?
     <li>
         How to communicate the temporal changes correctly?
-    <li>
-        How to interpolate the missing data in a time-series?
 </ul>
 </section>
 
@@ -369,10 +479,12 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     Petras, V., H. Mitasova, and A. Petrasova (2015).
     <em>Mapping gradient fields of landform migration</em>.
     In: Geomorphometry for Geosciences. Ed. by Jasiewicz, J.,
-    Z. Zwolinski, H. Mitasova, and T. Hengl
+    Z. Zwolinski, H. Mitasova, and T. Hengl.
+    p. 173 - 176.
+    ISBN 978-83-7986-059-3.
     <small>
     [Best Paper Award at Geomorphometry 2015,
-    1062 PDF hits on March 6, 2017]
+    1316 PDF hits on Aug 31, 2017]
     </small>
     <img class="stretch" src="img/papers/petras2015mapping.png">
 </section>
@@ -402,32 +514,16 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 </section>
 
 
-<section>
-    <div class="left">
-    <h3>Future work</h3>
-    <ul>
-        <li>description and interpretation of second order parameters
-        <li>integrating the fields across several elevation contours
-        <li>spatio-temporal interpolation of migrating landforms
-        <li>implementation and tests of the above
-    </ul>
-    </div>
-    <div class="right">
-    <h3>Planned publication</h3>
-    <em>
-        Description and interpolation of migrating landforms
-        using gradient fields based on spatio-temporal contours
-    </em>
-    </div>
-</section>
-
-
 <!-- 3D fragmentation -->
 
 
 <section>
-    <h2>Chapter 3</h2>
-    <h3>Lidar-based 3D fragmentation index</h3>
+    <h2>Chapter 4</h2>
+    <h3>
+        Generalized 3D fragmentation index
+        <br>
+        derived from lidar point clouds
+    </h3>
 </section>
 
 
@@ -476,11 +572,14 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 <section>
     <h3>Publication</h3>
-    Petras, V., D. J. Newcomb, and H. Mitasova.
+    Petras, V., D. J. Newcomb, and H. Mitasova. 2017.
     <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
-    In: Open Geospatial Data, Software and Standards
-    [submitted Dec 07, 2016, minor reviews Mar 9, 2017]
-    <img class="stretch" src="img/papers/petras2017generalized.png">
+    In: Open Geospatial Data, Software and Standards.
+    DOI:10.1186/s40965-017-0021-8
+    <br>
+    <small>[Accessed 613 times at SpringerOpen, Sep 8, 2017]</small>
+    <br>
+    <img class="stretch" src="img/papers/petras2017generalized2.png">
 </section>
 
 
@@ -502,7 +601,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h2>Chapter 4</h2>
+    <h2>Chapter 5</h2>
     <h3>A framework for open geospatial science</h3>
 </section>
 
@@ -636,49 +735,9 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <small>
     Petras, V., D. J. Newcomb, and H. Mitasova.
     <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
-    In: Open Geospatial Data, Software and Standards
-    [minor reviews Mar 9, 2017]
+    In: Open Geospatial Data, Software and Standards.
+    <a href="http://dx.doi.org/10.1186/s40965-017-0021-8">DOI:10.1186/s40965-017-0021-8</a>.
     </small>
-</section>
-
-
-<section>
-    <h3>Testing framework for GRASS GIS</h3>
-    <img class="stretch" src="img/papers/petras2014testing.png">
-    <p>
-    <small>
-    Petras, V. and Gebbert, S. (2014).
-    <em>Testing framework for GRASS GIS: ensuring reproducibility of scientific geospatial computing</em>.
-    In: AGU Fall Meeting
-    Abstracts. Vol.&nbsp;1, p.&nbsp;3758
-    </small>
-</section>
-
-
-<section>
-    <h3>How code in GRASS GIS develops over time</h3>
-    <img class="stretch" src="img/papers/petras2017how.png">
-    <p>
-    <small>
-    Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
-    Leo, S. Gebbert, and M. Neteler (2017).
-    <em>How innovations thrive in GRASS GIS</em>.
-    NCGIS2017, Raleigh, NC, USA.
-    <br>
-    <small>Also: Petras (2015) and Chemin (2015) at EGU</small>
-    </small>
-</section>
-
-
-<section>
-    <h3>Planned publication</h3>
-    <em>
-        A framework for geospatial open science
-        <br>
-        as implemented in GRASS GIS,
-        <br>
-        a geospatial research platform
-    </em>
 </section>
 
 
@@ -701,151 +760,38 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 </section>
 
 
-<!-- appendix -->
-
-
 <section>
-    <h2>Appendix</h2>
-    <h3>Selected additional projects</h3>
-    <ul>
-        <li>Urban growth model &ndash; FUTURES
-        <li>Disease spread model &ndash; SOD
-        <li>Seamless desktop and remote computations
-        <li>Tangible Landscape for QGIS
-        <li>Course: Tools for open geospatial science
-    </ul>
-</section>
+    <h3>Related poster</h3>
+    <img class="stretch" src="img/papers/petras2017how.png">
+    <p>
+    Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
+    Leo, S. Gebbert, and M. Neteler (2017).
+    <em>How innovations thrive in GRASS GIS</em>.
+    NCGIS2017, Raleigh, NC, USA.
 
-
-<!-- modeling -->
-
-
-<section>
-    <h2>FUTURES PGA &ndash; before</h2>
-    <ul>
-        <li>configuration file based interface
-    </ul>
+    <p>
+    Also:
+    Petras, V. and Gebbert, S. (AGU 2014),
     <br>
-    <img class="stretch" src="img/futures_config.png">
+    Petras (EGU 2015) and Chemin (EGU 2015)
 </section>
 
 
 <section>
-    <h2>FUTURES PGA &ndash; before</h2>
-    <ul>
-        <li>preprocessGISData.cpp
-    </ul>
-    <img class="stretch" src="img/futures_code_constants.png">
-</section>
-
-
-<section>
-    <h2>FUTURES PGA &ndash; after</h2>
-    <ul>
-        <li>GUI, command line, Python
-    </ul>
-    <img class="stretch" src="img/futures_pga_gui.png">
-</section>
-
-
-<section>
-    <h2>FUTURES PGA &ndash; after</h2>
-    <ul>
-        <li>faster <small>input/output, efficient memory usage</small>
-            <ul>
-                <li>binary input and put reduces time spent by I/O operations
-                <li>only memory which is needed is used
-            </ul>
-        <li>flexible <small>inputs, interface</small>
-            <ul>
-                <li>resolution and extent can be changed arbitrarily
-                <li>easy to add new parameters
-                <li>control over stochastic outcomes
-            </ul>
-        <li>fixed <small>memory management, edge cases</small>
-            <ul>
-                <li>all memory operations are done correctly (no failures or random results)
-                <li>handling of cases such as unresolved items from previous iteration
-            </ul>
-    </ul>
-</section>
-
-
-<section>
-    <h2>Sudden oak death model</h2>
-    <ul>
-        <li>hardcoded parameters &rarr; GUI + CLI (GRASS GIS)
-    </ul>
-    <img class="stretch" src="img/sod_screenshot.png">
-</section>
-
-
-<section>
-    <h2>Sudden oak death model</h2>
-    <ul>
-        <li>multiple stochastic runs which run in parallel
-            <ul>
-                <li>OpenMP
-                <li>week-based simulation but threads created for
-                    chunks of weeks to use less resources
-                    (in comparison for one thread for each week of every run)
-                <li>inputs shared over threads
-            </ul>
-    </ul>
-    <img class="stretch" src="img/sod_screenshot.png">
-</section>
-
-<section>
-    <h2>Sudden oak death model</h2>
-    <ul>
-        <li>optimization
-            <ul>
-                <li>inlining (reduces function call overheads)
-                <li>C++11 move semantics (avoids copy operations)
-            </ul>
-        <li>undefined behavior &rarr; correct memory management
-        <li>tested and versioned <!-- issues of testing (2 bugs) -->
-    </ul>
-    <img class="stretch" src="img/sod_screenshot.png">
-</section>
-
-
-<!-- g.remote -->
-
-
-<section>
-    <h2>Hybrid desktop-server workflow</h2>
-    <ul>
-        <li>locally: parts of processing, test runs on smaller data
-        <li>remotely: big data storage and processing
-    </ul>
-    <pre class="bash" style="font-size: x-large;"><code>g.region "small"
-# v.surf.rst runs locally
-v.surf.rst input="points" elevation="terrain_surface"
-g.region "large"
-# v.surf.rst runs on a remote machine
-g.remote server="example.ncsu.edu" ... \
-    grassdata="grassdata" location="nc_spf_gremote_2" mapset="practice1" \
-    vector_input="points" raster_output="terrain_surface" \
-    --exec \
-    v.surf.rst input="points" elevation="terrain_surface"</code></pre>
-    <img class="stretch" src="img/g_remote.svg">
-</section>
-
-
-<!-- Tangible Landscape -->
-
-
-<section>
-    <h2>Tangible Landscape for QGIS</h2>
-    <ul>
-        <li>QGIS used regularly to teach GIS on basic level
-        <li>Tangible Landscape suitable for teaching geospatial concepts
-        <li>Deploy both together
-        <li>GRASS GIS as processing backend
-    </ul>
+    <h3>Planned publication</h3>
+    <p style="text-align: left;">
+    <em>
+        A framework for open geospatial science
+    </em>
+    </p>
+    <p style="text-align: left;">
+    Target journal: Environmental Modelling &amp; Software
     <br>
-    <img class="stretch" src="img/logos/qgis.png">
+    Alternative journals:
+    PLOS ONE,
+    IEEE Transactions on Geoscience and Remote Sensing,
+    ACM Transactions on Spatial Algorithms and Systems
+    </p>
 </section>
 
 
@@ -854,19 +800,21 @@ g.remote server="example.ncsu.edu" ... \
 
 <section>
     <h2>Course<br>Tools for open geospatial science</h2>
+    <p><small>
+    Related publications:
+    <br>
     Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
     <em>Integrating free and open source solutions into geospatial science education</em>.
     In: ISPRS International Journal of Geo-Information 4.2, pp. 942–956
-    [1582 full-text views, MPDI on March 6, 2017]
+    [1992 full-text views, MPDI on Sep 5, 2017]
     <br>
-    <img class="stretch" src="img/papers/petras2015integrating.png">
-    <p><small>
-    Also:
     Rocchini, D., V. Petras, A. Petrasova, N. Horning,
     L. Furtkevicova, M. Neteler, B. Leutner, and M.&nbsp;Wegmann.
     <em>Open-access and open-source for remote sensing training in ecology and conservation</em>
-    [submitted to Ecological Informatics, Jan 20, 2017]
-    </small>
+    In: Ecological Informatics, Volume 40, 2017, Pages 57-61, ISSN 1574-9541,
+    <a href="http://dx.doi.org/10.1016/j.ecoinf.2017.05.004">DOI:10.1016/j.ecoinf.2017.05.004</a>.
+    </small></p>
+    <img class="stretch" src="img/papers/petras2015integrating.png">
 </section>
 
 
@@ -924,10 +872,281 @@ g.remote server="example.ncsu.edu" ... \
 
 
 <section>
-    <h2>Jupyter Notebook</h2>
+    <h2>Timeline</h2>
+    <table>
+        <tr>
+            <td>September, October 2017</td>
+            <td>Sudden oak death modeling</td>
+        </tr>
+        <tr>
+            <td>Fall 2017</td>
+            <td>Density anomalies paper</td>
+        </tr>
+        <tr>
+            <td>Late fall 2017, winter 2018</td>
+            <td>Open science paper</td>
+        </tr>
+        <tr>
+            <td>Spring/summer 2018</td>
+            <td>Final defense</td>
+        </tr>
+    </table>
+</section>
+
+
+<!-- appendix -->
+
+
+<section>
+    <h2>Appendix</h2>
+    <h3>Selected additional projects</h3>
     <ul>
-        <li>interactive document with text, code, and figures
+        <li>Spatio-temporal landscape modeling
+            <ul>
+                <li>Disease spread model &ndash; SOD
+                <li>Urban growth model &ndash; FUTURES
+            </ul>
+        <li>Tangible user interface for geospatial modeling
+            <ul>
+                <li>Tangible Landscape for QGIS
+            </ul>
+        <li>Point cloud and terrain processing
+            <ul>
+                <li>Desktop and web-based temporal visualizations
+            </ul>
+        <li>Open source software for open science
+            <ul>
+                <li>Seamless desktop and remote computations
+            </ul>
+    </ul>
+</section>
+
+
+<!-- SOD -->
+
+
+<section>
+    <h2>Sudden oak death model</h2>
+    <ul>
+        <li>hardcoded parameters &rarr; GUI + CLI (GRASS GIS)
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+
+<section>
+    <h2>Sudden oak death model</h2>
+    <ul>
+        <li>multiple stochastic runs which run in parallel
+            <ul>
+                <li>OpenMP
+                <li>week-based simulation but threads created for
+                    chunks of weeks to use less resources
+                    (in comparison for one thread for each week of every run)
+                <li>inputs shared over threads
+            </ul>
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+<section>
+    <h2>Sudden oak death model</h2>
+    <ul>
+        <li>optimization
+            <ul>
+                <li>inlining (reduces function call overheads)
+                <li>C++11 move semantics (avoids copy operations)
+            </ul>
+        <li>undefined behavior &rarr; correct memory management
+        <li>tested and versioned <!-- issues of testing (2 bugs) -->
+    </ul>
+    <img class="stretch" src="img/sod_screenshot.png">
+</section>
+
+
+<!-- FUTURES -->
+
+
+<section>
+    <h2>FUTURES PGA &ndash; before</h2>
+    <ul>
+        <li>configuration file based interface
     </ul>
     <br>
-    <img class="stretch" src="img/jupyter.png">
+    <img class="stretch" src="img/futures_config.png">
 </section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; before</h2>
+    <ul>
+        <li>preprocessGISData.cpp
+    </ul>
+    <img class="stretch" src="img/futures_code_constants.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; after</h2>
+    <ul>
+        <li>GUI, command line, Python
+    </ul>
+    <img class="stretch" src="img/futures_pga_gui.png">
+</section>
+
+
+<section>
+    <h2>FUTURES PGA &ndash; after</h2>
+    <ul>
+        <li>faster <small>input/output, efficient memory usage</small>
+            <ul>
+                <li>binary input and put reduces time spent by I/O operations
+                <li>only memory which is needed is used
+            </ul>
+        <li>flexible <small>inputs, interface</small>
+            <ul>
+                <li>resolution and extent can be changed arbitrarily
+                <li>easy to add new parameters
+                <li>control over stochastic outcomes
+            </ul>
+        <li>fixed <small>memory management, edge cases</small>
+            <ul>
+                <li>all memory operations are done correctly (no failures or random results)
+                <li>handling of cases such as unresolved items from previous iteration
+            </ul>
+    </ul>
+</section>
+
+
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <a href="http://wenzeslaus.github.io/" title="Personal page">&#8962;</a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: { 
+                // optionally load pre-recorded chalkboard drawing from file
+                    src: "chalkboard.json",
+                },
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    //{ src: 'plugin/math/math.js', async: true },
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+                    67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+                    66: function() { RevealChalkboard.toggleChalkboard() },    // toggle chalkboard when 'b' is pressed
+                    46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+                     8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+                    68: function() { RevealChalkboard.download() },    // downlad recorded chalkboard drawing when 'd' is pressed
+                },
+            });
+
+        </script>
+
+    </body>
+</html>
