@@ -86,7 +86,7 @@
 
 <section>
     <h2>Chapter 1</h2>
-    <h3>Density anomalies in lidar and UAV point clouds</h3>
+    <h3>Density anomalies in point clouds</h3>
 </section>
 
 
@@ -156,7 +156,7 @@
 
 <section>
     <h2>Chapter 2</h2>
-    <h3>Processing UAV and lidar point clouds in GRASS GIS</h3>
+    <h3>Homogenization and decimation of point clouds</h3>
 </section>
 
 
@@ -342,12 +342,93 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 </section>
 
 
-<!-- gradients -->
+<!-- 3D fragmentation -->
 
 
 <section>
     <h2>Chapter 3</h2>
-    <h3>Mapping gradient fields of landform migration</h3>
+    <h3>
+        Description of 3D structure in lidar point clouds
+    </h3>
+</section>
+
+
+<section>
+    <h3>Point cloud</h3>
+    <img class="stretch" src="img/points.png">
+</section>
+
+
+<section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        How to derive and describe 3D structure captured in lidar point clouds?
+    <li>
+        Is a 2D landscape index extensible and applicable to 3D vegetation structure?
+    <li>
+        Is 3D raster representation appropriate for lidar data analysis?
+</ul>
+</section>
+
+
+<section>
+    <h3>3D index of 3D raster</h3>
+    <img class="stretch" src="img/raster3d.png">
+</section>
+
+
+<section>
+    <h3>Profile of 3D raster</h3>
+    <img class="stretch" src="img/profile3d.png">
+</section>
+
+
+<section>
+    <h3>Point presence and index profiles</h3>
+    <img class="stretch" src="img/profiles.png">
+</section>
+
+
+<section>
+    <h3>As 2D raster</h3>
+    <img class="stretch" src="img/comparison_ortho.png">
+</section>
+
+
+<section>
+    <h3>Publication</h3>
+    Petras, V., D. J. Newcomb, and H. Mitasova. 2017.
+    <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
+    In: Open Geospatial Data, Software and Standards.
+    DOI:10.1186/s40965-017-0021-8
+    <br>
+    <small>[Accessed 613 times at SpringerOpen, Sep 8, 2017]</small>
+    <br>
+    <img class="stretch" src="img/papers/petras2017generalized2.png">
+</section>
+
+
+<section>
+    <h3>Software</h3>
+    <ul>
+        <li>3D fragmentation index module (r3.forestfrag)
+        <li>revised 2D fragmentation index module (r.forestfrag)
+        <li>count categories in vertical direction (r3.count.categories)
+        <li>3D scatter plot of 3D raster (r3.scatterplot)
+        <li>3D scatter plot of 2D raster (r.scatterplot)
+    </ul>
+    <br>
+    <img class="stretch" src="img/r3_scatterplot.png">
+</section>
+
+
+<!-- gradients -->
+
+
+<section>
+    <h2>Chapter 4</h2>
+    <h3>Analysis of lidar-derived dynamic surfaces</h3>
 </section>
 
 
@@ -514,95 +595,12 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 </section>
 
 
-<!-- 3D fragmentation -->
-
-
-<section>
-    <h2>Chapter 4</h2>
-    <h3>
-        Generalized 3D fragmentation index
-        <br>
-        derived from lidar point clouds
-    </h3>
-</section>
-
-
-<section>
-    <h3>Point cloud</h3>
-    <img class="stretch" src="img/points.png">
-</section>
-
-
-<section>
-    <h3>Questions</h3>
-<ul>
-    <li>
-        How to derive and describe 3D structure captured in lidar point clouds?
-    <li>
-        Is a 2D landscape index extensible and applicable to 3D vegetation structure?
-    <li>
-        Is 3D raster representation appropriate for lidar data analysis?
-</ul>
-</section>
-
-
-<section>
-    <h3>3D index of 3D raster</h3>
-    <img class="stretch" src="img/raster3d.png">
-</section>
-
-
-<section>
-    <h3>Profile of 3D raster</h3>
-    <img class="stretch" src="img/profile3d.png">
-</section>
-
-
-<section>
-    <h3>Point presence and index profiles</h3>
-    <img class="stretch" src="img/profiles.png">
-</section>
-
-
-<section>
-    <h3>As 2D raster</h3>
-    <img class="stretch" src="img/comparison_ortho.png">
-</section>
-
-
-<section>
-    <h3>Publication</h3>
-    Petras, V., D. J. Newcomb, and H. Mitasova. 2017.
-    <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
-    In: Open Geospatial Data, Software and Standards.
-    DOI:10.1186/s40965-017-0021-8
-    <br>
-    <small>[Accessed 613 times at SpringerOpen, Sep 8, 2017]</small>
-    <br>
-    <img class="stretch" src="img/papers/petras2017generalized2.png">
-</section>
-
-
-<section>
-    <h3>Software</h3>
-    <ul>
-        <li>3D fragmentation index module (r3.forestfrag)
-        <li>revised 2D fragmentation index module (r.forestfrag)
-        <li>count categories in vertical direction (r3.count.categories)
-        <li>3D scatter plot of 3D raster (r3.scatterplot)
-        <li>3D scatter plot of 2D raster (r.scatterplot)
-    </ul>
-    <br>
-    <img class="stretch" src="img/r3_scatterplot.png">
-</section>
-
-
 <!-- open geospatial science -->
 
 
 <section>
     <h2>Chapter 5</h2>
-    <h3>A framework for open geospatial science</h3>
+    <h3>Publishing using an open science framework</h3>
 </section>
 
 
