@@ -46,7 +46,7 @@
 <section>
     <h2>
         Geospatial analytics
-        for point clouds and dynamic surfaces
+        for point clouds
         <br>
         in an open science framework
     </h2>
@@ -72,10 +72,10 @@
         <li>Learning about point cloud density <small>and its anomalies</small>
         <li>Processing point clouds
             <small>while dealing with high density</small>
-        <li>Describing terrain changes
-            <small>using time-series of surfaces</small>
         <li>Describing vegetation using lidar point cloud
             <small>in three dimensions</small>
+        <li>Describing terrain changes
+            <small>using time-series of surfaces</small>
         <li>Publishing the results <small>in a reproducible way</small>
     </ul>
 </section>
@@ -249,6 +249,7 @@
 <ul>
     <li>
         Which decimation performs better for topography and micro-topography?
+    <li>
         How this changes with the point cloud acquisition method?
     <li>
         Is the simplest decimations enough?
@@ -335,9 +336,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Contributions</h3>
     <ul>
-        <li>significant decimation possible
+        <li>significant decimation possible and (micro-)topography is preserved
         <li>faster and simple count-based decimation more advantageous
         <li>grid-based decimation needed for specific cases
+            <small>(such as terrestrial lidar)</small>
         <li>simple decimations are sufficient,
             but complex decimation have their place
     </ul>
@@ -401,6 +403,9 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 <section>
     <h3>Point cloud</h3>
+    <ul>
+        <li>applicable for habitat identification, fuel modeling, ...
+    </ul>
     <img class="stretch" src="img/points.png">
 </section>
 
@@ -415,11 +420,11 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <h3>Questions</h3>
 <ul>
     <li>
-        How to derive and describe 3D structure captured in lidar point clouds?
+        Is 3D raster representation appropriate for lidar data analysis?
     <li>
         Is a 2D landscape index extensible and applicable to 3D vegetation structure?
     <li>
-        Is 3D raster representation appropriate for lidar data analysis?
+        How to derive and describe 3D structure captured in lidar point clouds?
 </ul>
 </section>
 
@@ -461,8 +466,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Contributions</h3>
     <ul>
-        <li>3D rasters can be utilized for lidar
-            in the same way as 2D rasters are used in general
+        <li>3D raster representation is suitable for lidar data analysis
+            of vegetation structure
         <li>2D remote sensing and landscape ecology concepts can be
             applied in 3D
         <li>generalized 3D fragmentation index is now available
@@ -623,7 +628,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
                 <li>evolving shorelines and islands
                 <li>fire spread
                 <li>disease spread
-                <li>glacier melting
+                <li>glacier melting, movement
+                <li>land slide
             </ul>
         </li>
     </ul>
