@@ -73,9 +73,10 @@
         <li>wildfire fuel assessment
         <li>habitat identification
         <li>species classification
+        <li>...
     </ul>
     <br>
-    <img class="stretch" src="img/points.png">
+    <img class="stretch" src="img/points_dark.png">
 </section>
 
 
@@ -113,7 +114,7 @@
         <li>vegetation fragmentation <small>[Petras at al. 2017]</small>
     </ul>
     <br>
-    <img class="stretch" src="img/points.png">
+    <img class="stretch" src="img/dark_forest.png">
 </section>
 
 
@@ -223,8 +224,8 @@
 <ul>
     <li>decimation ~ thinning ~ sampling
     <li>makes the point cloud smaller, more manageable
-    <li>may remove variations in point density
-    <li>grid-based decimation ~ binning
+    <li>count-based decimation: preserves variations in density
+    <li>grid-based decimation ~ binning: removes variations in density
 </ul>
 
 <br>
@@ -244,8 +245,8 @@
 <ul>
     <li>decimation ~ thinning ~ sampling
     <li>makes the point cloud smaller, more manageable
-    <li>may remove variations in point density
-    <li>grid-based decimation ~ binning
+    <li>count-based decimation: preserves variations in density
+    <li>grid-based decimation ~ binning: removes variations in density
 </ul>
 
 <br>
@@ -365,9 +366,17 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <h3>Contributions</h3>
     <ul>
         <li>significant decimation possible and (micro)topography is preserved
-        <li>faster and simple count-based decimation more advantageous
+            <ul>
+                <li>for all 4 datasets from 4 sensors at given resolution
+            </ul>
+        <li>faster and simpler count-based decimation more advantageous
+            <ul>
+                <li>in most cases count-based decimation provided same results as grid-based decimation
+            </ul>
         <li>grid-based decimation needed for specific cases
-            <small>(such as terrestrial lidar)</small>
+            <ul>
+                <li>grid-based decimation is beneficial for specific distribution of terrestrial lidar data
+            </ul>
         <li>simple decimations are sufficient,
             but complex decimation have their place
     </ul>
@@ -431,9 +440,18 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 <section>
     <h3>Point cloud</h3>
+    <p>
+        full point cloud in vegetation-related applicications
     <ul>
-        <li>applicable for habitat identification, fuel modeling, ...
+        <li>habitat characterization
+            <small>[e.g. Sasaki et al. 2016]</small>
+        <li>fuel modeling
+            <small>[e.g. García et al. 2011]</small>
+        <li>tree models
+            <small>[e.g. Gorte &amp; Winterhalder 2004]</small>
+        <li>...
     </ul>
+    <br>
     <img class="stretch" src="img/points.png">
 </section>
 
@@ -523,7 +541,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>2D remote sensing and landscape ecology concepts can be
             applied in 3D
         <li>generalized 3D fragmentation index is now available
-        <li>method for conversion to 2D is also available
+        <li>aggregation method resulting in a 2D raster is also available
     </ul>
 </section>
 
@@ -544,9 +562,9 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Software</h3>
     <ul>
-        <li>3D fragmentation index module (r3.forestfrag)
-        <li>revised 2D fragmentation index module (r.forestfrag)
-        <li>count categories in vertical direction (r3.count.categories)
+        <li>3D fragmentation index (r3.forestfrag)
+        <li>revised 2D fragmentation index (r.forestfrag)
+        <li>dominant fragmentation class (r3.count.categories)
         <li>profile/slice of a 3D raster (r3.profile)
         <li>3D scatter plot of 3D raster (r3.scatterplot)
         <li>3D scatter plot of 2D raster (r.scatterplot)
@@ -578,7 +596,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <li>
         How to represent landform changes in time?
     <li>
-        How to communicate the temporal changes correctly?
+        How to visualize landform migration?
 </ul>
 </section>
 
