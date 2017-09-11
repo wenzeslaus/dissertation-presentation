@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Geospatial analytics for point clouds and dynamic surfaces in an open science framework</title>
+        <title>Petras: Geospatial analytics for point clouds in an open science framework</title>
 
         <meta name="description" content="Turning point clouds, surfaces, and their time series into information in a framework of open geospatial science">
         <meta name="author" content="Vaclav Petras">
@@ -44,6 +44,7 @@
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
 <section>
+    <h3>Dissertation proposal</h3>
     <h2>
         Geospatial analytics
         for point clouds
@@ -439,9 +440,9 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Point cloud</h3>
+    <h3>Lidar point clouds</h3>
     <p>
-        full point cloud in vegetation-related applicications
+        full lidar point cloud in vegetation-related applicications
     <ul>
         <li>habitat characterization
             <small>[e.g. Sasaki et al. 2016]</small>
@@ -610,53 +611,57 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Contours, year 2001, z = 110m</h3>
+    <h3>Contour evolution</h3>
+    <p> year 2001, z = 110m</p>
     <img class="stretch" src="img/grad_st1_cont.png">
 </section>
 
 
 <section>
-    <h3>Contours, year 2005, z = 110m</h3>
+    <h3>Contour evolution</h3>
+    <p> year 2005, z = 110m</p>
     <img class="stretch" src="img/grad_st2_cont.png">
 </section>
 
 
 <section>
-    <h3>Contours, year 2008, z = 110m</h3>
+    <h3>Contour evolution</h3>
+    <p> year 2008, z = 110m</p>
     <img class="stretch" src="img/grad_st3_cont.png">
 </section>
 
 
 <section>
-    <h3>Contours, year 2009, z = 110m</h3>
+    <h3>Contour evolution</h3>
+    <p> year 2009, z = 110m</p>
     <img class="stretch" src="img/grad_st4_cont.png">
 </section>
 
 
 <section>
     <h3>Define migration areas</h3>
-    <p class="small">Mask areas outside the range of 110m contour migration</p>
+    <p>Mask areas outside the range of 110m contour migration</p>
     <img class="stretch" src="img/grad_st1234_coreenvmask2_110m.png">
 </section>
 
 
 <section>
     <h3>Assign time attribute</h3>
-    <p class="small">Each 110m contour is assigned a time [year] attribute</p>
+    <p>Each 110m contour is assigned a time [year] attribute</p>
     <img class="stretch" src="img/grad_st1234_110m.png">
 </section>
 
 
 <section>
     <h3>Interpolate temporal surface</h3>
-    <p class="small" >Temporal surface is interpolated from a time series of 110m contours </p>
+    <p>Temporal surface is interpolated from a time series of 110m contours </p>
     <img class="stretch" src="img/grad_st1234_surfmasked_110m.png">
 </section>
 
 
 <section>
     <h3>Migration gradient field</h3>
-    <p class="small">Gradient lines over time and vectors over migration rates</p>
+    <p>Gradient lines over time and vectors over migration rates</p>
     <img src="img/gradlines_overyear.png" style="width: 49%;">
     <img src="img/gradarrows_overrates.png" style="width: 49%;">
 </section>
