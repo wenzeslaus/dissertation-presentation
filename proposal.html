@@ -364,7 +364,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Contributions</h3>
     <ul>
-        <li>significant decimation possible and (micro-)topography is preserved
+        <li>significant decimation possible and (micro)topography is preserved
         <li>faster and simple count-based decimation more advantageous
         <li>grid-based decimation needed for specific cases
             <small>(such as terrestrial lidar)</small>
@@ -720,24 +720,12 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Software</h3>
     <ul>
-        <li>can be implemented in any GIS-like software
-        <li>
-            <a href="https://github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution">
-                github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution
-            </a>
-        </li>
-        <li>GNU GPL <small>(code can be copied and changed)</small></li>
-        <li>
-            depends only on GRASS GIS
-            <small>(anybody can have what is needed)</small>
-        </li>
-        <li>GRASS GIS module <small>(convenient to get, ready to use)</small></li>
+        <li>computation of the gradient field (<em>r.contour.evolution</em>)
+            <ul>
+                <li>can be implemented in any GIS-like software
+            </ul>
+        <li>dynamic visualization of the field (<em>r.out.jscomet</em> and modified JavaScript code)
     </ul>
-    <p>
-    <img src="img/logos/grass_gis.png" style="width: 10%;">
-    <img src="img/logos/open_source.png" style="width: 10%;">
-    <img src="img/logos/gnu_gpl.svg" style="width: 17%;">
-    <img src="img/logos/github.png" style="width: 10%;">
 </section>
 
 
@@ -768,41 +756,32 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>
             use of open source tools part of reproducibility
             <small>[Less 2012]</small>
+        <li>
+            <em>easily reproducible result</em> reproduced in 10 minutes
+            <small>[Schwab et al. 2000]</small>
     </ul>
 </section>
 
 
 <section>
-    <h3>Too easy to delete a GitHub repository</h3>
-    <blockquote>
-        <p>
-            [...] deleting a repository on GitHub takes only a few seconds
-            and can be done (accidentally or intentionally) by the user
-            who created the repository.
-        </p>
-        <p>
-            &mdash;Casey Bergman (2012). On the Preservation of Published Bioinformatics Code on GitHub
-            <!-- https://caseybergman.wordpress.com/2012/11/08/on-the-preservation-of-published-bioinformatics-code-on-github/ -->
-        </p>
-    </blockquote>
-    <p>
-    <img src="img/logos/github.png" style="width: 10%;">
+    <h3>The common ways</h3>
+    <ul>
+        <li>binary: not flexible, not transparent
+        <li>source code: not enough by itself
+        <li>repository: easy to delete (e.g. on GitHub)
+        <li>virtual machine: too cumbersome
+        <li>web service: needs to be maintained
+    </ul>
 </section>
 
 
 <section>
-    <h3>More than a link to GitHub</h3>
-    <blockquote>
-        <p>
-            Thanks for the GitHub link… What does it do?
-        </p>
-        <p>
-            &mdash;Rachel Nabors (2016). Design is not a bug ticket. All Things Open 2016. Keynote
-            <!-- https://www.slideshare.net/CrowChick/design-is-not-a-bug-ticket-all-things-open-2016-keynote -->
-        </p>
-    </blockquote>
-    <p>
-    <img src="img/logos/github.png" style="width: 10%;">
+    <h3>Initial questions</h3>
+    <ul>
+        <li>How to publish software so it is reusable?
+        <li>Where to publish source code so it is preserved?
+        <li>How to ensure reproducibility of results in the paper?
+    </ul>
 </section>
 
 
@@ -830,11 +809,25 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <img class="stretch" src="img/repository_readme.png">
     <br>
     <small>
-        Part of <em>README</em> file from repository
+        Part of a <em>README</em> file from repository
         associated with Petras et al. 2017 paper
     </small>
 </section>
 
+
+<section>
+    <h3>Reproducibility</h3>
+    <ul>
+        <li>result after running the commands
+    </ul>
+    <br>
+    <img class="stretch" src="img/reproduced_figures.png">
+    <br>
+    <small>
+        Data-driven figures reproduced using the repository
+        associated with Petras et al. 2017 paper
+    </small>
+</section>
 
 
 <section>
@@ -853,51 +846,31 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Software as part of research</h3>
+    <h3>Integrating code into a larger project</h3>
     <ul>
-        <li>is open source
-        <li>is based on open source
-        <li>has stable place for code
-        <li>is more than code
-    </ul>
-</section>
-
-
-<section>
-    <h3>Integrating code into GRASS GIS</h3>
-    <ul>
-        <li>Do I want to create new open source project?
-        <li>New methods as new GRASS GIS modules or improvements of existing ones
+        <li>Avoiding creation of a new open source project for each paper
+            <ul>
+                <li>GRASS GIS can integrate smaller projects.
+            </ul>
+        <li>New methods as new functions or improvements of existing ones
+            <ul>
+                <li>GRASS GIS modules can be added or extended.
+            </ul>
         <li>Preprocessing, visualization, and user interface included
+            <ul>
+                <li>Different tools and interfaces are available in GRASS GIS.
+            </ul>
         <li>Well integrated with existing analytical tools
+            <ul>
+                <li>GRASS GIS modules use unified interfaces and exchange formats.
+            </ul>
+        <li>Small, isolated projects often die out
+            <ul>
+                <li>GRASS GIS modules get long-term maintenance from the community.
+            </ul>
     </ul>
-</section>
-
-
-<section>
-    <h3>Reproducibility</h3>
-    <ul>
-        <li>reproducibility ~ repeatability ~ replicability ~ recomputability
-        <li>methods as GRASS GIS modules
-            <small style="color: gray;">(C and Python)</small>
-        <li>scripts to perform the analyses
-            <small style="color: gray;">(Bash and Python)</small>
-        <li>data for the study area
-            <small style="color: gray;">(open formats)</small>
-            <!-- <small style="color: gray;">(small enough)</small> -->
-        <li>details about all dependencies
-            <small style="color: gray;">(Dockerfile)</small>
-        <li>code repository &rarr; complete runtime environment
-            <small style="color: gray;">(Git, GitHub, Linux, Docker)</small>
-        <li>continuous integration service
-            <small style="color: gray;">(Travis-CI)</small>
-    </ul>
-    <small>
-    Petras, V., D. J. Newcomb, and H. Mitasova.
-    <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
-    In: Open Geospatial Data, Software and Standards.
-    <a href="http://dx.doi.org/10.1186/s40965-017-0021-8">DOI:10.1186/s40965-017-0021-8</a>.
-    </small>
+    <br>
+    <img src="img/logos/grass_gis.png" style="width: 10%;">
 </section>
 
 
@@ -921,7 +894,53 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Related poster</h3>
+    <h3>Contributions</h3>
+    <ul>
+        <li>general framework for publishing scientific code
+        <li>concrete steps for geospatial use case
+        <li>qualitative evaluation of GRASS GIS applicability as a
+            platform for publishing and preserving scientific code
+    </ul>
+</section>
+
+
+<section>
+    <h3>Planned publication</h3>
+    <p>
+    <em>
+        A framework for open geospatial science
+    </em>
+    </p>
+    <p>
+    Target journals:
+    <br>
+    PLOS ONE
+    <br>
+    Environmental Modelling &amp; Software
+    </p>
+</section>
+
+
+<section>
+    <h3>Related publications</h3>
+    <p>
+    Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
+    <em>Integrating free and open source solutions into geospatial science education</em>.
+    In: ISPRS International Journal of Geo-Information 4.2, p. 942–956
+    [1992 full-text views, MPDI on Sep 5, 2017]
+    <br>
+    Rocchini, D., V. Petras, A. Petrasova, N. Horning,
+    L. Furtkevicova, M. Neteler, B. Leutner, and M.&nbsp;Wegmann.
+    <em>Open-access and open-source for remote sensing training in ecology and conservation</em>
+    In: Ecological Informatics, Volume 40, 2017, p. 57-61, ISSN 1574-9541,
+    <a href="http://dx.doi.org/10.1016/j.ecoinf.2017.05.004">DOI:10.1016/j.ecoinf.2017.05.004</a>.
+    </small></p>
+    <img class="stretch" src="img/papers/petras2015integrating.png">
+</section>
+
+
+<section>
+    <h3>Related posters</h3>
     <img class="stretch" src="img/papers/petras2017how.png">
     <p>
     Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
@@ -930,28 +949,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     NCGIS2017, Raleigh, NC, USA.
 
     <p>
-    Also:
+    and also:
     Petras, V. and Gebbert, S. (AGU 2014),
     <br>
     Petras (EGU 2015) and Chemin (EGU 2015)
-</section>
-
-
-<section>
-    <h3>Planned publication</h3>
-    <p style="text-align: left;">
-    <em>
-        A framework for open geospatial science
-    </em>
-    </p>
-    <p style="text-align: left;">
-    Target journal: Environmental Modelling &amp; Software
-    <br>
-    Alternative journals:
-    PLOS ONE,
-    IEEE Transactions on Geoscience and Remote Sensing,
-    ACM Transactions on Spatial Algorithms and Systems
-    </p>
 </section>
 
 
@@ -959,36 +960,18 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h2>Course<br>Tools for open geospatial science</h2>
-    <p><small>
-    Related publications:
-    <br>
-    Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
-    <em>Integrating free and open source solutions into geospatial science education</em>.
-    In: ISPRS International Journal of Geo-Information 4.2, pp. 942–956
-    [1992 full-text views, MPDI on Sep 5, 2017]
-    <br>
-    Rocchini, D., V. Petras, A. Petrasova, N. Horning,
-    L. Furtkevicova, M. Neteler, B. Leutner, and M.&nbsp;Wegmann.
-    <em>Open-access and open-source for remote sensing training in ecology and conservation</em>
-    In: Ecological Informatics, Volume 40, 2017, Pages 57-61, ISSN 1574-9541,
-    <a href="http://dx.doi.org/10.1016/j.ecoinf.2017.05.004">DOI:10.1016/j.ecoinf.2017.05.004</a>.
-    </small></p>
-    <img class="stretch" src="img/papers/petras2015integrating.png">
-</section>
-
-
-<section>
-    <h2>Course<br>Tools for open geospatial science</h2>
+    <h3>Teaching</h3>
     <ul>
-        <li>Collaborative writing of scientific papers
-        <li>Revision control systems and wiki technologies
-        <li>QGIS + GRASS GIS
-        <li>command line, remote access, Linux
-        <li>Interactive notebooks
-        <li>Publishing code as part of an open source project
-        <li>Publishing data on web
-        <li>Reproducible computational environments
+        <li>Course: Tools for open geospatial science
+        <ul>
+            <li>teaching materials published as a website
+            <li>research focus with extension to industry
+            <li>
+                topics: advanced writing tools, revision control systems,
+                command line, remote access, Linux,
+                QGIS, GRASS GIS, GDAL,
+                interactive notebooks, publishing source code
+        </ul>
     </ul>
     <br>
     <img class="stretch" src="img/open/open_pens.png">
@@ -996,39 +979,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 </section>
 
 
-<section>
-    <h2>Course<br>Tools for open geospatial science</h2>
-    <div class="left">
-    <h4>What it is</h4>
-    <ul>
-        <li>a course with research focus
-        <li>a course with extension to industry
-            <ul>
-                <li>tools like Git are daily bread in many companies
-            </ul>
-    </ul>
-    <img style="width: 100%;" src="img/open/open_books.png">
-    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
-    </div>
-    <div class="right">
-    <h4>What it is not</h4>
-    <ul>
-        <li>a course limited to geospatial topics
-            <ul>
-                <li>authoring, management, computer knowledge needed as well
-            </ul>
-        <li>the complete &amp; comprehensive open science course
-            <ul>
-                <li>this one is focused on software tools
-                <li>not data, open access, ...
-            </ul>
-        <li>the course where you learn open source GIS
-            <ul>
-                <li>this should happen in all other courses
-            </ul>
-    </ul>
-    </div>
-</section>
+<!-- timeline -->
 
 
 <section>
@@ -1037,6 +988,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <tr>
             <td>September, October 2017</td>
             <td>Sudden oak death modeling</td>
+        </tr>
+        <tr>
+            <td>Fall 2017</td>
+            <td>Open science course</td>
         </tr>
         <tr>
             <td>Fall 2017</td>
