@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Petras: Geospatial analytics for point clouds in an open science framework</title>
+
+        <meta name="description" content="Turning point clouds, surfaces, and their time series into information in a framework of open geospatial science">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/ncsu-geoforall-lab.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- For chalkboard plugin -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+    <h3>Dissertation defense</h3>
+    <h2>
+        Geospatial analytics
+        for point clouds
+        <br>
+        in an open science framework
+    </h2>
+    <h3 style="margin-top: 0.5em">
+        Vaclav Petras</h3>
+    <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU GeoForAll Lab">GeoForAll Lab</a>
+        at
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a>
+        <br>
+    </p>
+    <p>April 23, 2018</p>
+</section>
+
+
+<!-- intro -->
+
+
+<section>
+    <h3>Point cloud usages</h3>
+    <ul>
+        <li>flood modeling
+        <li>wildfire fuel assessment
+        <li>habitat characterization
+        <li>species classification
+        <li>...
+    </ul>
+    <br>
+    <img class="stretch" src="img/points_dark.png">
+</section>
+
+
+<section>
+    <h2>Overview</h2>
+    <ul>
+        <li>Learning about point cloud density <small>and its anomalies</small>
+        <li>Processing point clouds
+            <small>while dealing with high density</small>
+        <li>Describing vegetation using lidar point cloud
+            <small>in three dimensions</small>
+        <li>Describing terrain changes
+            <small>using time-series of surfaces</small>
+        <li>Publishing the results <small>in a reproducible way</small>
+    </ul>
+</section>
+
+
+<!-- density -->
+
+
+<section>
+    <h2>Chapter 1</h2>
+    <h3>Density anomalies in point clouds</h3>
+</section>
+
+
+<section>
+    <h3>Use of point cloud densities</h3>
+    <ul>
+        <li>biomass estimation <small>[Calders et al. 2015]</small>
+        <li>leaf area density distribution <small>[Oshio et al. 2015]</small>
+        <li>crown density <small>[Dalponte et al. 2009]</small>
+        <li>subcanopy solar radiation <small>[Bode et al. 2014]</small>
+        <li>vegetation fragmentation <small>[Petras at al. 2017]</small>
+    </ul>
+    <br>
+    <img class="stretch" src="img/dark_forest.png">
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/scan_line_end_detail.png">
+    <br>
+    <small>detail of an end of scan line</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/density_overlap.png">
+    <br>
+    <small>point density in swath overlap</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/custom_density_ground.png">
+    <br>
+    <small>classified group point density in swath overlap</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/uav_density_anomalies.png">
+    <br>
+    <small>point distribution in UAV point cloud</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/custom_pattern_first.png">
+    <br>
+    <small>influence of vegetation on point distribution</small>
+</section>
+
+
+<section>
+    <h3>Literature review</h3>
+    <ul>
+        <li>overview of density anomalies and potential issues
+        <li>linked to examples in literature and NC datasets
+        <li>identification of potential causes and solutions
+    </ul>
+</section>
+
+
+<section>
+    <h3>Planned publication</h3>
+    Petras, V., ...
+    <em>Density anomalies in lidar and UAV point clouds</em>.
+    <br>
+    Target journal(s): Remote Sensing of Environment or GIScience &amp; Remote Sensing
+</section>
+
+
+<!-- decimation -->
+
+
+<section>
+    <h2>Chapter 2</h2>
+    <h3>Homogenization and decimation of point clouds</h3>
+</section>
+
+
+<section>
+    <h3>Point density for airborne lidar</h3>
+    <img class="stretch" src="img/count_lidar.png">
+    <br>
+    <small>raster resolution 1.5 m</small>
+</section>
+
+
+<section>
+    <h3>Point density for UAV imagery SfM point cloud</h3>
+    <img class="stretch" src="img/count_uav.png">
+    <br>
+    <small>raster resolution 0.5 m</small>
+</section>
+
+
+<section>
+    <h3>Point density for Kinect point cloud</h3>
+    <img class="stretch" src="img/count_kinect.png">
+    <br>
+    <small>0.37 m × 0.35 m, raster resolution 0.002 m</small>
+</section>
+
+
+<section>
+    <h3>Point density for terrestrial lidar</h3>
+    <img class="stretch" src="img/count_ground.png">
+    <br>
+    <small>raster resolution 0.5 m, red color used for 80 to 18 thousand points per cell</small>
+</section>
+
+
+<section>
+    <h3>Decimation</h3>
+
+<ul>
+    <li>decimation ~ thinning ~ sampling
+    <li>makes the point cloud smaller, more manageable
+    <li>count-based decimation: preserves variations in density
+    <li>grid-based decimation ~ binning: removes variations in density
+</ul>
+
+<br>
+
+<img style="width: 40%;" src="img/decimation_secref_full.png">
+<img style="width: 40%;" src="img/decimation_secref_preserve_3.png">
+
+<br>
+<small>count-based decimation effect</small>
+
+</section>
+
+
+<section>
+    <h3>Decimation</h3>
+
+<ul>
+    <li>decimation ~ thinning ~ sampling
+    <li>makes the point cloud smaller, more manageable
+    <li>count-based decimation: preserves variations in density
+    <li>grid-based decimation ~ binning: removes variations in density
+</ul>
+
+<br>
+
+<img style="width: 40%;" src="img/decimation_secref_full.png">
+<img style="width: 40%;" src="img/decimation_secref_grid_10.png">
+
+<br>
+<small>grid-based decimation effect</small>
+
+</section>
+
+
+<section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        Which decimation performs better for topography and microtopography?
+    <li>
+        How this changes with the point cloud acquisition method?
+    <li>
+        Is the simplest decimations enough?
+        Or do we need to use slower but more sophisticated techniques?
+</ul>
+
+</section>
+
+
+<section>
+    <h3>Evaluating level of detail</h3>
+
+<ul>
+    <li>microtopography <small>[e.g. Watt 1947]</small>:
+        small variations in topography
+    <li>local relief model <small>[Hesse 2010]</small>:
+        features other than trend
+</ul>
+
+<br>
+
+<img style="width: 40%;" src="img/gully_shaded_relief.png">
+<img style="width: 40%;" src="img/gully_lrm.png">
+
+<br>
+
+<small>
+30-60cm wide, 30cm deep, 60m long gully (resolution 30cm)
+<!-- 294 rows, 325 cols (88.2m x 97.5m) -->
+</small>
+
+<!--
+Watt, Alex S. "Pattern and process in the plant community." Journal of ecology 35.1/2 (1947): 1-22.
+
+Environmental Engineering Dictionary
+Refers to the contours along the bottom of a shallow wetland system.
+A complex microtopography creates a great variety of environmental
+conditions that favor the unique requirements of many different species
+of marsh plants.
+http://www.ecologydictionary.org/MICROTOPOGRAPHY
+-->
+
+</section>
+
+
+<section>
+<h3>Influence of grid-based decimation resolution</h3>
+
+<img style="width: 20%;" src="img/uav_grid_points_res_0_1_shaded_elevation.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_0_3_shaded_elevation.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_0_9_shaded_elevation.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_1_5_shaded_elevation.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_0_1_lrm_shaded.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_0_3_lrm_shaded.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_0_9_lrm_shaded.png">
+
+<img style="width: 20%;" src="img/uav_grid_points_res_1_5_lrm_shaded.png">
+
+<small>
+grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
+<br>
+<small>
+(points removed: 0 % &rarr; 81 % &rarr; 98 % &rarr; 99 %)
+</small>
+</small>
+
+</section>
+
+
+<section>
+    <h3>Removing points</h3>
+    <div class="left">
+    <h4>Airborne lidar</h4>
+    <ul>
+        <li>count-based and grid-based decimations are equivalent
+    </ul>
+    <br>
+    <img style="width: 100%;" src="img/lrm_grid_count_lidar.png">
+    </div>
+    <div class="right">
+    <h4>Terrestrial lidar</h4>
+    <ul>
+        <li>grid-based decimation performs better
+    </ul>
+    <br>
+    <img style="width: 100%;" src="img/lrm_grid_count_ground.png">
+    </div>
+</section>
+
+
+<section>
+    <h3>Contributions</h3>
+    <ul>
+        <li>significant decimation possible and (micro)topography is preserved
+            <ul>
+                <li>for all 4 datasets from 4 sensors at given resolution
+            </ul>
+        <li>faster and simpler count-based decimation more advantageous
+            <ul>
+                <li>in most cases count-based decimation provided same results as grid-based decimation
+            </ul>
+        <li>grid-based decimation needed for specific cases
+            <ul>
+                <li>grid-based decimation is beneficial for specific distribution of terrestrial lidar data
+            </ul>
+        <li>simple decimations are sufficient,
+            but complex decimation have their place
+    </ul>
+</section>
+
+
+<section>
+    <h3>Publication</h3>
+    Petras, V., A. Petrasova, J. Jeziorska, and H. Mitasova (2016). <em>Processing UAV
+    and lidar point clouds in GRASS GIS</em>. In: ISPRS-International Archives of the
+    Photogrammetry, Remote Sensing and Spatial Information Sciences, pp. 945–952.
+    DOI:10.5194/isprs-archives-XLI-B7-945-2016
+    <br>
+    <small>[560 reads on ResearchGate, Sep 8, 2018]</small>
+    <br>
+    <img class="stretch" src="img/papers/petras2016processing_page.png">
+</section>
+
+
+<section>
+    <h3>Software</h3>
+    <ul>
+        <li>extended GRASS GIS module for binning (r.in.lidar)
+        <li>created GRASS GIS module for binning in 3D (r3.in.lidar)
+        <li>created module for count- and grid-based decimation (v.decimate)
+        <li>extended GRASS GIS module for point cloud import (v.in.lidar)
+        <li>local relief model implementation for GRASS GIS (r.local.relief)
+        <li>point cloud transect (v.profile.points)
+        <li>under development: tool which performs the tests done in the paper
+    </ul>
+    <br>
+    <img class="stretch" src="img/v_profile_points.png">
+</section>
+
+
+<section>
+    <h3>Educational material</h3>
+    <p>
+    <em>Processing lidar and UAV point clouds in GRASS GIS</em>
+    available online
+    <br>
+    (and translated to Spanish by GRASS GIS community).
+    </p>
+    <h3 style="padding-top: 1ex;">Training</h3>
+    Workshop at FOSS4G 2017 in Boston,
+    <br>
+    Center for Geographic Analysis, Harvard University.
+</section>
+
+
+<!-- 3D fragmentation -->
+
+
+<section>
+    <h2>Chapter 3</h2>
+    <h3>
+        Description of 3D structure in lidar point clouds
+    </h3>
+</section>
+
+
+<section>
+    <h3>Lidar point clouds</h3>
+    <p>
+        full lidar point cloud in vegetation-related applicications
+    <ul>
+        <li>habitat characterization
+            <small>[e.g. Sasaki et al. 2016]</small>
+        <li>fuel modeling
+            <small>[e.g. García et al. 2011]</small>
+        <li>tree models
+            <small>[e.g. Gorte &amp; Winterhalder 2004]</small>
+        <li>...
+    </ul>
+    <br>
+    <img class="stretch" src="img/points.png">
+</section>
+
+
+<section>
+    <h3>3D raster</h3>
+    <img class="stretch" src="img/raster3d.png">
+</section>
+
+
+<section>
+    <h3>2D forest fragmentation index</h3>
+    <img class="stretch" src="img/forestfrag_2d_forest.png">
+    <br>
+    <small>forested areas</small>
+</section>
+
+
+<section>
+    <h3>2D forest fragmentation index</h3>
+    <img class="stretch" src="img/forestfrag_2d_index.png">
+    <br>
+    <small>forest fragmentation index [Riitters et al. 2000]</small>
+</section>
+
+
+<section>
+    <h3>Fragmentation index</h3>
+    <img class="stretch" src="img/ff_graph.png">
+    <br>
+    <small>assignment of fragmentation classes [Riitters et al. 2000], generalized</small>
+</section>
+
+
+<section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        Is 3D raster representation appropriate for lidar data analysis?
+    <li>
+        How to derive and describe 3D structure captured in lidar point clouds?
+    <li>
+        Is a 2D landscape index extensible and applicable to 3D vegetation structure?
+</ul>
+</section>
+
+
+<section>
+    <h3>Point cloud and index profiles</h3>
+    <img class="stretch" src="img/profiles_points_and_ff.png">
+    <br>
+    <small>
+        slice of raw point cloud
+        and slice of fragmentation index 3D raster
+    </small>
+</section>
+
+
+<section>
+    <h3>Point presence and index profiles</h3>
+    <img class="stretch" src="img/profiles.png">
+    <br>
+    <small>
+        slice of point presence 3D raster
+        and slice of fragmentation index 3D raster
+    </small>
+</section>
+
+
+<section>
+    <h3>Profile of 3D raster</h3>
+    <img class="stretch" src="img/profile3d.png">
+</section>
+
+
+<section>
+    <h3>As 2D raster</h3>
+    <img class="stretch" src="img/comparison_ortho.png">
+</section>
+
+
+<section>
+    <h3>Contributions</h3>
+    <ul>
+        <li>3D raster representation is suitable for lidar data analysis
+            of vegetation structure
+        <li>2D remote sensing and landscape ecology concepts can be
+            applied in 3D
+        <li>generalized 3D fragmentation index is now available
+        <li>aggregation method resulting in a 2D raster is also available
+    </ul>
+</section>
+
+
+<section>
+    <h3>Publication</h3>
+    Petras, V., D. J. Newcomb, and H. Mitasova. 2017.
+    <em>Generalized 3D fragmentation index derived from lidar point clouds</em>.
+    In: Open Geospatial Data, Software and Standards.
+    DOI:10.1186/s40965-017-0021-8
+    <br>
+    <small>[Accessed 613 times at SpringerOpen, Sep 8, 2017]</small>
+    <br>
+    <img class="stretch" src="img/papers/petras2017generalized_page.png">
+</section>
+
+
+<section>
+    <h3>Software</h3>
+    <ul>
+        <li>3D fragmentation index (r3.forestfrag)
+        <li>revised 2D fragmentation index (r.forestfrag)
+        <li>dominant fragmentation class (r3.count.categories)
+        <li>profile/slice of a 3D raster (r3.profile)
+        <li>3D scatter plot of 3D raster (r3.scatterplot)
+        <li>3D scatter plot of 2D raster (r.scatterplot)
+    </ul>
+    <br>
+    <img class="stretch" src="img/r3_scatterplot.png">
+</section>
+
+
+<!-- gradients -->
+
+
+<section>
+    <h2>Chapter 4</h2>
+    <h3>Analysis of lidar-derived dynamic surfaces</h3>
+</section>
+
+
+<section>
+    <h3>Migrating landform</h3>
+    <img class="stretch" src="img/jr_anim.gif">
+    <small>Jockey's Ridge, 1974 - 2012</small>
+</section>
+
+
+<section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        How to represent landform changes in time?
+    <li>
+        How to visualize landform migration?
+</ul>
+</section>
+
+
+<section>
+    <h3>Simple experiment</h3>
+    Series of DEMs for tests created using Tangible Landscape
+    <img class="left" src="img/tangible_1.jpg">
+    <img class="right" src="img/tangible_4.jpg">
+</section>
+
+
+<section>
+    <h3>Contour evolution</h3>
+    <p> year 2001, z = 110m</p>
+    <img class="stretch" src="img/grad_st1_cont.png">
+</section>
+
+
+<section>
+    <h3>Contour evolution</h3>
+    <p> year 2005, z = 110m</p>
+    <img class="stretch" src="img/grad_st2_cont.png">
+</section>
+
+
+<section>
+    <h3>Contour evolution</h3>
+    <p> year 2008, z = 110m</p>
+    <img class="stretch" src="img/grad_st3_cont.png">
+</section>
+
+
+<section>
+    <h3>Contour evolution</h3>
+    <p> year 2009, z = 110m</p>
+    <img class="stretch" src="img/grad_st4_cont.png">
+</section>
+
+
+<section>
+    <h3>Define migration areas</h3>
+    <p>Mask areas outside the range of 110m contour migration</p>
+    <img class="stretch" src="img/grad_st1234_coreenvmask2_110m.png">
+</section>
+
+
+<section>
+    <h3>Assign time attribute</h3>
+    <p>Each 110m contour is assigned a time [year] attribute</p>
+    <img class="stretch" src="img/grad_st1234_110m.png">
+</section>
+
+
+<section>
+    <h3>Interpolate temporal surface</h3>
+    <p>Temporal surface is interpolated from a time series of 110m contours </p>
+    <img class="stretch" src="img/grad_st1234_surfmasked_110m.png">
+</section>
+
+
+<section>
+    <h3>Migration gradient field</h3>
+    <p>Gradient lines over time and vectors over migration rates</p>
+    <img src="img/gradlines_overyear.png" style="width: 49%;">
+    <img src="img/gradarrows_overrates.png" style="width: 49%;">
+</section>
+
+
+<section>
+    <h3>Dynamic visualization of the gradient field</h3>
+    <p>Shows spatial pattern of mass concentration and dispersal over time</p>
+    <video class="stretch" data-autoplay muted loop>
+         <source src="img/comets.mp4" type="video/mp4">
+    </video>
+    <br>
+    <small class="credit">
+        Inspired by Tokyo Wind Speed application by Cameron Beccario.
+        Derived from <code>air.js</code> source code.
+        Uses HTML, CSS, JavaScript and D3.js library.
+    </small>
+</section>
+
+
+<section>
+    <h3>Jockey's Ridge</h3>
+    <img class="stretch" src="img/jr-stc-contours.png">
+</section>
+
+
+<section>
+    <h3>Contributions</h3>
+    <ul>
+        <li>visual and quantitative technique for landform migration
+        <li>magnitude and direction of horizontal change
+        <li>spatial distribution of rate of change
+        <li>
+            use cases:
+            analysis of 3D monitoring data or model calibration
+            <ul>
+                <li>migrating landforms
+                <li>evolving shorelines and islands
+                <li>fire spread
+                <li>disease spread
+                <li>glacier melting and movement
+                <li>landslide path
+            </ul>
+        </li>
+    </ul>
+</section>
+
+
+<section>
+    <h3>Publication</h3>
+    Petras, V., H. Mitasova, and A. Petrasova (2015).
+    <em>Mapping gradient fields of landform migration</em>.
+    In: Geomorphometry for Geosciences. Ed. by Jasiewicz, J.,
+    Z. Zwolinski, H. Mitasova, and T. Hengl.
+    p. 173 - 176.
+    ISBN 978-83-7986-059-3.
+    <small>
+    [Best Paper Award at Geomorphometry 2015,
+    1316 PDF hits on Aug 31, 2017]
+    </small>
+    <img class="stretch" src="img/papers/petras2015mapping_page.png">
+</section>
+
+
+<section>
+    <h3>Software</h3>
+    <ul>
+        <li>computation of the gradient field (<em>r.contour.evolution</em>)
+            <ul>
+                <li>can be implemented in any GIS-like software
+            </ul>
+        <li>dynamic visualization of the field (<em>r.out.jscomet</em> and modified JavaScript code)
+    </ul>
+</section>
+
+
+<!-- open geospatial science -->
+
+
+<section>
+    <h2>Chapter 5</h2>
+    <h3>Publishing using an open science framework</h3>
+</section>
+
+
+<section>
+    <h3>Science and software</h3>
+    <ul>
+        <li>
+            software must be available to readers
+            <small>[Nature Methods - 4, 189 (2007)]</small>
+        <li>
+            source code part of method description
+            <small>[Ince et al. 2012, Morin et al. 2012]</small>
+        <li>
+            recomputability orthogonal to source code
+            <small>[Gent 2013]</small>
+        <li>
+            reproducibility, replicability, and repeatability required
+            <small>[Fehr et al. 2016]</small>
+        <li>
+            use of open source tools part of reproducibility
+            <small>[Less 2012]</small>
+        <li>
+            <em>easily reproducible result</em> reproduced in 10 minutes
+            <small>[Schwab et al. 2000]</small>
+    </ul>
+</section>
+
+
+<section>
+    <h3>The common ways</h3>
+    <ul>
+        <li>binary: not flexible, not transparent
+        <li>source code: not enough by itself
+        <li>repository: easy to delete (e.g. on GitHub)
+        <li>virtual machine: too cumbersome
+        <li>web service: needs to be maintained
+    </ul>
+</section>
+
+
+<section>
+    <h3>Initial questions</h3>
+    <ul>
+        <li>How to ensure reproducibility of results in the paper?
+        <li>Where to publish source code so it is preserved?
+        <li>How to publish software so it is reusable?
+    </ul>
+</section>
+
+
+<section>
+    <h3>Reproducibility</h3>
+    <ul>
+        <li>text in paper explicitly refers to code for full reproducibility
+    </ul>
+    <br>
+    <img class="stretch" src="img/code_for_full_reproducibility.png">
+    <br>
+    <small>
+        Part of <em>Availability of data and materials</em> section
+        in Petras et al. 2017
+    </small>
+</section>
+
+
+<section>
+    <h3>Reproducibility</h3>
+    <ul>
+        <li>repository gives concrete steps
+    </ul>
+    <br>
+    <img class="stretch" src="img/repository_readme.png">
+    <br>
+    <small>
+        Part of a <em>README</em> file from repository
+        associated with Petras et al. 2017 paper
+    </small>
+</section>
+
+
+<section>
+    <h3>Reproducibility</h3>
+    <ul>
+        <li>result after running the commands
+    </ul>
+    <br>
+    <img class="stretch" src="img/reproduced_figures.png">
+    <br>
+    <small>
+        Data-driven figures reproduced using the repository
+        associated with Petras et al. 2017 paper
+    </small>
+</section>
+
+
+<section>
+    <h3>Reproducibility</h3>
+    <ul>
+        <li>flexible reproducibility and reuse with new software
+    </ul>
+    <br>
+    <img class="stretch" src="img/newly_developed_software.png">
+    <br>
+    <small>
+        Part of <em>Availability of data and materials</em> section
+        in Petras et al. 2017
+    </small>
+</section>
+
+
+<section>
+    <h3>Integrating code into a larger project</h3>
+    <ul>
+        <li>Avoiding creation of a new open source project for each paper
+            <ul>
+                <li>GRASS GIS can integrate smaller projects.
+            </ul>
+        <li>New methods as new functions or improvements of existing ones
+            <ul>
+                <li>GRASS GIS modules can be added or extended.
+            </ul>
+        <li>Preprocessing, visualization, and user interface included
+            <ul>
+                <li>Different tools and interfaces are available in GRASS GIS.
+            </ul>
+        <li>Well integrated with existing analytical tools
+            <ul>
+                <li>GRASS GIS modules use unified interfaces and exchange formats.
+            </ul>
+        <li>Small, isolated projects often disappear
+            <ul>
+                <li>GRASS GIS modules get long-term maintenance from the community.
+            </ul>
+    </ul>
+    <br>
+    <img src="img/logos/grass_gis.png" style="width: 10%;">
+</section>
+
+
+<section>
+    <h3>Questions</h3>
+    <ul>
+        <li>What are the differences between software tool and research platform?
+        <li>Who are the authors of significant additions to the code?
+            <ul>
+                <li>Are they the same as the maintainers of the code?
+                <li>Are they the same as the original authors?
+            </ul>
+        <li>How much original research is in the software?
+            <ul>
+                <li>What is the ratio of original research code and implementations of existing methods?
+                <li>How many researches are contributing the original research?
+            </ul>
+        <li>What makes software and code suitable for research and for practitioners?
+    </ul>
+</section>
+
+
+<section>
+    <h3>Contributions</h3>
+    <ul>
+        <li>general framework for publishing scientific code
+        <li>concrete steps for geospatial use case
+        <li>qualitative evaluation of GRASS GIS applicability as a
+            platform for publishing and preserving scientific code
+    </ul>
+</section>
+
+
+<section>
+    <h3>Planned publication</h3>
+    <p>
+    <em>
+        A framework for open geospatial science
+    </em>
+    </p>
+    <p>
+    Target journals:
+    <br>
+    PLOS ONE
+    <br>
+    Environmental Modelling &amp; Software
+    </p>
+</section>
+
+
+<section>
+    <h3>Related publications</h3>
+    <p>
+    Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
+    <em>Integrating free and open source solutions into geospatial science education</em>.
+    In: ISPRS International Journal of Geo-Information 4.2, p. 942–956
+    [1992 full-text views, MPDI on Sep 5, 2017]
+    <br>
+    Rocchini, D., V. Petras, A. Petrasova, N. Horning,
+    L. Furtkevicova, M. Neteler, B. Leutner, and M.&nbsp;Wegmann.
+    <em>Open-access and open-source for remote sensing training in ecology and conservation</em>
+    In: Ecological Informatics, Volume 40, 2017, p. 57-61, ISSN 1574-9541,
+    <a href="http://dx.doi.org/10.1016/j.ecoinf.2017.05.004">DOI:10.1016/j.ecoinf.2017.05.004</a>.
+    </small></p>
+    <img class="stretch" src="img/papers/petras2015integrating.png">
+</section>
+
+
+<section>
+    <h3>Related posters</h3>
+    <img class="stretch" src="img/papers/petras2017how.png">
+    <p>
+    Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
+    Leo, S. Gebbert, and M. Neteler (2017).
+    <em>How innovations thrive in GRASS GIS</em>.
+    NCGIS2017, Raleigh, NC, USA.
+
+    <p>
+    and also:
+    Petras, V. and Gebbert, S. (AGU 2014),
+    <br>
+    Petras (EGU 2015) and Chemin (EGU 2015)
+</section>
+
+
+<!-- open science course -->
+
+
+<section>
+    <h3>Teaching</h3>
+    <ul>
+        <li>Course: Tools for open geospatial science
+        <ul>
+            <li>teaching materials published as a website
+            <li>research focus with extension to industry
+            <li>
+                topics: advanced writing tools, revision control systems,
+                command line, remote access, Linux,
+                QGIS, GRASS GIS, GDAL,
+                interactive notebooks, publishing source code
+        </ul>
+    </ul>
+    <br>
+    <img class="stretch" src="img/open/open_pens.png">
+    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
+</section>
+
+
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+    <!--
+        Home button or link to a parent page
+        If you want this to be unique for every page (slide deck),
+        then remove it from here and put it at the end of each
+        file (or series of files) creating one page
+        (the position will be little different)
+        TODO: some JS is needed to move it to the right position
+    -->
+    <div class="parent-page">
+        <a href="http://wenzeslaus.github.io/" title="Personal page">&#8962;</a>
+    </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+
+                center: true,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+                chalkboard: {
+                // optionally load pre-recorded chalkboard drawing from file
+                    src: "chalkboard.json",
+                },
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    //{ src: 'plugin/math/math.js', async: true },
+                    { src: 'plugin/chalkboard/chalkboard.js' }
+                ],
+                keyboard: {
+                    67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+                    66: function() { RevealChalkboard.toggleChalkboard() },    // toggle chalkboard when 'b' is pressed
+                    46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+                     8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+                    68: function() { RevealChalkboard.download() },    // downlad recorded chalkboard drawing when 'd' is pressed
+                },
+            });
+
+        </script>
+
+    </body>
+</html>
