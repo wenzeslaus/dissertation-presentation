@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Petras: Geospatial analytics for point clouds in an open science framework</title>
+        <title>V. Petras: Geospatial analytics for point clouds in an open science framework</title>
 
-        <meta name="description" content="Turning point clouds, surfaces, and their time series into information in a framework of open geospatial science">
+        <meta name="description" content="Dissertation defense: Turning point clouds, surfaces, and their time series into information in a framework of open geospatial science">
         <meta name="author" content="Vaclav Petras">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -100,8 +100,9 @@
 
 
 <section>
-    <h2>Chapter 1</h2>
-    <h3>Density anomalies in point clouds</h3>
+    <h2>Density anomalies in point clouds</h2>
+    <h3>and how to deal with them</h3>
+    <!-- Homogenization and decimation of point clouds -->
 </section>
 
 
@@ -172,19 +173,13 @@
 <section>
     <h3>Planned publication</h3>
     Petras, V., ...
-    <em>Density anomalies in lidar and UAV point clouds</em>.
+    <em>Density anomalies in point clouds</em>.
     <br>
     Target journal(s): Remote Sensing of Environment or GIScience &amp; Remote Sensing
 </section>
 
 
 <!-- decimation -->
-
-
-<section>
-    <h2>Chapter 2</h2>
-    <h3>Homogenization and decimation of point clouds</h3>
-</section>
 
 
 <section>
@@ -432,10 +427,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h2>Chapter 3</h2>
-    <h3>
-        Description of 3D structure in lidar point clouds
-    </h3>
+    <h2>Description of 3D structure in lidar point clouds</h2>
 </section>
 
 
@@ -575,175 +567,11 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 </section>
 
 
-<!-- gradients -->
-
-
-<section>
-    <h2>Chapter 4</h2>
-    <h3>Analysis of lidar-derived dynamic surfaces</h3>
-</section>
-
-
-<section>
-    <h3>Migrating landform</h3>
-    <img class="stretch" src="img/jr_anim.gif">
-    <small>Jockey's Ridge, 1974 - 2012</small>
-</section>
-
-
-<section>
-    <h3>Questions</h3>
-<ul>
-    <li>
-        How to represent landform changes in time?
-    <li>
-        How to visualize landform migration?
-</ul>
-</section>
-
-
-<section>
-    <h3>Simple experiment</h3>
-    Series of DEMs for tests created using Tangible Landscape
-    <img class="left" src="img/tangible_1.jpg">
-    <img class="right" src="img/tangible_4.jpg">
-</section>
-
-
-<section>
-    <h3>Contour evolution</h3>
-    <p> year 2001, z = 110m</p>
-    <img class="stretch" src="img/grad_st1_cont.png">
-</section>
-
-
-<section>
-    <h3>Contour evolution</h3>
-    <p> year 2005, z = 110m</p>
-    <img class="stretch" src="img/grad_st2_cont.png">
-</section>
-
-
-<section>
-    <h3>Contour evolution</h3>
-    <p> year 2008, z = 110m</p>
-    <img class="stretch" src="img/grad_st3_cont.png">
-</section>
-
-
-<section>
-    <h3>Contour evolution</h3>
-    <p> year 2009, z = 110m</p>
-    <img class="stretch" src="img/grad_st4_cont.png">
-</section>
-
-
-<section>
-    <h3>Define migration areas</h3>
-    <p>Mask areas outside the range of 110m contour migration</p>
-    <img class="stretch" src="img/grad_st1234_coreenvmask2_110m.png">
-</section>
-
-
-<section>
-    <h3>Assign time attribute</h3>
-    <p>Each 110m contour is assigned a time [year] attribute</p>
-    <img class="stretch" src="img/grad_st1234_110m.png">
-</section>
-
-
-<section>
-    <h3>Interpolate temporal surface</h3>
-    <p>Temporal surface is interpolated from a time series of 110m contours </p>
-    <img class="stretch" src="img/grad_st1234_surfmasked_110m.png">
-</section>
-
-
-<section>
-    <h3>Migration gradient field</h3>
-    <p>Gradient lines over time and vectors over migration rates</p>
-    <img src="img/gradlines_overyear.png" style="width: 49%;">
-    <img src="img/gradarrows_overrates.png" style="width: 49%;">
-</section>
-
-
-<section>
-    <h3>Dynamic visualization of the gradient field</h3>
-    <p>Shows spatial pattern of mass concentration and dispersal over time</p>
-    <video class="stretch" data-autoplay muted loop>
-         <source src="img/comets.mp4" type="video/mp4">
-    </video>
-    <br>
-    <small class="credit">
-        Inspired by Tokyo Wind Speed application by Cameron Beccario.
-        Derived from <code>air.js</code> source code.
-        Uses HTML, CSS, JavaScript and D3.js library.
-    </small>
-</section>
-
-
-<section>
-    <h3>Jockey's Ridge</h3>
-    <img class="stretch" src="img/jr-stc-contours.png">
-</section>
-
-
-<section>
-    <h3>Contributions</h3>
-    <ul>
-        <li>visual and quantitative technique for landform migration
-        <li>magnitude and direction of horizontal change
-        <li>spatial distribution of rate of change
-        <li>
-            use cases:
-            analysis of 3D monitoring data or model calibration
-            <ul>
-                <li>migrating landforms
-                <li>evolving shorelines and islands
-                <li>fire spread
-                <li>disease spread
-                <li>glacier melting and movement
-                <li>landslide path
-            </ul>
-        </li>
-    </ul>
-</section>
-
-
-<section>
-    <h3>Publication</h3>
-    Petras, V., H. Mitasova, and A. Petrasova (2015).
-    <em>Mapping gradient fields of landform migration</em>.
-    In: Geomorphometry for Geosciences. Ed. by Jasiewicz, J.,
-    Z. Zwolinski, H. Mitasova, and T. Hengl.
-    p. 173 - 176.
-    ISBN 978-83-7986-059-3.
-    <small>
-    [Best Paper Award at Geomorphometry 2015,
-    1316 PDF hits on Aug 31, 2017]
-    </small>
-    <img class="stretch" src="img/papers/petras2015mapping_page.png">
-</section>
-
-
-<section>
-    <h3>Software</h3>
-    <ul>
-        <li>computation of the gradient field (<em>r.contour.evolution</em>)
-            <ul>
-                <li>can be implemented in any GIS-like software
-            </ul>
-        <li>dynamic visualization of the field (<em>r.out.jscomet</em> and modified JavaScript code)
-    </ul>
-</section>
-
-
 <!-- open geospatial science -->
 
 
 <section>
-    <h2>Chapter 5</h2>
-    <h3>Publishing using an open science framework</h3>
+    <h2>Publishing using an open science framework</h2>
 </section>
 
 
