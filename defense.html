@@ -71,10 +71,10 @@
 <section>
     <h3>Point cloud usages</h3>
     <ul>
-        <li>flood modeling
-        <li>wildfire fuel assessment
-        <li>habitat characterization
-        <li>species classification
+        <li>flood modeling <small>[Webster et al. 2010]</small>
+        <li>wildfire fuel assessment <small>[Gajardo et al. 2014]</small>
+        <li>habitat characterization <small>[Sasaki et al. 2016]</small>
+        <li>land cover classification <small>[Antonarakis et al. 2008]</small>
         <li>...
     </ul>
     <br>
@@ -104,7 +104,7 @@
         <li>leaf area density distribution <small>[Oshio et al. 2015]</small>
         <li>crown density <small>[Dalponte et al. 2009]</small>
         <li>subcanopy solar radiation <small>[Bode et al. 2014]</small>
-        <li>vegetation fragmentation <small>[Petras at al. 2017]</small>
+        <li>vegetation structure <small>[Sasaki et al. 2016]</small>
     </ul>
     <br>
     <img class="stretch" src="img/dark_forest.png">
@@ -112,8 +112,18 @@
 
 
 <section>
+    <h3>Use of point cloud densities</h3>
+    <img style="width: 100%;" src="img/natural_planted_forest_gray.png">
+    <br>
+    <img style="width: 100%;" src="img/skewness_figure.png">
+    <br>
+    <small>natural and planted forest (transect)</small>
+</section>
+
+
+<section>
     <h3>Density anomalies</h3>
-    <img class="stretch" src="img/scan_line_end_detail.png">
+    <img class="stretch" src="img/scan_line_end.png">
     <br>
     <small>detail of an end of scan line</small>
 </section>
@@ -129,72 +139,45 @@
 
 <section>
     <h3>Density anomalies</h3>
-    <img class="stretch" src="img/custom_density_ground.png">
+    <img class="stretch" src="img/banding_density.png">
     <br>
-    <small>classified group point density in swath overlap</small>
+    <small>density waves (banding)</small>
 </section>
 
 
 <section>
     <h3>Density anomalies</h3>
-    <img class="stretch" src="img/uav_density_anomalies.png">
+    <img class="stretch" src="img/uav_density_objects.png">
     <br>
-    <small>point distribution in UAV point cloud</small>
+    <small>point distribution in SfM-derived (UAV) point cloud</small>
 </section>
 
 
 <section>
     <h3>Density anomalies</h3>
-    <img class="stretch" src="img/custom_pattern_first.png">
+    <img class="stretch" src="img/profile_uav_lidar.png">
     <br>
-    <small>influence of vegetation on point distribution</small>
+    <small>vertical point distribution in lidar and SfM-derived point clouds</small>
 </section>
 
 
 <section>
-    <h3>Literature review</h3>
-    <ul>
-        <li>overview of density anomalies and potential issues
-        <li>linked to examples in literature and NC datasets
-        <li>identification of potential causes and solutions
-    </ul>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/count_ground.png">
+    <br>
+    <small>terrestrial lidar (raster resolution 0.5 m, red color used for 80 to 18 thousand points per cell)</small>
+</section>
+
+
+<section>
+    <h3>Density anomalies</h3>
+    <img class="stretch" src="img/count_kinect.png">
+    <br>
+    <small>Kinect short range scanner (0.37 m × 0.35 m, raster resolution 0.002 m)</small>
 </section>
 
 
 <!-- decimation -->
-
-
-<section>
-    <h3>Point density for airborne lidar</h3>
-    <img class="stretch" src="img/count_lidar.png">
-    <br>
-    <small>raster resolution 1.5 m</small>
-</section>
-
-
-<section>
-    <h3>Point density for UAV imagery SfM point cloud</h3>
-    <img class="stretch" src="img/count_uav.png">
-    <br>
-    <small>raster resolution 0.5 m</small>
-</section>
-
-
-<section>
-    <h3>Point density for Kinect point cloud</h3>
-    <img class="stretch" src="img/count_kinect.png">
-    <br>
-    <small>0.37 m × 0.35 m, raster resolution 0.002 m</small>
-</section>
-
-
-<section>
-    <h3>Point density for terrestrial lidar</h3>
-    <img class="stretch" src="img/count_ground.png">
-    <br>
-    <small>raster resolution 0.5 m, red color used for 80 to 18 thousand points per cell</small>
-</section>
-
 
 <section>
     <h3>Decimation</h3>
@@ -218,7 +201,7 @@
 
 
 <section>
-    <h3>Decimation</h3>
+    <h3>Homogenization</h3>
 
 <ul>
     <li>decimation ~ thinning ~ sampling
@@ -242,14 +225,17 @@
     <h3>Questions</h3>
 <ul>
     <li>
+        What are the different density anomalies and associated issues?
+    <li>
+        What are causes and solutions?
+    <li>
         Which decimation performs better for topography and microtopography?
     <li>
         How this changes with the point cloud acquisition method?
     <li>
-        Is the simplest decimations enough?
+        Are the simplest decimations enough?
         Or do we need to use slower but more sophisticated techniques?
 </ul>
-
 </section>
 
 
@@ -343,9 +329,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Contributions</h3>
     <ul>
-        <li>significant decimation possible and (micro)topography is preserved
+        <li>identification of density anomalies, their causes, and resulting issues
+        <li>significant decimation is possible with (micro)topography preserved
             <ul>
-                <li>for all 4 datasets from 4 sensors at given resolution
+                <li>for all 4 datasets from 4 sensors
             </ul>
         <li>faster and simpler count-based decimation more advantageous
             <ul>
@@ -370,7 +357,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <a href="https://doi.org/10.5194/isprs-archives-XLI-B7-945-2016">DOI&nbsp;10.5194/isprs-archives-XLI-B7-945-2016</a>
     <br>
     <small>[675 reads on ResearchGate, Apr 16, 2018]</small>
-    <h4 style="padding-top: 1em;">Planned</h4>
+    <h4 style="padding-top: 1em;">To be submitted</h4>
     <em>Density anomalies in point clouds (Chapter 2)</em>.
     <br>
     Target journal: MDPI Remote Sensing
@@ -388,7 +375,6 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>extended GRASS GIS module for point cloud import (v.in.lidar)
         <li>local relief model implementation for GRASS GIS (r.local.relief)
         <li>point cloud transect (v.profile.points)
-        <li>under development: tool which performs the tests done in the paper
     </ul>
     <br>
     <img class="stretch" src="img/v_profile_points.png">
@@ -487,17 +473,6 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <br>
     <small>
         slice of raw point cloud
-        and slice of fragmentation index 3D raster
-    </small>
-</section>
-
-
-<section>
-    <h3>Point presence and index profiles</h3>
-    <img class="stretch" src="img/profiles.png">
-    <br>
-    <small>
-        slice of point presence 3D raster
         and slice of fragmentation index 3D raster
     </small>
 </section>
@@ -603,11 +578,13 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Initial questions</h3>
+    <h3>Questions</h3>
     <ul>
         <li>How to ensure reproducibility of results in the paper?
         <li>Where to publish source code so it is preserved?
         <li>How to publish software so it is reusable?
+        <li>What are the differences between software tool and research platform?
+        <li>What makes software and code suitable for research and for practitioners?
     </ul>
 </section>
 
@@ -704,7 +681,6 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Questions</h3>
     <ul>
-        <li>What are the differences between software tool and research platform?
         <li>Who are the authors of significant additions to the code?
             <ul>
                 <li>Are they the same as the maintainers of the code?
@@ -715,7 +691,6 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
                 <li>What is the ratio of original research code and implementations of existing methods?
                 <li>How many researches are contributing the original research?
             </ul>
-        <li>What makes software and code suitable for research and for practitioners?
     </ul>
 </section>
 
@@ -738,8 +713,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     Petras, V., A. Petrasova, B. Harmon, R. K. Meentemeyer, and H. Mitasova (2015).
     <em>Integrating free and open source solutions into geospatial science education</em>.
     In: ISPRS International Journal of Geo-Information 4(2), p. 942-956
-    [2727 full-text views, MPDI; Altmetric Attention Score 20 (in the top 25%), Apr 16, 2018]
-    <h4>Planned</h4>
+    [2727 full-text views, Altmetric Attention Score 20 (in the top 25%), Apr 16, 2018]
+    <h4>To be submitted</h4>
     <p>
     <em>
         A framework for open geospatial science (Chapter 6).
@@ -772,8 +747,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <em>Tools for open geospatial science.</em>
     AGU Fall Meeting Abstracts 51 (2017).
     <p>
-    Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi, M. Di
-    Leo, S. Gebbert, and M. Neteler (2017).
+    Petras, V., Y. Chemin, M. Landa, T. Leppelt, P. Zambelli, L. Delucchi,
+    M. Di Leo, S. Gebbert, and M. Neteler (2017).
     <em>How innovations thrive in GRASS GIS</em>.
     NCGIS2017, Raleigh, NC, USA.
     <p>
@@ -808,6 +783,22 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     </ul>
     <br>
     <img class="stretch" src="img/open_class_index.png">
+</section>
+
+
+<!-- conclusions -->
+
+
+<section>
+    <h3>Summary and Conclusions</h3>
+    <ul>
+        <li>
+        <ul>
+            <li>
+        </ul>
+    </ul>
+    <br>
+    <img class="stretch" src="img/dark_forest.png">
 </section>
 
 
