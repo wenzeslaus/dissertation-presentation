@@ -261,7 +261,7 @@ body {
   display: inline-block;
   font-size: smaller;
   line-height: 1.2em;
-  vertical-align: bottom;
+  vertical-align: baseline;
   margin: 0.1em; }
 
 .reveal small * {
