@@ -329,7 +329,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Contributions</h3>
     <ul>
-        <li>identification of density anomalies, their causes, and resulting issues
+        <li>identification of density anomalies, their causes, resulting issues, and solutions
         <li>significant decimation is possible with (micro)topography preserved
             <ul>
                 <li>for all 4 datasets from 4 sensors
@@ -552,7 +552,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h2>Publishing using an open science framework</h2>
+    <h2>A framework for open science</h2>
     <small>Publishing the results in a reproducible way</small>
 </section>
 
@@ -570,11 +570,11 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
             recomputability orthogonal to source code
             <small>[Gent 2013]</small>
         <li>
-            reproducibility, replicability, and repeatability required
+            reproducibility, replicability, and repeatability
             <small>[Fehr et al. 2016]</small>
         <li>
             use of open source tools part of reproducibility
-            <small>[Less 2012]</small>
+            <small>[Less 2012, Alsberg &amp; Hagen 2006]</small>
         <li>
             <em>easily reproducible result</em> reproduced in 10 minutes
             <small>[Schwab et al. 2000]</small>
@@ -583,13 +583,30 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>The common ways</h3>
-    <ul>
-        <li>binary: not flexible, not transparent
-        <li>source code: not enough by itself
-        <li>repository: easy to delete (e.g. on GitHub)
-        <li>virtual machine: too cumbersome
-        <li>web service: needs to be maintained
+    <h3>State of the Art</h3>
+    <img class="left" src="img/zip_with_password.png">
+    <ul class="right">
+        <li class="fragment">binary
+            <ul>
+                <li>not flexible, not transparent
+            </ul>
+        <li class="fragment">source code
+            <ul>
+                <li>not enough by itself
+                <li><em>Thanks for that GitHub link.<br> What does it do?</em> <small class="credit">[Nabors 2016]</small>
+            </ul>
+        <li class="fragment">code repository
+            <ul>
+                <li>easy to delete <small>(e.g GitHub)</small><small class="credit">[Bergman 2012]</small>
+            </ul>
+        <li class="fragment">virtual machine
+            <ul>
+                <li>too cumbersome <small>(large files, not descriptive)</small>
+            </ul>
+        <li class="fragment">web service
+            <ul>
+                <li>somebody needed to keep it running
+            </ul>
     </ul>
 </section>
 
@@ -599,30 +616,96 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <ul>
         <li>How to ensure reproducibility of results in the paper?
         <li>Where to publish source code so it is preserved?
-        <li>How to publish software so it is reusable?
-        <li>What are the differences between software tool and research platform?
-        <li>What makes software and code suitable for research and for practitioners?
+        <li>How to publish software so it is reusable*?
+        <li>How to identify a platform for building and publishing research code?
     </ul>
+    <p>
+        <small>*Reusable also outside of the original research field.</small>
+    </p>
 </section>
 
 
 <section>
-    <h3>Reproducibility</h3>
-    <ul>
-        <li>text in paper explicitly refers to code for full reproducibility
-    </ul>
+    <h3>Use Case</h3>
+    Petras et al. 2017
     <br>
-    <img class="stretch" src="img/code_for_full_reproducibility.png">
+    <img class="stretch" src="img/papers/petras2017generalized_full.png">
     <br>
-    <small>
-        Part of <em>Availability of data and materials</em> section
-        in Petras et al. 2017
+    <small class="credit">
+        Petras, V., Newcomb, D. J., &amp; Mitasova, H. (2017).
+        <em>Generalized 3D fragmentation index derived from lidar point clouds.</em>
+        In: Open Geospatial Data, Software and Standards 2(1), 9.
+        <a href="https://doi.org/10.1186/s40965-017-0021-8">DOI 10.1186/s40965-017-0021-8</a>
     </small>
 </section>
 
 
 <section>
-    <h3>Reproducibility</h3>
+    <h3>Description in the paper</h3>
+    <em>Availability of data and materials</em> section
+    refers to data, software used, new software, and code for full reproducibility.
+    <br>
+    <img class="stretch" src="img/papers/petras2017generalized_availability.png">
+    <br>
+    <small style="credit">
+        [Petras et al. 2017]
+    </small>
+</section>
+
+
+<section>
+<h2>Open Science Publication Framework</h2>
+<table style="font-size: smaller;">
+    <tr>
+        <th>Component</th>
+        <th>in Petras et al. 2017 (use case)</th>
+    <tr>
+        <td>Text</td>
+        <td>
+            background, methods, results, discussion, conclusions, &hellip;
+        </td>
+    </tr>
+    <tr>
+        <td>Data</td>
+        <td>
+            input data <small>(formats readable by open source software)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Reusable&nbsp;code</td>
+        <td>
+            methods as GRASS GIS modules <small>(C &amp; Python)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Publication-specific&nbsp;code</td>
+        <td>
+            scripts to generate results <small>(Bash &amp Python)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Computational environment</td>
+        <td>
+            details about all dependencies and the code <small>(Docker, Dockerfile)</small>
+        </td>
+    </tr>
+    <tr>
+        <td>Versions</td>
+        <td>
+            repository with current and previous versions* <small>(Git, GitHub)</small>
+        </td>
+    </tr>
+</table>
+<p>
+    <small style="font-size: 70%;">
+    * Version associated with the publication included also as a supplemental file.
+    </small>
+</p>
+</section>
+
+
+<section>
+    <h3>Computational Environment and Reproducibility</h3>
     <ul>
         <li>repository gives concrete steps
     </ul>
@@ -632,8 +715,26 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <small>
         Part of a <em>README</em> file from repository
         associated with Petras et al. 2017 paper
+        (<a href="https://github.com/wenzeslaus/forestfrag3d">github.com/wenzeslaus/forestfrag3d</a>)
     </small>
 </section>
+
+<!--
+$ time docker build --no-cache -t forestfrag3d https://github.com/wenzeslaus/forestfrag3d.git
+real 15m51.028s
+user 0m2.000s
+sys  0m1.400s
+$ mkdir /tmp/testff
+$ time docker run --rm -v /tmp/testff:/data -it forestfrag3d /code/run.sh
+real 23m16.968s
+user 0m0.416s
+sys  0m0.540s
+$ mkdir /tmp/testff_test_region
+$ time docker run --rm -v /tmp/testff_test_region/:/data -it forestfrag3d /code/run.sh test
+real 5m49.269s
+user 0m0.116s
+sys  0m0.200s
+-->
 
 
 <section>
@@ -652,17 +753,23 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Reproducibility</h3>
+    <div class="left">
+    <h3>Publication-Specific Code</h3>
     <ul>
-        <li>flexible reproducibility and reuse with new software
+        <li>creates exact figures as published in the paper
+        <li>works with specific input data
+        <li>Petras et al. 2017: Bash and Python scripts
     </ul>
-    <br>
-    <img class="stretch" src="img/newly_developed_software.png">
-    <br>
-    <small>
-        Part of <em>Availability of data and materials</em> section
-        in Petras et al. 2017
-    </small>
+    </div>
+    <div class="right">
+    <h3>Reusable Code<br>&nbsp;</h3>
+    <ul>
+        <li>new software for reuse
+        <li>flexible reproducibility and replicability
+        <li>works with any data
+        <li>Petras et al. 2017: GRASS GIS modules (C and Python)
+    </ul>
+    </div>
 </section>
 
 
@@ -696,8 +803,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>Questions</h3>
+    <h3>Platform evaluation criteria</h3>
     <ul>
+        <li>Does the contributed scientific code survive over time?
+        <li>How easy is it for a user to inspect the underlying code?
         <li>Who are the authors of significant additions to the code?
             <ul>
                 <li>Are they the same as the maintainers of the code?
@@ -708,6 +817,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
                 <li>What is the ratio of original research code and implementations of existing methods?
                 <li>How many researches are contributing the original research?
             </ul>
+        <li>&hellip;
     </ul>
 </section>
 
@@ -715,10 +825,12 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Contributions</h3>
     <ul>
-        <li>general framework for publishing scientific code
-        <li>concrete steps for geospatial use case
-        <li>qualitative evaluation of GRASS GIS applicability as a
-            platform for publishing and preserving scientific code
+        <li>general publishing framework for open science
+            <ul>
+                <li>components: text, data, reusable code, publication-specific code, computational environment, versions
+            </ul>
+        <li>concept of software platform for publishing and preserving scientific code
+        <li>addressing specific challenges of geospatial science
     </ul>
 </section>
 
