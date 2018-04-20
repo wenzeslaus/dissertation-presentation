@@ -139,6 +139,17 @@
 
 
 <section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        What are the different density anomalies and associated issues?
+    <li>
+        What are causes and solutions?
+</ul>
+</section>
+
+
+<section>
     <h3>Density anomalies</h3>
     <img class="stretch" src="img/scan_line_end.png">
     <br>
@@ -241,10 +252,6 @@
 <section>
     <h3>Questions</h3>
 <ul>
-    <li>
-        What are the different density anomalies and associated issues?
-    <li>
-        What are causes and solutions?
     <li>
         Which decimation performs better for topography and microtopography?
     <li>
@@ -349,18 +356,18 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>identification of density anomalies, their causes, resulting issues, and solutions
         <li>significant decimation is possible with (micro)topography preserved
             <ul>
-                <li>for all 4 datasets from 4 sensors
+                <li>with data from all 4 tested sensors
             </ul>
         <li>faster and simpler count-based decimation more advantageous
             <ul>
                 <li>in most cases count-based decimation provided same results as grid-based decimation
+                <li>needed when relative density needs to be preserved
             </ul>
-        <li>grid-based decimation needed for specific cases
+        <li>more complex grid-based decimation needed for specific cases
             <ul>
-                <li>grid-based decimation is beneficial for specific distribution of terrestrial lidar data
+                <li>beneficial for terrestrial lidar data
+                <li>beneficial for homogenization
             </ul>
-        <li>simple decimations are sufficient,
-            but complex decimation have their place
     </ul>
 </section>
 
@@ -442,6 +449,19 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
+    <h3>Questions</h3>
+<ul>
+    <li>
+        Is 3D raster representation appropriate for lidar data analysis?
+    <li>
+        How to derive and describe 3D structure captured in lidar point clouds?
+    <li>
+        Is a 2D landscape index extensible and applicable to 3D vegetation structure?
+</ul>
+</section>
+
+
+<section>
     <h3>3D raster</h3>
     <img class="stretch" src="img/raster3d_plain.png">
     <br>
@@ -477,19 +497,6 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>number of partially occupied cells pairs are in the neighborhood
         <li>number of fully occupied cells pairs are in the neighborhood
     </ul>
-</section>
-
-
-<section>
-    <h3>Questions</h3>
-<ul>
-    <li>
-        Is 3D raster representation appropriate for lidar data analysis?
-    <li>
-        How to derive and describe 3D structure captured in lidar point clouds?
-    <li>
-        Is a 2D landscape index extensible and applicable to 3D vegetation structure?
-</ul>
 </section>
 
 
