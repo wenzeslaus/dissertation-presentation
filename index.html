@@ -70,6 +70,24 @@
 
 
 <section>
+    <h3>Point clouds</h3>
+    <ul>
+        <li>set of points in 3D space
+        <li>&ldquo;a lot of XYZ coordinates&rdquo;
+        <li>sources
+            <ul>
+                <li>airborne lidar
+                <li>terrestrial lidar
+                <li>SfM-derived (based on UAV imagery)
+                <li>short-range sensors
+            </ul>
+    </ul>
+    <br>
+    <img class="stretch" src="img/points.png">
+</section>
+
+
+<section>
     <h3>Point cloud usages</h3>
     <ul>
         <li>flood modeling <small>[e.g., Webster et al. 2010]</small>
@@ -86,7 +104,7 @@
 <section>
     <h3>Outline</h3>
     <ul>
-        <li>Point cloud densities
+        <li>Point densities in point clouds
         <li>Description of 3D vegetation structure
         <li>Reproducibility and open science
             <!-- enabling code reuse and thorough review -->
@@ -107,18 +125,34 @@
 
 <section>
     <h2>Point densities in point clouds</h2>
-    <small>Learning about point cloud density and its anomalies
-    <br>
-    Homogenization and decimation of point clouds
-    <br>
-    Processing point clouds
-    while dealing with high density
+    <small>
+        Examining point densities and their anomalies
+        <br>
+        Homogenizing point cloud to remove density variations
+        <br>
+        Decimating point cloud to deal with high density
     </small>
 </section>
 
 
 <section>
-    <h3>Use of point cloud densities</h3>
+    <h3>Point densities</h3>
+    <ul>
+        <li>spatial distribution of points in a point cloud
+    </ul>
+    <img style="width: 100%;" src="img/natural_planted_forest_gray.png">
+    <br>
+    <img style="width: 100%;" src="img/skewness_figure.png">
+    <br>
+    <small>
+        natural and planted forest (transect)
+        distinguished by vertical distribution of points
+    </small>
+</section>
+
+
+<section>
+    <h3>Use of point densities</h3>
     <ul>
         <li>biomass estimation <small>[e.g., Calders et al. 2015]</small>
         <li>leaf area density distribution <small>[e.g., Oshio et al. 2015]</small>
@@ -128,16 +162,6 @@
     </ul>
     <br>
     <img class="stretch" src="img/dark_forest.png">
-</section>
-
-
-<section>
-    <h3>Use of point cloud densities</h3>
-    <img style="width: 100%;" src="img/natural_planted_forest_gray.png">
-    <br>
-    <img style="width: 100%;" src="img/skewness_figure.png">
-    <br>
-    <small>natural and planted forest (transect)</small>
 </section>
 
 
