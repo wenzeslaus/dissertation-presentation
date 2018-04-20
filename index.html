@@ -472,6 +472,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
                     <small>[e.g., Gorte &amp; Winterhalder 2004]</small>
                 <li>...
             </ul>
+        <li>challenging to process <small>(large, unstructured, 3D)</small>
     </ul>
     <br>
     <img class="stretch" src="img/points.png">
@@ -526,6 +527,14 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>number of occupied cells are in the neighborhood
         <li>number of partially occupied cells pairs are in the neighborhood
         <li>number of fully occupied cells pairs are in the neighborhood
+        <li>new equations for 3D and generalized
+            <ul>
+                <li>3D moving window
+                <li>interior limit added
+                <li>interior based on circle equation
+                <li>limits (classes) customizable
+            </ul>
+        <li>used for vegetation scale, not landscape scale
     </ul>
 </section>
 
@@ -536,7 +545,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <br>
     <small>
         slice of raw point cloud
-        and slice of presence/absence 3D raster
+        and slice of 3D raster with cells marked as presence or absence
     </small>
 </section>
 
@@ -562,7 +571,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 <section>
     <h3>As 2D raster</h3>
-    <img class="stretch" src="img/ff_and_density.png">
+    <img class="stretch" src="img/ff_and_density.png" alt="Fragmentation and density (modified from computed image - mask applied)">
     <br>
     <small>most common class in vertical column and point density</small>
 </section>
