@@ -665,14 +665,17 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 <section>
     <h3>Reproducibility of Computational Articles</h3>
+    <p>
     Stodden et al. (PNAS, March 13, 2018)<br>
     204 computational articles from Science in 2011–2012
+    </p>
+    <img class="stretch" src="img/reproducibility_ratio_from_stodden.png">
     <table>
         <tr>
-            <td>computationally reproducible
+            <td style="text-align:right">computationally reproducible
             <td>26%
         <tr>
-            <td>computationally irreproducible
+            <td style="text-align:right">computationally irreproducible
             <td>74%
     </table>
     <small class="credit">
@@ -683,6 +686,25 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <a href="https://doi.org/10.1073/pnas.1708290115">DOI 10.1073/pnas.1708290115</a>
     </small>
 </section>
+
+<!--
+Stodden et al. (2018):
+We were able to obtain data and code from the authors of 89
+articles in our sample of 204, giving an estimate for the artifact
+recovery rate of 44% for articles published in Science shortly
+after the policy change: (65 + 24/204) with a 95% bootstrap
+confidence interval of [0.36, 0.50]. Of the 56 articles that were
+then deemed potentially reproducible, we randomly chose 22
+to attempt replication, and all but 1 of the 22 provided enough
+information that we were able to reproduce their computational
+findings (given sufficient resources and a willingness write some
+code). We estimate 95% (21/22) of the articles deemed reproducible
+by inspection are computationally reproducible, so for
+the full sample, we estimate 26% will computationally reproduce
+((56 ∗ (1 − 1/22))) with a 95% bootstrap confidence interval for
+the proportion [0.20, 0.32].
+((56 * (1 - 1./22)) / 204)
+-->
 
 <section>
     <h3>Science and software</h3>
