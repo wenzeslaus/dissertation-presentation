@@ -177,15 +177,32 @@
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>Airborne Lidar Example: Scan Line Densities</h3>
+    <ul>
+        <li>issue: high density at the end of the line*
+        <li>cause: mechanics of the scanner
+        <li>associated elevation error: may indicate low quality points
+    </ul>
+    <br>
     <img class="stretch" src="img/scan_line_end.png">
     <br>
     <small>detail of an end of scan line</small>
+    <p>
+        <small style="font-size: 75%;">
+            * Issue for density-dependent products, processing speed, &hellip;
+        </small>
+    </p>
 </section>
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>Airborne Lidar Example: Swath Overlaps</h3>
+    <ul>
+        <li>issue: doubled density
+        <li>cause: necessary swath overlaps
+        <li>associated elevation error: may indicate abrupt changes in elevation
+    </ul>
+    <br>
     <img class="stretch" src="img/density_overlap.png">
     <br>
     <small>point density in swath overlap</small>
@@ -193,7 +210,13 @@
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>Airborne Lidar Example: Banding</h3>
+    <ul>
+        <li>issue: doubled density
+        <li>cause: necessary swath overlaps
+        <li>associated elevation error: may be associated with bended elevations
+    </ul>
+    <br>
     <img class="stretch" src="img/banding_density.png">
     <br>
     <small>density waves (banding)</small>
@@ -201,7 +224,12 @@
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>SfM-Derived Point Cloud Example</h3>
+    <ul>
+        <li>issue: locally increased density
+        <li>cause: edges/sites of objects
+    </ul>
+    <br>
     <img class="stretch" src="img/uav_density_objects.png">
     <br>
     <small>point distribution in SfM-derived (UAV) point cloud</small>
@@ -209,7 +237,11 @@
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>Point Cloud Merging Example</h3>
+    <ul>
+        <li>issue: different density and vertical distribution of points
+        <li>cause: each method produces point clouds with very different properties
+    </ul>
     <img class="stretch" src="img/profile_uav_lidar.png">
     <br>
     <small>vertical point distribution in lidar and SfM-derived point clouds</small>
@@ -217,7 +249,12 @@
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>Terrestrial Lidar Example: Overall Point Distribution</h3>
+    <ul>
+        <li>issue: different density and vertical distribution of points
+        <li>cause: each method produces point clouds with very different properties
+        <li>associated processing challenge: increased processing time
+    </ul>
     <img class="stretch" src="img/count_ground.png">
     <br>
     <small>terrestrial lidar (raster resolution 0.5 m, red color used for 80 to 18 thousand points per cell)</small>
@@ -225,7 +262,12 @@
 
 
 <section>
-    <h3>Density anomalies</h3>
+    <h3>Short Range Scanner Example: Variable Density</h3>
+    <ul>
+        <li>issue: pattern of high and low densities diminishing further from the sensor
+        <li>cause: inner working of the sensor
+        <li>associated processing challenge: increased processing time and empty spaces
+    </ul>
     <img class="stretch" src="img/count_kinect.png">
     <br>
     <small>Kinect short range scanner (0.37 m × 0.35 m, raster resolution 0.002 m)</small>
