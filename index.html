@@ -702,17 +702,8 @@ the proportion [0.20, 0.32].
     <h3>Science and Software</h3>
     <ul>
         <li>
-            software must be available to readers
-            <small>[Nature Methods - 4, 189 (2007)]</small>
-        <li>
-            source code part of method description
-            <small>[Ince et al. 2012, Morin et al. 2012]</small>
-        <li>
-            recomputability orthogonal to source code
-            <small>[Gent 2013]</small>
-        <li>
-            reproducibility, replicability, and repeatability
-            <small>[Fehr et al. 2016]</small>
+            code part of method description
+            <small>[Ince et al. 2012, Morin et al. 2012, Nat. Methods 2007]</small>
         <li>
             use of open source tools part of reproducibility
             <small>[Less 2012, Alsberg &amp; Hagen 2006]</small>
@@ -854,12 +845,18 @@ the proportion [0.20, 0.32].
             </ul>
         <li>repository gives concrete steps
     </ul>
-    <br>
-    <img class="stretch" src="img/repository_readme.png">
-    <br>
+    <pre style="font-size: 70%;">
+Build based on the content of the Git repository:
+
+docker build -t forestfrag3d https://github.com/wenzeslaus/forestfrag3d.git
+
+Start the processing (you need an existing empty directory):
+
+docker run --rm -v /home/.../ffdata:/data -it forestfrag3d /code/run.sh
+</pre>
     <small>
         Part of a <em>README</em> file from repository
-        associated with Petras et al. 2017 paper
+        associated with the Petras et al. 2017 paper
         (<a href="https://github.com/wenzeslaus/forestfrag3d">github.com/wenzeslaus/forestfrag3d</a>)
     </small>
 </section>
@@ -900,7 +897,7 @@ sys  0m0.200s
 <section>
     <h3>Reproducibility</h3>
     <ul>
-        <li>finished recomputation at Code Ocean*
+        <li>finished recomputation at Code Ocean
     </ul>
     <br>
     <img class="stretch" src="img/codeocean_frag_interface.png">
@@ -912,7 +909,7 @@ sys  0m0.200s
     </small>
     <br>
     <small style="font-size: 75%;">
-        *usual runtime 27 min
+        Usual runtime is around 27 min.
     </small>
 </section>
 
