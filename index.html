@@ -588,8 +588,25 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>As 2D raster</h3>
-    <img class="stretch" src="img/ff_and_density.png" alt="Fragmentation and density (modified from computed image - mask applied)">
+    <h3>3D Raster as 2D Rasters</h3>
+    <ul>
+        <li>using count of cells of the same class for each vertical column
+    </ul>
+    <img class="stretch" src="img/count_relative_perforated_interior.png">
+    <br>
+    <small>relative count of perforated and interior* class cells in a vertical column</small>
+    <br>
+    <small style="font-size: 75%;">*under top of the canopy</small>
+</section>
+
+
+<section>
+    <h3>Comparison with Point Density</h3>
+    <ul>
+        <li>Index is based on presence, absence, and spatial distribution of points.
+        <li>Is there are difference between the most common index class and density?
+    </ul>
+    <img class="stretch" src="img/ff_and_density.png" title="Fragmentation and density (modified from computed image - mask applied)">
     <br>
     <small>most common class in vertical column and point density</small>
 </section>
