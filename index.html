@@ -667,6 +667,12 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <h3>Reproducibility of Computational Articles</h3>
     Stodden et al. (PNAS, March 13, 2018)<br>
     204 computational articles from Science in 2011–2012
+
+    <canvas class="stretch" data-chart="doughnut">
+        ,computationally reproducible, computationally irreproducible
+        ,26, 74
+    </canvas>
+
     <table>
         <tr>
             <td>computationally reproducible
@@ -1206,7 +1212,12 @@ sys  0m0.200s
                     { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                     //{ src: 'plugin/math/math.js', async: true },
-                    { src: 'plugin/chalkboard/chalkboard.js' }
+                    { src: 'plugin/chalkboard/chalkboard.js' },
+                    // Chart.min.js
+                    { src: 'plugin/chart/Chart.min.js'},
+                    // the plugin
+                    { src: 'plugin/chart/Chart.js'},
+                    { src: 'plugin/chart/csv2chart.js' }
                 ],
                 keyboard: {
                     67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
@@ -1215,6 +1226,9 @@ sys  0m0.200s
                      8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
                     68: function() { RevealChalkboard.download() },    // downlad recorded chalkboard drawing when 'd' is pressed
                 },
+                chart : {
+                    doughnut: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+                }
             });
 
         </script>
