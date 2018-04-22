@@ -746,14 +746,11 @@ the proportion [0.20, 0.32].
 <section>
     <h3>Questions</h3>
     <ul>
-        <li>How to ensure reproducibility of results in the paper?
+        <li>How to ensure reproducibility of geospatial research with many software dependencies?
         <li>Where to publish source code so it is preserved?
-        <li>How to publish software so it is reusable*?
-        <li>How to identify a platform for building and publishing research code?
+        <li>How to publish geospatial software so it is reusable inside and outside of academia?
+        <li>How to identify a suitable software platform for building and publishing research code?
     </ul>
-    <p>
-        <small>*Reusable also outside of the original research field.</small>
-    </p>
 </section>
 
 
@@ -773,24 +770,11 @@ the proportion [0.20, 0.32].
 
 
 <section>
-    <h3>Description in the Paper</h3>
-    <em>Availability of data and materials</em> section
-    refers to data, software used, new software, and code for full reproducibility.
-    <br>
-    <img class="stretch" src="img/papers/petras2017generalized_availability.png">
-    <br>
-    <small style="credit">
-        [Petras et al. 2017]
-    </small>
-</section>
-
-
-<section>
 <h3>Publication Framework</h3>
 <table style="font-size: smaller;">
     <tr>
         <th>Component</th>
-        <th>in Petras et al. 2017 (use case)</th>
+        <th>in the Petras et al. 2017 use case</th>
     <tr>
         <td>Text</td>
         <td>
@@ -837,27 +821,46 @@ the proportion [0.20, 0.32].
 
 
 <section>
+    <div class="left">
+    <h3>Publication-Specific Code</h3>
+    <ul>
+        <li>creates exact results as published in the paper
+        <li>works with specific input data
+        <li>Petras et al. 2017: Bash and Python scripts
+    </ul>
+    </div>
+    <div class="right">
+    <h3>Reusable Code<br>&nbsp;</h3>
+    <ul>
+        <li>new software for reuse
+        <li>flexible reproducibility and replicability
+        <li>works with any data
+        <li>Petras et al. 2017: GRASS GIS modules (C and Python)
+    </ul>
+    </div>
+</section>
+
+
+<section>
     <h3>Computational Environment and Reproducibility</h3>
     <ul>
-        <li>all dependencies specified and provided
+        <li>Computational environment: all dependencies specified and provided
+        <li>Docker <small>(used in Petras et al. 2017)</small>:
             <ul>
-                <li>Docker provides isolated, self-contained environment
+                <li>similar to virtual machine: isolated &amp; self-contained environment
+                <li>lightweight &amp; efficient
+                <li>all dependencies described in a text file <small>(Dockerfile)</small>
             </ul>
-        <li>repository gives concrete steps
     </ul>
+    <p style="margin-top: 2em;">
+        Repository linked from Petras et al. 2017 gives two steps
+        for building the environment and running the code:
     <pre style="font-size: 70%;">
-Build based on the content of the Git repository:
-
 docker build -t forestfrag3d https://github.com/wenzeslaus/forestfrag3d.git
-
-Start the processing (you need an existing empty directory):
-
 docker run --rm -v /home/.../ffdata:/data -it forestfrag3d /code/run.sh
 </pre>
     <small>
-        Part of a <em>README</em> file from repository
-        associated with the Petras et al. 2017 paper
-        (<a href="https://github.com/wenzeslaus/forestfrag3d">github.com/wenzeslaus/forestfrag3d</a>)
+        <a href="https://github.com/wenzeslaus/forestfrag3d">github.com/wenzeslaus/forestfrag3d</a>
     </small>
 </section>
 
@@ -882,10 +885,10 @@ sys  0m0.200s
 <section>
     <h3>Reproducibility</h3>
     <ul>
-        <li>result after running the commands
+        <li>executing the code gives all results for the paper
     </ul>
     <br>
-    <img class="stretch" src="img/reproduced_figures.png">
+    <img class="stretch" src="img/reproduced_figures_detail.png">
     <br>
     <small>
         Data-driven figures reproduced using the repository
@@ -915,69 +918,22 @@ sys  0m0.200s
 
 
 <section>
-    <div class="left">
-    <h3>Publication-Specific Code</h3>
+    <h3>Software Platform</h3>
     <ul>
-        <li>creates exact results as published in the paper
-        <li>works with specific input data
-        <li>Petras et al. 2017: Bash and Python scripts
-    </ul>
-    </div>
-    <div class="right">
-    <h3>Reusable Code<br>&nbsp;</h3>
-    <ul>
-        <li>new software for reuse
-        <li>flexible reproducibility and replicability
-        <li>works with any data
-        <li>Petras et al. 2017: GRASS GIS modules (C and Python)
-    </ul>
-    </div>
-</section>
-
-
-<section>
-    <h3>Publishing Reusable Code Through Software Platform</h3>
-    <ul>
-        <li>Avoiding creation of a new open source project for each paper
+        <li>Reusable code component needs a place to survive and thrive.
             <ul>
-                <li>GRASS GIS can integrate smaller projects.
+                <li>Maintenance and distribution of reusable code is time consuming.
+                <li>A software platform needed as a common place for
+                    long-term maintenance and distribution to facilitate reuse.
             </ul>
-        <li>New methods as new functions or improvements of existing ones
-            <ul>
-                <li>GRASS GIS modules can be added or extended.
-            </ul>
-        <li>Preprocessing, visualization, and user interface included
-            <ul>
-                <li>Different tools and interfaces are available in GRASS GIS.
-            </ul>
-        <li>Well integrated with existing analytical tools
-            <ul>
-                <li>GRASS GIS modules use unified interfaces and exchange formats.
-            </ul>
-        <li>Small, isolated projects often disappear
-            <ul>
-                <li>GRASS GIS modules get long-term maintenance from the community.
-            </ul>
-    </ul>
-</section>
-
-
-<section>
-    <h3>Platform Evaluation Criteria</h3>
-    <ul>
-        <li>Does the contributed scientific code survive over time?
-        <li>How easy is it for a user to inspect the underlying code?
-        <li>Who are the authors of significant additions to the code?
-            <ul>
-                <li>Are they the same as the maintainers of the code?
-                <li>Are they the same as the original authors?
-            </ul>
-        <li>How much original research is in the software?
-            <ul>
-                <li>What is the ratio of original research code and implementations of existing methods?
-                <li>How many researches are contributing to the original research?
-            </ul>
+        <li>Platform evaluation criteria:
+        <ul>
+            <li>Does the contributed scientific code survive over time?
+            <li>How much original research is in the software?
+            <li>How easy is it for a user to inspect the underlying code?
+        <li>Are preprocessing, visualization, and user interface included?
         <li>&hellip;
+        </ul>
     </ul>
 </section>
 
