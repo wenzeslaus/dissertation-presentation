@@ -160,7 +160,7 @@
         and reproducibility and open science.
         I will talk about open science at the end,
         but if you want to try reproducibility my calculations
-        for the vegetation structure topic, go to
+        for the vegetation structure topic right now, go to
         codeocean.com, search for petras, and select
         generalized 3D fragmentation index... - that's the title of the paper.
         To actually run the code, not just to view it, you will need
@@ -179,6 +179,10 @@
         <br>
         Homogenization and Decimation of Point Clouds (Chapter 3)
     </small>
+    <aside class="notes">
+        As some of you are getting ready to run that code,
+        I will move to point densities in point clouds.
+    </aside>
 </section>
 
 
@@ -187,6 +191,8 @@
     <ul>
         <li>spatial distribution of points in a point cloud
     </ul>
+    <img style="width: 100%;" src="img/top_transect_density.png">
+    <br>
     <img style="width: 100%;" src="img/natural_planted_forest_gray.png">
     <br>
     <img style="width: 100%;" src="img/skewness_figure.png">
@@ -195,6 +201,18 @@
         natural and planted forest (transect)
         distinguished by vertical distribution of points
     </small>
+    <aside class="notes">
+        Point density describes distribution of points in a point cloud
+        and is often expressed as number of points per raster cell.
+        Here we see stripe of points from a point cloud in a forested area.
+        This image shows them from the top
+        and this image from the side as a profile, or transect,
+        showing vertical distribution of the points.
+        On one side points are evenly distributed, while on the other
+        the points are mostly in the top of the canopy.
+        This can be expressed using skewness and it can help us to
+        distinguish natural forest here from plated forest here.
+    </aside>
 </section>
 
 
@@ -210,6 +228,11 @@
     </ul>
     <br>
     <img class="stretch" src="img/dark_tree.png">
+    <aside class="notes">
+        Point densities are directly or indirectly used in number of
+        applications, for example, in vegetation structure
+        reconstruction or in solar radiation models.
+    </aside>
 </section>
 
 
@@ -221,6 +244,13 @@
     <li>
         What are their causes and solutions?
 </ul>
+    <aside class="notes">
+        However, the point density anomalies are often overlooked
+        and when not taken into account they may cause problems in the
+        results. That's why I asked in my research what are these
+        anomalies, why are they important, and what are the causes
+        and solutions.
+    </aside>
 </section>
 
 
@@ -235,6 +265,17 @@
     <img class="stretch" src="img/scan_line_end.png">
     <br>
     <small>detail of an end of scan line</small>
+    <aside class="notes">
+        First example of density anomaly I will show you is related to
+        how airborne lidar scanner acquires the points.
+        Many scanners scan in parallel lines and because of the inner
+        mechanics of the scanner they give us higher density of the
+        points at the end of the scan line.
+        This is an issue for density related applications
+        and like many of the density anomalies it can also indicate
+        an issue related to elevation of the points.
+        In this case, it may indicate points with low elevation accuracy.
+    </aside>
 </section>
 
 
