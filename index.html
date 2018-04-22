@@ -114,7 +114,7 @@
 
 
 <section>
-    <h3>Point Cloud Usages</h3>
+    <h3>Point Cloud Applications</h3>
     <ul>
         <li>flood modeling <small>[e.g., Webster et al. 2010]</small>
         <li>wildfire fuel assessment <small>[e.g., Gajardo et al. 2014]</small>
@@ -199,7 +199,7 @@
 
 
 <section>
-    <h3>Use of Point Densities</h3>
+    <h3>Point Density Applications</h3>
     <ul>
         <li>vegetation structure <small>[e.g., Sasaki et al. 2016]</small>
         <li>subcanopy solar radiation <small>[e.g., Bode et al. 2014]</small>
@@ -217,10 +217,7 @@
     <h3>Questions</h3>
 <ul>
     <li>
-        What are the different density anomalies and associated issues?
-        <ul>
-            <li>Issue for density-dependent products, processing speed, &hellip;
-        </ul>
+        What are density anomalies and why are they important?
     <li>
         What are their causes and solutions?
 </ul>
@@ -232,7 +229,7 @@
     <ul>
         <li>issue: high density at the end of the line
         <li>cause: mechanics of the scanner
-        <li>associated elevation error: may indicate low quality points
+        <li>associated elevation error: may indicate low accuracy points
     </ul>
     <br>
     <img class="stretch" src="img/scan_line_end.png">
@@ -258,8 +255,8 @@
 <section>
     <h3>Airborne Lidar Example: Banding</h3>
     <ul>
-        <li>issue: doubled density
-        <li>cause: necessary swath overlaps
+        <li>issue: bands of higher density
+        <li>cause: changes in aircraft speed or errors in recorded pitch
         <li>associated elevation error: may be associated with bended elevations
     </ul>
     <br>
@@ -284,13 +281,13 @@
 <section>
     <h3>Terrestrial Lidar Example: Overall Point Distribution</h3>
     <ul>
-        <li>issue: different density and vertical distribution of points
-        <li>cause: each method produces point clouds with very different properties
+        <li>issue: high density around the scanner and data voids
+        <li>cause: scanning from one place
         <li>associated processing challenge: increased processing time
     </ul>
     <img class="stretch" src="img/count_ground_single.png">
     <br>
-    <small>terrestrial lidar (raster resolution 0.5 m, red color used for 80 to 18 thousand points per cell)</small>
+    <small>terrestrial lidar, raster resolution 0.5 m, some cells (in red) have up to 10 thousand points</small>
 </section>
 
 
@@ -303,6 +300,7 @@
 <ul>
     <li>decimation ~ thinning ~ sampling
     <li>makes the point cloud smaller, more manageable
+    <li>preserves the information needed for the application
     <li>count-based decimation: preserves variations in density
     <li>grid-based decimation ~ binning: removes variations in density
 </ul>
@@ -505,8 +503,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <section>
     <h3>Lidar Point Clouds</h3>
     <ul>
-        <li>lidar penetrates vegetation <small>(not only top of canopy)</small>
-        <li>points in the vegetation <small>(not only ground points)</small>
+        <li>lidar penetrates through vegetation to the ground
+        <li>points in the vegetation layer
         <li>vegetation-related applications
             <ul>
                 <li>habitat characterization
@@ -615,7 +613,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 
 
 <section>
-    <h3>3D Raster as 2D Rasters</h3>
+    <h3>Aggregation of 3D Raster to 2D Raster</h3>
     <ul>
         <li>using count of cells of the same class for each vertical column
     </ul>
@@ -692,6 +690,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     </small>
 </section>
 
+
 <section>
     <h3>Reproducibility of Computational Articles</h3>
     <p>
@@ -744,7 +743,7 @@ the proportion [0.20, 0.32].
 
 
 <section>
-    <h3>State of the Art</h3>
+    <h3>Current Practices</h3>
     <img class="left" src="img/zip_with_password.png">
     <ul class="right">
         <li class="fragment">binary
@@ -1089,6 +1088,35 @@ sys  0m0.200s
     <br>
     <img class="stretch" src="img/dark_forest.png">
     <p><a href="https://wenzeslaus.github.io/dissertation-presentation/">wenzeslaus.github.io/dissertation-presentation</a></p>
+</section>
+
+
+<!-- appendix -->
+
+
+<section>
+    <h2>Appendix</h2>
+</section>
+
+
+<section>
+    <h3>SfM-Derived Point Cloud Density Example</h3>
+    <ul>
+        <li>issue: locally increased density
+        <li>cause: edges/sites of objects
+    </ul>
+    <br>
+    <img class="stretch" src="img/uav_density_objects.png">
+    <br>
+    <small>point distribution in SfM-derived (UAV) point cloud</small>
+</section>
+
+
+<section>
+    <h3>Fragmentation Index 3D Raster Slices</h3>
+    <img class="stretch" src="img/hslice.png">
+    <br>
+    <small>horizontal slices of the fragmentation index 3D raster</small>
 </section>
 
 
