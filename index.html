@@ -88,7 +88,7 @@
 
 
 <section>
-    <h3>Point Clouds</h3>
+    <h3>Point Cloud</h3>
     <ul>
         <li>set of points in 3D space
         <li>&ldquo;a lot of XYZ coordinates&rdquo;
@@ -104,10 +104,13 @@
     <img class="stretch" src="img/sensors_schema.png">
 
     <aside class="notes">
-        Point clouds are more and more common type of data.
-        Point cloud is a set of points with XYZ coordinates
-        which is usually acquired by airborne or terrestrial lidar,
-        derived from UAV imagery, or captured by short range sensors
+        Point cloud is a type of data which is more an more common
+        in the geospatial field.
+        Point cloud is a set of points 3D space or we could simply say
+        that is is a lot of XYZ coordinates.
+        Point clouds are usually acquired by airborne or terrestrial lidar,
+        derived from UAV imagery using Structure from Motion technique,
+        or they are captured by short range sensors
         such as Kinect which we are using with Tangible Landscape.
     </aside>
 </section>
@@ -155,14 +158,14 @@
     <br>
     <img class="stretch" src="img/codeocean_frag_code.png">
     <aside class="notes">
-        Today, I will focus on three research topics:
-        Point densities, description of 3D vegetation structure,
-        and reproducibility and open science.
-        I will talk about open science at the end,
+        Today, I will focus on two research topics related to point clouds:
+        Point densities in point clouds, description of 3D vegetation structure.
+        At the end I will present you also the topic of
+        reproducibility and open science,
         but if you want to try reproducibility my calculations
-        for the vegetation structure topic right now, go to
+        for the vegetation structure topic right now during my talk, go to
         codeocean.com, search for petras, and select
-        generalized 3D fragmentation index... - that's the title of the paper.
+        generalized 3D fragmentation index...
         To actually run the code, not just to view it, you will need
         to create an account for that service.
     </aside>
@@ -203,12 +206,12 @@
     </small>
     <aside class="notes">
         Point density describes distribution of points in a point cloud
-        and is often expressed as number of points per raster cell.
-        Here we see stripe of points from a point cloud in a forested area.
+        and is often expressed as a number of points per raster cell.
+        Here we see a stripe of points from a point cloud in a forested area.
         This image shows them from the top
         and this image from the side as a profile, or transect,
         showing vertical distribution of the points.
-        On one side points are evenly distributed, while on the other
+        On one side, points are evenly distributed, while on the other
         the points are mostly in the top of the canopy.
         This can be expressed using skewness and it can help us to
         distinguish natural forest here from plated forest here.
@@ -220,7 +223,7 @@
     <h3>Point Density Applications</h3>
     <ul>
         <li>vegetation structure <small>[e.g., Sasaki et al. 2016]</small>
-        <li>subcanopy solar radiation <small>[e.g., Bode et al. 2014]</small>
+        <li>subcanopy solar radiation model <small>[e.g., Bode et al. 2014]</small>
         <li>biomass estimation <small>[e.g., Calders et al. 2015]</small>
         <li>leaf area density distribution <small>[e.g., Oshio et al. 2015]</small>
         <li>crown density <small>[e.g., Dalponte et al. 2009]</small>
@@ -242,12 +245,12 @@
     <li>
         What are density anomalies and why are they important?
     <li>
-        What are their causes and solutions?
+        What are their causes and their solutions?
 </ul>
     <aside class="notes">
         However, the point density anomalies are often overlooked
         and when not taken into account they may cause problems in the
-        results. That's why I asked in my research what are these
+        results. That's why I investigated in my research what are these
         anomalies, why are they important, and what are the causes
         and solutions.
     </aside>
@@ -273,7 +276,7 @@
         points at the end of the scan line.
         This is an issue for density related applications
         and like many of the density anomalies it can also indicate
-        an issue related to elevation of the points.
+        an issue related to position of the points.
         In this case, it may indicate points with low elevation accuracy.
     </aside>
 </section>
@@ -282,7 +285,7 @@
 <section>
     <h3>Airborne Lidar Example: Swath Overlaps</h3>
     <ul>
-        <li>issue: doubled density
+        <li>issue: doubled or tripled density
         <li>cause: necessary swath overlaps
         <li>associated elevation error: may indicate abrupt changes in elevation
     </ul>
@@ -369,8 +372,11 @@
         How does this change with the point cloud acquisition method?
     <li>
         Are the simplest decimations enough?
-        Or do we need to use slower but more sophisticated techniques?
+        Or do we need to use more sophisticated but slower techniques?
 </ul>
+    <aside class="notes">
+        In relation to decimations, I investigated these questions: ...
+    </aside>
 </section>
 
 
@@ -430,7 +436,7 @@ http://www.ecologydictionary.org/MICROTOPOGRAPHY
 <img style="width: 20%;" src="img/uav_grid_points_res_1_5_lrm_shaded.png">
 
 <small>
-grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
+digital elevation model and local relief model, decimation grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
 <br>
 <small>
 (points removed: 0 % &rarr; 81 % &rarr; 98 % &rarr; 99 %)
@@ -569,8 +575,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <aside class="notes">
         Lidar penetrates through the vegetation all the way to the
         ground and as a result the point cloud contains points
-        capturing objects such as laves and branches in the vegetation layer.
-        This is useful for building digital tree model or charactering habitat.
+        capturing objects such as leaves and branches in the vegetation layer.
+        This is useful for example, for building digital tree model or charactering habitat.
         However, the unstructured nature of the point clouds makes
         it difficult to process them.
     </aside>
@@ -588,9 +594,9 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         Is a 2D landscape index extensible and applicable to 3D vegetation structure?
 </ul>
     <aside class="notes">
-        To address that, I was asking if a 3D raster representation
+        To address that, I was investigating if a 3D raster representation
         is appropriate for lidar point clouds.
-        I was further asking how to describe the 3D captured in lidar
+        I was further investigating how to describe the 3D captured in lidar
         point clouds and since 3D rasters are similar to 2D rasters,
         I specifically asked if we can extent and apply a 2D landscape
         index in 3D.
@@ -603,6 +609,11 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <img class="stretch" src="img/raster3d_plain.png">
     <br>
     <small>voxel-based (cube-based) representation of space</small>
+    <aside class="notes">
+        ...
+        However, 3D rasters are rarely used in the geospatial field
+        to represent 3D space.
+    </aside>
 </section>
 
 
@@ -611,6 +622,13 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <img class="stretch" src="img/forestfrag_2d_forest.png">
     <br>
     <small>forested areas</small>
+    <aside class="notes">
+        On the other hand, 2D rasters are used a lot and one common
+        group of analytical methods often applied in remote sensing and
+        landscape ecology is different indices.
+        I focused on forest fragmentation index which takes
+        forested and not forested raster cells...
+    </aside>
 </section>
 
 
@@ -619,6 +637,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <img class="stretch" src="img/forestfrag_2d_index.png">
     <br>
     <small>forest fragmentation index [Riitters et al. 2000]</small>
+    <aside class="notes">
+        ...and classifies them into categories such as interior forest,
+        perforated forest, forest edge, or forest patch.
+    </aside>
 </section>
 
 
@@ -630,9 +652,9 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <small>assignment of fragmentation classes<br> [Riitters et al. 2000], generalized</small>
     </div>
     <ul class="right" style="max-width:55% !important">
-        <li>number of occupied cells in moving window
-        <li>number of partially occupied cell pairs in moving window
-        <li>number of fully occupied cell pairs in moving window
+        <li>number of occupied cells in a moving window
+        <li>number of fully or partially occupied cell pairs in a moving window
+        <li>assignment of fragmentation classes
         <li>generalized equations for 3D
             <ul>
                 <li>3D moving window
@@ -640,24 +662,47 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
                 <li>interior based on circle equation
                 <li>customizable limits (classes)
             </ul>
-        <li>used for vegetation scale, not landscape scale
     </ul>
+    <aside class="notes">
+        The generalized version of the index is based on number of
+        occupied cells in a moving window and number of fully and
+        partially occupied cell pairs.
+        From the occupied cells and cell pairs, we get measure of density
+        and connectivity and we classify these into the six
+        categories I have already mentioned, only in this case, the interior
+        is not an interior of forest, but interior of a 3D object such
+        as tree crown.
+        To do that, I generalized the index equations to 3D
+        and modified them to be more flexible, for example, instead
+        of interior being just the point 1 1 at this chart,
+        the interior class can be anything which falls into this circle.
+    </aside>
 </section>
 
 
 <section>
     <h3>Point Cloud and Presence Profiles</h3>
+    <ul>
+        <li>vegetation scale: presence and absence based on lidar points
+    </ul>
     <img class="stretch" src="img/profiles_points_and_presence.png">
     <br>
     <small>
         slice of raw point cloud
         and slice of 3D raster with cells marked as presence or absence
     </small>
+    <aside class="notes">
+        In the original application the cells are occupied by forest,
+        while in my application, the cells are occupied by lidar points.
+    </aside>
 </section>
 
 
 <section>
     <h3>Point Cloud and Index Profiles</h3>
+    <ul>
+        <li>vegetation scale: index describes vegetation structure
+    </ul>
     <img class="stretch" src="img/profiles_points_and_ff.png">
     <br>
     <small>
@@ -682,9 +727,7 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     </ul>
     <img class="stretch" src="img/count_relative_perforated_interior.png">
     <br>
-    <small>relative count of perforated and interior* class cells in a vertical column</small>
-    <br>
-    <small style="font-size: 75%;">*under top of the canopy</small>
+    <small>relative count of perforated and interior class cells in a vertical column</small>
 </section>
 
 
@@ -692,11 +735,11 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <h3>Comparison with Point Density</h3>
     <ul>
         <li>Index is based on presence, absence, and spatial distribution of points.
-        <li>Is there any difference between the most common index class and density?
+        <li>Is there any difference between the fragmentation index and point density?
     </ul>
     <img class="stretch" src="img/ff_and_density.png" title="Fragmentation and density (modified from computed image - mask applied)">
     <br>
-    <small>most common class in vertical column and point density</small>
+    <small>most common fragmentation class in vertical column and point density</small>
 </section>
 
 
@@ -704,11 +747,11 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <h3>Contributions</h3>
     <ul>
         <li>3D raster representation is suitable for lidar data analysis
-            of vegetation structure
+            of vegetation structure.
         <li>2D remote sensing and landscape ecology concepts can be
-            applied in 3D
-        <li>generalized 3D fragmentation index is now available
-        <li>aggregation method resulting in a 2D raster is also available
+            applied in 3D.
+        <li>Generalized 3D fragmentation index is now available.
+        <li>Aggregation method resulting in a 2D raster is also available.
     </ul>
 </section>
 
@@ -752,8 +795,8 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         Integrating Free and Open Source Solutions into Geospatial Science Education (Chapter 7)
     </small>
     <aside class="notes">
-        I just mentioned software I published together with my paper.
-        This is actually a part of a larger topic I worked on
+        Publishing the software with my papers
+        is actually a part of a larger topic I worked on
         which is a publishing framework for open science.
     </aside>
 </section>
@@ -814,16 +857,16 @@ the proportion [0.20, 0.32].
             use of open source tools is part of reproducibility
             <small>[Less 2012, Alsberg &amp; Hagen 2006]</small>
         <li>
-            <em>easily reproducible result</em> reproduced in 10 minutes
+            <em>easily reproducible result</em> is a result obtained in 10 minutes
             <small>[Schwab et al. 2000]</small>
     </ul>
     <aside class="notes">
-        A major contributor to this issue is dependence of science on
+        A major contributor to this issue is the dependence of science on
         software. Therefore, many scientist already recognized that
         source code is a necessary part of method description,
         that use of open source tools is part of reproducibility,
         and also, based on options use of software gives us,
-        easily reproducible result is a result reproduced in 10 minutes.
+        easily reproducible result is a result obtained in 10 minutes.
     </aside>
 </section>
 
@@ -851,7 +894,7 @@ the proportion [0.20, 0.32].
             </ul>
         <li class="fragment">web service
             <ul>
-                <li>somebody needed to keep it running
+                <li>need somebody to keep it running
             </ul>
     </ul>
     <aside class="notes">
@@ -1200,8 +1243,8 @@ sys  0m0.200s
     <img class="stretch" src="img/dark_forest.png">
     <p><a href="https://wenzeslaus.github.io/dissertation-presentation/">wenzeslaus.github.io/dissertation-presentation</a></p>
     <aside class="notes">
-        In my dissertation work, I reviewed and analyzed density anomalies
-        and related errors in point clouds and I evaluated
+        In my dissertation work, I reviewed and analyzed the often overlooked
+        density anomalies and related errors in point clouds and I evaluated
         homogenization and decimation methods for dealing with these
         anomalies and also with dense point clouds.
         I proposed a method, based on point densities, for describing
@@ -1209,7 +1252,7 @@ sys  0m0.200s
         But I didn't just published the methods, I also published software
         implementing these methods and provided training for it.
         I didn't stop there either and I created a publication framework
-        to help researchers understand, organize, and ensure reproducibility.
+        to help researchers to understand, organize, and ensure reproducibility.
     </aside>
 </section>
 
