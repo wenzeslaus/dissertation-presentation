@@ -538,6 +538,10 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <small>
         Generalized 3D Fragmentation Index Derived from Lidar Point Clouds (Chapter 4)
     </small>
+    <aside class="notes">
+        In my research, I used point densities to describe vegetation
+        3D structure captured in lidar point clouds.
+    </aside>
 </section>
 
 
@@ -548,18 +552,26 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
         <li>points in the vegetation layer
         <li>vegetation-related applications
             <ul>
+                <li>tree models
+                    <small>[e.g., Gorte &amp; Winterhalder 2004]</small>
                 <li>habitat characterization
                     <small>[e.g., Sasaki et al. 2016]</small>
                 <li>fuel modeling
                     <small>[e.g., García et al. 2011]</small>
-                <li>tree models
-                    <small>[e.g., Gorte &amp; Winterhalder 2004]</small>
                 <li>...
             </ul>
         <li>challenging to process <small>(large, unstructured, 3D)</small>
     </ul>
     <br>
     <img class="stretch" src="img/points.png">
+    <aside class="notes">
+        Lidar penetrates through the vegetation all the way to the
+        ground and as a result the point cloud contains points
+        capturing objects such as laves and branches in the vegetation layer.
+        This is useful for building digital tree model or charactering habitat.
+        However, the unstructured nature of the point clouds makes
+        it difficult to process them.
+    </aside>
 </section>
 
 
@@ -573,6 +585,14 @@ grid size: 0.1 m &rarr; 0.3 m &rarr; 0.9 m &rarr; 1.5 m
     <li>
         Is a 2D landscape index extensible and applicable to 3D vegetation structure?
 </ul>
+    <aside class="notes">
+        To address that, I was asking if a 3D raster representation
+        is appropriate for lidar point clouds.
+        I was further asking how to describe the 3D captured in lidar
+        point clouds and since 3D rasters are similar to 2D rasters,
+        I specifically asked if we can extent and apply a 2D landscape
+        index in 3D.
+    </aside>
 </section>
 
 
