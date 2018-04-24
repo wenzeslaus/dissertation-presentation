@@ -18,7 +18,15 @@ phometry for Geosciences (2015). Ed. by Jasiewicz, J., Zwolinski, Z., Mitasova, 
 Petras, V., Newcomb, D. J. & Mitasova, H. “Generalized 3D fragmentation index derived from lidar
 point clouds”. Open Geospatial Data, Software and Standards 2.1 (2017), p. 9.
 
-## Creating one PNG from PDF document
+### Dissertation
+
+For the yet unpublished material, cite the dissertation:
+
+Petras, V. (2018). Geospatial analytics for point clouds in an open science framework (Doctoral dissertation) [to be published]
+
+## Repository Management
+
+## Creating One PNG from a PDF Document
 
 Using ImageMagic (version 6 syntax) in command line (unix-like):
 
